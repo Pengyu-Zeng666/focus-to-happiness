@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>閱讀 PDF — 從專注到幸福</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#ECEEE9; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
+  --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B; --accent-soft:#E7EFE8;
+  --sans:"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0E1310; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
+    --line:#2A342D; --accent:#7FB49A; --accent-ink:#9CC7B0; --accent-soft:#22322A; }
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans)}
+header{
+  position:sticky; top:0; z-index:10; background:var(--surface);
+  border-bottom:1px solid var(--line); box-shadow:0 1px 4px rgba(0,0,0,.06);
+  display:flex; align-items:center; gap:14px; padding:10px 16px;
+}
+header a{color:var(--accent-ink); text-decoration:none; font-size:14px; white-space:nowrap}
+header a:hover{text-decoration:underline; text-underline-offset:3px}
+.back::before{content:"← "}
+#vtitle{
+  flex:1; font-size:14px; font-weight:600; overflow:hidden;
+  text-overflow:ellipsis; white-space:nowrap; text-align:center;
+}
+#pageinfo{font-size:12.5px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+.dl{
+  border:1px solid var(--accent); border-radius:999px; padding:4px 14px; font-size:13px;
+}
+.dl:hover{background:var(--accent-soft); text-decoration:none!important}
+#pages{display:flex; flex-direction:column; align-items:center; gap:14px; padding:20px 16px 60px}
+.pg{
+  background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.12); border-radius:2px;
+  position:relative;
+}
+.pg canvas{display:block; width:100%; height:auto; border-radius:2px}
+#status{
+  text-align:center; padding:60px 20px; color:var(--muted); font-size:14.5px; line-height:2;
+}
+#status a{color:var(--accent-ink)}
+.spin{
+  display:inline-block; width:22px; height:22px; border-radius:50%;
+  border:2px solid var(--line); border-top-color:var(--accent);
+  animation:sp 1s linear infinite; margin-bottom:12px;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){ .spin{animation:none} }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="index.html">返回網站</a>
+  <span id="vtitle">載入中⋯</span>
+  <span id="pageinfo"></span>
+  <a class="dl" id="vdl" href="#" download>下載</a>
+</header>
+<div id="status"><span class="spin"></span><br>正在載入 PDF⋯</div>
+<div id="pages"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var file = params.get('file') || '';
+  // 僅允許本站內的 PDF 檔案
+  if(!/^(thesis\.pdf|papers\/(0[1-9]|10)\.pdf)$/.test(file)){
+    document.getElementById('status').innerHTML = '找不到指定的檔案。<br><a href="index.html">返回網站</a>';
+    return;
+  }
+  var title = params.get('title') || (file === 'thesis.pdf' ? '博士論文全文' : '論文 PDF');
+  var targetPage = parseInt(params.get('page'), 10) || 1;
+
+  document.title = title + ' — 從專注到幸福';
+  document.getElementById('vtitle').textContent = title;
+  var dl = document.getElementById('vdl');
+  dl.href = file;
+  dl.setAttribute('download', file.split('/').pop());
+
+  if (typeof pdfjsLib === 'undefined'){
+    document.getElementById('status').innerHTML =
+      'PDF 閱讀器載入失敗（可能是網路問題）。<br><a href="' + file + '">改為直接開啟 PDF 檔案</a>';
+    return;
+  }
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  var pagesEl = document.getElementById('pages');
+  var statusEl = document.getElementById('status');
+  var infoEl = document.getElementById('pageinfo');
+  var pdfDoc = null, ratio = 1.414, holders = [];
+
+  function containerWidth(){
+    return Math.min(920, document.documentElement.clientWidth - 32);
+  }
+
+  function renderPage(num, holder){
+    if (holder.dataset.done) return;
+    holder.dataset.done = '1';
+    pdfDoc.getPage(num).then(function(page){
+      var W = containerWidth();
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var vp1 = page.getViewport({scale: 1});
+      var vp = page.getViewport({scale: W / vp1.width * dpr});
+      var canvas = document.createElement('canvas');
+      canvas.width = vp.width; canvas.height = vp.height;
+      page.render({canvasContext: canvas.getContext('2d'), viewport: vp, intent: 'print'}).promise.then(function(){
+        holder.style.height = 'auto';
+        holder.appendChild(canvas);
+      });
+    });
+  }
+
+  // 以捲動位置計算需要渲染的頁面（不依賴 IntersectionObserver，相容性最高）
+  var ticking = false;
+  function updateVisible(){
+    ticking = false;
+    if (!pdfDoc || !holders.length) return;
+    var margin = 900;
+    var top = window.scrollY - margin;
+    var bottom = window.scrollY + window.innerHeight + margin;
+    var current = 1;
+    for (var i = 0; i < holders.length; i++){
+      var h = holders[i];
+      var y = h.offsetTop, yb = y + h.offsetHeight;
+      if (yb > top && y < bottom) renderPage(i + 1, h);
+      if (y <= window.scrollY + window.innerHeight / 2) current = i + 1;
+    }
+    infoEl.textContent = '第 ' + current + ' / ' + pdfDoc.numPages + ' 頁';
+  }
+  function requestUpdate(){
+    if (!ticking){ ticking = true; requestAnimationFrame(updateVisible); }
+  }
+  window.addEventListener('scroll', requestUpdate, {passive: true});
+  window.addEventListener('resize', requestUpdate);
+
+  pdfjsLib.getDocument(file).promise.then(function(doc){
+    pdfDoc = doc;
+    return doc.getPage(1);
+  }).then(function(p1){
+    var vp = p1.getViewport({scale: 1});
+    ratio = vp.height / vp.width;
+    statusEl.style.display = 'none';
+    var W = containerWidth();
+    for (var i = 1; i <= pdfDoc.numPages; i++){
+      var d = document.createElement('div');
+      d.className = 'pg';
+      d.dataset.page = i;
+      d.style.width = W + 'px';
+      d.style.height = (W * ratio) + 'px';
+      pagesEl.appendChild(d);
+      holders.push(d);
+    }
+    if (targetPage > 1 && targetPage <= pdfDoc.numPages){
+      holders[targetPage - 1].scrollIntoView({behavior: 'instant', block: 'start'});
+    }
+    updateVisible();
+  }).catch(function(err){
+    statusEl.innerHTML = 'PDF 載入失敗。<br><a href="' + file + '">改為直接開啟 PDF 檔案</a>';
+  });
+})();
+</script>
+</body>
+</html>
