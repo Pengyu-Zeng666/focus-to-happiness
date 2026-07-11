@@ -1,0 +1,561 @@
+<meta charset="utf-8">
+<title>曾鵬宇 — 從專注到幸福：博士論文與學術發表</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#F6F7F3; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
+  --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B;
+  --accent-soft:#E7EFE8; --gold:#A8823F; --shadow:0 1px 3px rgba(31,40,35,.06);
+  --serif:"Songti TC","Noto Serif TC","Source Han Serif TC","Times New Roman",serif;
+  --sans:"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#121814; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
+    --line:#2A342D; --accent:#7FB49A; --accent-ink:#9CC7B0;
+    --accent-soft:#22322A; --gold:#C9A662; --shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121814; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
+  --line:#2A342D; --accent:#7FB49A; --accent-ink:#9CC7B0;
+  --accent-soft:#22322A; --gold:#C9A662; --shadow:0 1px 3px rgba(0,0,0,.3);
+}
+:root[data-theme="light"]{
+  --bg:#F6F7F3; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
+  --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B;
+  --accent-soft:#E7EFE8; --gold:#A8823F; --shadow:0 1px 3px rgba(31,40,35,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent-ink); text-decoration:none}
+a:hover{text-decoration:underline; text-underline-offset:4px}
+a:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+.wrap{max-width:880px; margin:0 auto; padding:0 24px}
+
+/* ---------- hero ---------- */
+.hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:96px; padding-bottom:88px; position:relative; z-index:1}
+.breath{
+  position:absolute; right:-140px; top:-140px; width:520px; height:520px;
+  border-radius:50%; border:1px solid var(--line); opacity:.8; z-index:0;
+  animation:breathe 9s ease-in-out infinite;
+}
+.breath::after{
+  content:""; position:absolute; inset:70px; border-radius:50%;
+  border:1px solid var(--line);
+}
+.breath::before{
+  content:""; position:absolute; inset:150px; border-radius:50%;
+  background:var(--accent-soft); opacity:.6;
+}
+@keyframes breathe{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+.eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.22em;
+  color:var(--muted); margin:0 0 28px;
+}
+h1{
+  font-size:clamp(40px,7vw,64px); font-weight:600; letter-spacing:.06em;
+  line-height:1.25; margin:0 0 10px; text-wrap:balance;
+}
+h1 .kanji-accent{color:var(--accent-ink)}
+.subtitle{
+  font-size:clamp(18px,2.6vw,22px); color:var(--muted);
+  letter-spacing:.12em; margin:0 0 40px;
+}
+.byline{
+  font-family:var(--sans); font-size:14.5px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:8px 28px; margin:0 0 44px;
+}
+.byline strong{color:var(--ink); font-weight:600}
+.stats{display:flex; flex-wrap:wrap; gap:0}
+.stat{
+  padding:6px 28px 6px 0; margin-right:28px;
+  border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none}
+.stat b{
+  display:block; font-size:30px; font-weight:600; color:var(--accent-ink);
+  font-variant-numeric:tabular-nums; line-height:1.3;
+}
+.stat span{font-family:var(--sans); font-size:12.5px; letter-spacing:.14em; color:var(--muted)}
+.hero-thesis{margin-top:40px}
+
+/* ---------- buttons ---------- */
+.btn-pdf{
+  font-family:var(--sans); font-size:13px; letter-spacing:.05em;
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--accent); color:#fff; padding:7px 18px;
+  border-radius:999px; white-space:nowrap;
+}
+:root[data-theme="dark"] .btn-pdf{color:#10160f}
+@media (prefers-color-scheme: dark){ .btn-pdf{color:#10160f} }
+:root[data-theme="light"] .btn-pdf{color:#fff}
+.btn-pdf:hover{text-decoration:none; filter:brightness(1.08)}
+.btn-pdf::before{content:"⬒"; font-size:12px}
+
+/* ---------- sections ---------- */
+section{padding:72px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.22em;
+  color:var(--gold); margin:0 0 14px;
+}
+h2{
+  font-size:clamp(26px,4vw,32px); font-weight:600; letter-spacing:.05em;
+  margin:0 0 30px; text-wrap:balance;
+}
+.prose{max-width:42em}
+.prose p{margin:0 0 1.2em; text-align:justify}
+.keywords{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.kw{
+  font-family:var(--sans); font-size:13px; letter-spacing:.06em;
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:5px 14px; border-radius:999px;
+}
+
+/* ---------- chapters ---------- */
+.frame-note{max-width:42em; color:var(--muted); margin:0 0 40px; text-align:justify}
+.chapters{display:flex; flex-direction:column; gap:28px}
+.chapter{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  box-shadow:var(--shadow); padding:34px 38px;
+}
+.ch-head{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px}
+.ch-num{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.2em;
+  color:var(--gold); white-space:nowrap;
+}
+.ch-head h3{font-size:22px; font-weight:600; letter-spacing:.04em; margin:0}
+.ch-q{color:var(--accent-ink); font-size:16.5px; margin:2px 0 12px; letter-spacing:.03em}
+.chapter > p{color:var(--muted); margin:0 0 22px; text-align:justify; font-size:16px}
+.studies{display:flex; flex-direction:column; border-top:1px solid var(--line)}
+
+details.study{border-bottom:1px solid var(--line)}
+details.study summary{
+  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  padding:15px 2px; cursor:pointer; list-style:none;
+}
+details.study summary::-webkit-details-marker{display:none}
+details.study summary:hover .study-name{color:var(--accent-ink)}
+.study-name{flex:1 1 280px; min-width:0}
+.study-name em{font-style:normal; font-family:var(--sans); font-size:12px; letter-spacing:.1em; color:var(--muted); margin-right:10px}
+.chev{
+  font-family:var(--sans); font-size:12px; color:var(--muted);
+  transition:transform .25s ease; align-self:center;
+}
+details[open] > summary .chev{transform:rotate(180deg)}
+.pub-tag{
+  font-family:var(--sans); font-size:12px; letter-spacing:.04em;
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:3px 12px; border-radius:999px; white-space:nowrap;
+}
+.pub-tag:hover{text-decoration:none; filter:brightness(.96)}
+.unpub{
+  font-family:var(--sans); font-size:12px; letter-spacing:.06em;
+  color:var(--muted); border:1px solid var(--line);
+  padding:2px 12px; border-radius:999px; white-space:nowrap;
+}
+.study-body{
+  padding:6px 2px 26px; border-top:1px dashed var(--line); margin-top:-1px;
+}
+.study-body p{font-size:15.5px; margin:14px 0 0; text-align:justify; color:var(--ink)}
+.study-body p b{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.12em;
+  color:var(--gold); font-weight:600; display:block; margin-bottom:2px;
+}
+.study-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; align-items:center}
+.thesis-link{
+  font-family:var(--sans); font-size:13px; letter-spacing:.03em;
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid var(--accent); color:var(--accent-ink);
+  padding:6px 16px; border-radius:999px; white-space:nowrap;
+}
+.thesis-link:hover{text-decoration:none; background:var(--accent-soft)}
+.thesis-link::before{content:"⬒"; font-size:12px}
+
+/* ---------- publications ---------- */
+.pub-group{margin-top:44px}
+.pub-group:first-of-type{margin-top:0}
+.pub-group h3{
+  font-family:var(--sans); font-size:13px; letter-spacing:.2em; font-weight:600;
+  color:var(--muted); margin:0 0 20px;
+}
+.pubs{display:flex; flex-direction:column; gap:20px}
+.pub{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  box-shadow:var(--shadow); padding:26px 30px;
+  display:grid; grid-template-columns:56px 1fr; gap:4px 22px;
+}
+.pub-no{
+  grid-row:span 5; font-family:var(--sans); font-size:22px; font-weight:600;
+  color:var(--line); font-variant-numeric:tabular-nums; line-height:1.4;
+}
+.pub[id]{scroll-margin-top:24px}
+.pub:target{border-color:var(--accent)}
+.pub-meta{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.08em;
+  color:var(--gold); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; margin:0;
+}
+.pub-meta .dtag{
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:2px 10px; border-radius:999px; letter-spacing:.06em;
+}
+.pub h4{font-size:18.5px; font-weight:600; line-height:1.6; margin:4px 0 2px; letter-spacing:.02em; text-wrap:balance}
+.pub .authors{font-family:var(--sans); font-size:13.5px; color:var(--muted); margin:0}
+.pub .authors b{color:var(--ink); font-weight:600}
+.pub .summary{font-size:15.5px; color:var(--muted); margin:10px 0 14px; text-align:justify}
+.pub-actions{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center}
+.doi{
+  font-family:var(--sans); font-size:13px; letter-spacing:.03em;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.doi::before{content:"→"; color:var(--gold)}
+@media (max-width:560px){
+  .pub{grid-template-columns:1fr}
+  .pub-no{grid-row:auto}
+  .chapter{padding:26px 22px}
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line); padding:44px 0 64px;
+  font-family:var(--sans); font-size:13.5px; color:var(--muted);
+}
+footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-between}
+</style>
+
+<header class="hero">
+  <div class="breath" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">國立臺灣大學心理學系暨研究所 · 博士論文</p>
+    <h1>從<span class="kanji-accent">專注</span>到<span class="kanji-accent">幸福</span></h1>
+    <p class="subtitle">心理機制、個人實踐、人際影響力的探討</p>
+    <div class="byline">
+      <span>研究生 <strong>曾鵬宇</strong>（Peng-Yu Zeng）</span>
+      <span>指導教授 <strong>葉素玲</strong> 博士</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>章節</span></div>
+      <div class="stat"><b>6</b><span>研究</span></div>
+      <div class="stat"><b>9</b><span>期刊發表</span></div>
+      <div class="stat"><b>1</b><span>會議論文</span></div>
+    </div>
+    <p class="hero-thesis"><a class="btn-pdf" data-local-pdf href="thesis.pdf" target="_blank" rel="noopener">博士論文全文 PDF</a></p>
+  </div>
+</header>
+
+<section id="abstract">
+  <div class="wrap">
+    <p class="sec-label">摘要 · ABSTRACT</p>
+    <h2>在分心的時代，重塑專注與幸福</h2>
+    <div class="prose">
+      <p>在數位科技高度滲透的當代，社群媒體的持續干擾使人們長期處於分心狀態；與此同時，個體內在紛擾的思緒亦不斷將注意力從當下抽離。這種普遍的分心狀態不僅削弱個體的認知功能，更對幸福感造成負面影響。如何形塑當下的專注力與幸福感，已成為學界與實務界共同關注的核心議題。</p>
+      <p>本論文以「專注當下」與「幸福感」為核心構念，從心理機制、個人實踐與人際影響力三個層次展開探討。第一章從機制層次切入，探討外在動機如何削弱專注與幸福感之間的正向關係，並檢視自我慈悲特質在個體分心時的關鍵緩衝作用。第二章從個人實踐層次出發，檢驗自然介入與正念介入如何有效提升專注與幸福感。第三章將視角延伸至人際影響力層次，探討正念特質較高者如何促進人際互動品質，並探討賦予正念角色的聊天機器人如何影響人際感恩。</p>
+      <p>本論文不僅從理論層次揭示影響專注與幸福感的各種因素，亦在實踐層次為提升自身與他人福祉提供具體啟示。</p>
+    </div>
+    <div class="keywords">
+      <span class="kw">專注當下</span><span class="kw">幸福感</span><span class="kw">動機</span>
+      <span class="kw">自我慈悲</span><span class="kw">自然介入</span><span class="kw">正念訓練</span>
+      <span class="kw">人際關係</span><span class="kw">人機關係</span>
+    </div>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="wrap">
+    <p class="sec-label">論文架構 · THREE LEVELS</p>
+    <h2>三個層次，六個研究</h2>
+    <p class="frame-note">論文以 Seligman 的 PERMA 幸福感模型為理論框架，從個人層次（機制與實踐）到人際層次（影響力）逐步展開。點擊任一研究可展開閱讀研究問題、方法與主要發現；已發表的四個研究另可跳至對應的期刊發表。</p>
+
+    <div class="chapters">
+      <article class="chapter">
+        <div class="ch-head"><span class="ch-num">第一章</span><h3>心理機制</h3></div>
+        <p class="ch-q">專注與分心，如何影響幸福感？</p>
+        <p>以經驗取樣法捕捉日常生活中即時的專注狀態，探討外在動機如何削弱「專注 → 幸福感」的正向關係，以及當人們分心時，自我慈悲特質如何緩衝分心帶來的負面影響。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究一</em>動機影響專注到幸福感的歷程</span>
+              <a class="pub-tag" href="#pub-5">已發表 · Mindfulness（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>專注當下能提升快樂，但為什麼有時效果不明顯？本研究檢驗「做這件事的動機」是否調節專注與幸福感的關係，以及正念特質高的人是否對動機更敏感。</p>
+              <p><b>研究方法</b>以經驗取樣法追蹤 56 位臺灣大學生兩週的日常生活，每天三次隨機回報當下的專注程度、快樂感受，以及從事活動的動機類型（自主動機或外在動機）。</p>
+              <p><b>主要發現</b>專注當下顯著正向預測快樂；但活動的外在動機越高，專注與快樂的正向關係越弱。此外，高正念特質者對自身動機的覺察更敏銳，反而放大了外在動機的削弱效果——提示正念訓練應同時留意降低外在動機的影響。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=14" target="_blank" rel="noopener">閱讀論文原文（第 14 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究二</em>分心時，想法的內容動機影響幸福感</span>
+              <span class="unpub">論文章節</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>分心一定會讓人不快樂嗎？本研究首次從「分心內容的動機屬性」切入：分心想著自主動機的事（如期待的聚會）與受控動機的事（如不得不做的工作），對幸福感的影響是否不同？年齡與自我慈悲又扮演什麼角色？</p>
+              <p><b>研究方法</b>以經驗取樣法追蹤 91 位參與者（35 位長者、56 位年輕人）兩週，共回收 3,023 筆日常經驗資料，同時測量自我慈悲特質，以多層次調節中介模型分析。</p>
+              <p><b>主要發現</b>參與者平均 39.3% 的時間處於分心，且分心時幸福感較低；但分心想「自主動機」內容顯著比想「受控動機」內容更快樂——當從事受控活動時，分心想自主動機的事，幸福感可與專注時相當，顯示分心可作為缺失自主性時的補償機制。此外，長者即使分心也不降低幸福感：因為長者具備更高的自我慈悲（其中正念與共同人性是關鍵成分），緩衝了分心的負面影響。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=25" target="_blank" rel="noopener">閱讀論文原文（第 25 頁起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="ch-head"><span class="ch-num">第二章</span><h3>個人實踐</h3></div>
+        <p class="ch-q">哪些介入方法，能有效提升專注與幸福感？</p>
+        <p>基於輕推理論（改變環境）與賦能理論（系統性訓練）的雙軌途徑，以縱貫視角檢驗自然介入與正念介入對日常專注狀態與幸福感的提升效果。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究三</em>自然介入對專注與幸福感的影響</span>
+              <a class="pub-tag" href="#pub-2">已發表 · J. Environ. Psychol.（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>接觸自然能提升幸福感，但背後的心理機制是什麼？本研究假設「正念狀態」是自然介入促進幸福感的關鍵中介：身處自然時，人更容易回到當下。</p>
+              <p><b>研究方法</b>兩個子研究：子研究一以經驗取樣法比較自然介入期間與基準日的快樂、壓力與自主動機；子研究二以日重建法測量快樂與自然連結感，皆以多層次迴歸分析。</p>
+              <p><b>主要發現</b>相較於基準日，自然介入提升快樂、降低壓力，並增進自主動機與自然連結感；更重要的是，正念狀態顯著中介了自然介入與幸福感的關係，且介入期間正念狀態較高的時刻，幸福感也較高——未來的自然介入課程可納入正念元素以強化效果。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=37" target="_blank" rel="noopener">閱讀論文原文（第 37 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究四</em>正念介入對專注與幸福感的影響</span>
+              <span class="unpub">論文章節</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>正念課程的效果取決於「練了多少」。本研究提出正念練習的不對稱 U 型曲線模型：練習量低於某個門檻時，正念可能不增反減幸福感；超過門檻後才展現劑量效果。</p>
+              <p><b>研究方法</b>21 位參與者完成八週正念認知療法（MBCT）課程，另有 27 位年齡性別配對的對照組（閱讀任務）。所有人連續 50 天填寫每日幸福感日記（個人、人際、環境、生理四面向），並於課程前後完成持續注意力、情緒記憶與情緒臉孔眼動三項電腦測驗。</p>
+              <p><b>主要發現</b>高練習組的正念特質與各面向每日幸福感顯著高於對照組；每天平均練習低於約 5 分鐘時，幸福感反而出現輕微下降，支持不對稱 U 型曲線。正念訓練主要降低「內在思緒分心」而非提升客觀注意力，支持內在注意力模型；低練習組在正向高激發刺激下的後設記憶能力下降，呼應初學者困境。交叉滯後分析並顯示：練習與幸福感、睡眠品質之間是雙向相互滋養的動態歷程。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=51" target="_blank" rel="noopener">閱讀論文原文（第 51 頁起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </article>
+
+      <article class="chapter">
+        <div class="ch-head"><span class="ch-num">第三章</span><h3>人際影響力</h3></div>
+        <p class="ch-q">專注與正念，如何影響他人與關係？</p>
+        <p>將視角從個人延伸至人際：正念特質較高者如何促進跨世代溝通品質；當生成式 AI 聊天機器人被賦予正念角色時，又如何重塑人際感恩的表達。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究五</em>正念特質影響溝通品質</span>
+              <a class="pub-tag" href="#pub-6">已發表 · Current Psychology（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>個人內正念（專注當下、不評判）與人際正念（覺察對話中的語言與非語言線索）如何分別影響跨世代溝通的品質？</p>
+              <p><b>研究方法</b>44 組臺灣跨世代配對（年輕人＋長者）進行三種溝通情境，依人際化學模型從情緒、認知、行為三層面評估溝通品質，並以多層次迴歸與行動者—夥伴互依模型（APIM）分析。</p>
+              <p><b>主要發現</b>兩種正念皆能提升正向情緒、降低壓力、促進同理心與溝通滿意度、拉近心理距離，並在爭議話題上達成更高共識；其中人際正念的效益範圍更廣（還能降低負向情緒、加快合作速度）。APIM 分析顯示，正念對長者溝通品質的提升效果比對年輕人更全面——未來溝通工具的設計可納入正念元素。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=90" target="_blank" rel="noopener">閱讀論文原文（第 90 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究六</em>正念聊天機器人影響感恩</span>
+              <a class="pub-tag" href="#pub-1">已發表 · CHB: Artificial Humans（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>當生成式 AI 介入感恩練習，改變的不只是效果，還有「歷程」。本研究比較 AI 對話式感恩與傳統感恩日記，檢驗 GenAI 如何重塑幸福感介入。</p>
+              <p><b>研究方法</b>為期七天的隨機對照試驗，三組：感恩聊天機器人組（GenAI 對話式書寫）、感恩日記組（結構化提示書寫）、主動對照組（記錄每日事件），以線性混合效果模型結合主題分析（混合方法）。</p>
+              <p><b>主要發現</b>兩種感恩形式皆比對照組提升快樂與意義感；但聊天機器人組的知覺努力較低、感恩表達較淺，且更偏向自我導向。質性分析顯示參與者對 AI 生成的摘要感到驚喜與啟發。整體而言，GenAI 介入是把雙面刃：降低認知門檻、帶來靈感，卻可能侵蝕反思深度——未來的 AI 幸福感工具應讓使用者自行權衡是否納入 AI 中介。</p>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="thesis.pdf#page=117" target="_blank" rel="noopener">閱讀論文原文（第 117 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <p class="sec-label">學術發表 · PUBLICATIONS</p>
+    <h2>發表論文清單</h2>
+
+    <div class="pub-group">
+      <h3>期刊發表（9 篇）</h3>
+      <div class="pubs">
+
+        <article class="pub" id="pub-1">
+          <span class="pub-no">01</span>
+          <p class="pub-meta"><span>Computers in Human Behavior: Artificial Humans · 2026</span><span class="dtag">博士論文 研究六</span></p>
+          <h4>How generative AI reshapes gratitude interventions: Benefits and risks</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Chang, K.Y., Lin, K.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">為期七天的隨機對照試驗，比較「感恩聊天機器人」與傳統感恩日記。結果顯示生成式 AI 是把雙面刃：它降低書寫的認知門檻、帶來驚喜與啟發，卻也讓感恩表達變得較淺、更偏向自我導向。兩種感恩形式皆能提升快樂與意義感。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/01.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">doi.org/10.1016/j.chbah.2026.100333</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-2">
+          <span class="pub-no">02</span>
+          <p class="pub-meta"><span>Journal of Environmental Psychology · 2026</span><span class="dtag">博士論文 研究三</span></p>
+          <h4>Nurturing well-being through nature-based intervention: The mediating role of mindfulness state</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Yeh, M.S., &amp; Yeh, S.L.*</p>
+          <p class="summary">結合經驗取樣法與日重建法的兩個研究顯示：自然介入能提升快樂、降低壓力，並增進自主動機與自然連結感；更重要的是，「正念狀態」是自然介入促進幸福感的關鍵中介機制。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/02.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">doi.org/10.1016/j.jenvp.2025.102849</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-3">
+          <span class="pub-no">03</span>
+          <p class="pub-meta"><span>Journal of Behavioral and Experimental Economics · 2026</span></p>
+          <h4>Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hsieh, T.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">檢驗預設選項、社會規範與正向框架三種輕推策略的組合效果：使用的輕推種類越多、效果越強，且策略之間沒有交互作用。「預設＋正向框架」僅對年輕人有效，「預設＋社會規範」則對高齡者更有效，為年齡導向的輕推設計提供依據。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/03.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.socec.2026.102598" target="_blank" rel="noopener">doi.org/10.1016/j.socec.2026.102598</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-4">
+          <span class="pub-no">04</span>
+          <p class="pub-meta"><span>Psychology and Aging · 2025</span></p>
+          <h4>Exploring semantic expression disparities in intragenerational and intergenerational communication: A novel perspective on socioemotional selectivity theory</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以語言分析工具（LIWC）檢視 36 組對話：同世代對話中，高齡者比年輕人使用更多當下導向與家庭詞彙，符合社會情緒選擇理論；但在跨世代對話中，雙方的語言型態趨於一致，顯示群體間的語言調適比理論預測的年齡差異更具主導性。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/04.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1037/pag0000877" target="_blank" rel="noopener">doi.org/10.1037/pag0000877</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-5">
+          <span class="pub-no">05</span>
+          <p class="pub-meta"><span>Mindfulness · 2025</span><span class="dtag">博士論文 研究一</span></p>
+          <h4>Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以經驗取樣法追蹤 56 位大學生兩週的日常經驗。結果顯示專注當下能正向預測快樂，但外在動機會削弱這個正向關係；而高正念特質者對外在動機更敏感，放大了外在動機的調節效果——提示正念訓練應留意降低外在動機的影響。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/05.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">doi.org/10.1007/s12671-025-02534-7</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-6">
+          <span class="pub-no">06</span>
+          <p class="pub-meta"><span>Current Psychology · 2025</span><span class="dtag">博士論文 研究五</span></p>
+          <h4>Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Wu, S.H., Li, T.V., &amp; Yeh, S.L.*</p>
+          <p class="summary">44 組台灣跨世代配對進行三種溝通情境。個人內正念與人際正念皆能提升正向情緒、同理心、溝通滿意度並拉近心理距離；其中人際正念的效益更廣，且正念對高齡者溝通品質的提升效果比年輕人更全面。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/06.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">doi.org/10.1007/s12144-025-07849-1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-7">
+          <span class="pub-no">07</span>
+          <p class="pub-meta"><span>Research Square（Preprint）· 2024</span></p>
+          <h4>Emotional impact on investment and insurance preferences in unit-linked insurance plans</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Liu, H.Y., Chen, L.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">以情感灌注模型（Affect Infusion Model）為框架，探討情緒狀態如何影響投資型保單中投資與保險偏好的權衡，為金融商品設計與消費者決策提供心理學觀點。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/07.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.21203/rs.3.rs-4733981/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-4733981/v1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-8">
+          <span class="pub-no">08</span>
+          <p class="pub-meta"><span>應用心理研究（Research in Applied Psychology）· 2024</span></p>
+          <h4>精準輕推：以客戶為導向的商業應用</h4>
+          <p class="authors">黃振維、<b>曾鵬宇</b>、葉素玲*</p>
+          <p class="summary">系統性回顧輕推（Nudge）在政府、企業與金融領域的應用，並延伸探討性格特質與情緒如何影響輕推的有效性，提出「精準輕推」框架——依據目的、形式、客群與強度，設計最合適的輕推方式。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/08.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.53106/156092512024120081001" target="_blank" rel="noopener">doi.org/10.53106/156092512024120081001</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-9">
+          <span class="pub-no">09</span>
+          <p class="pub-meta"><span>Cogent Economics &amp; Finance · 2024</span></p>
+          <h4>Psychological dynamics of unit-linked insurance product decision-making: A cognitive model</h4>
+          <p class="authors">Tsai, C.C., Chen, L.Y., Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">建構投資型保單決策的認知模型，剖析消費者在兼具投資與保障性質的金融商品中，如何形成偏好與做出選擇的心理動態歷程。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/09.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1080/23322039.2024.2422966" target="_blank" rel="noopener">doi.org/10.1080/23322039.2024.2422966</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h3>會議論文（1 篇）</h3>
+      <div class="pubs">
+        <article class="pub" id="pub-10">
+          <span class="pub-no">10</span>
+          <p class="pub-meta"><span>IEEE RO-MAN ·（審查中）</span></p>
+          <h4>Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hou, C.A., Pan, C.H., Liu, Y.C., Liu, T., Chiu, T.W., &amp; Yeh, S.L.*</p>
+          <p class="summary">兩項實驗檢驗 AI 聊天機器人的情緒調節效果：20 分鐘的對話不僅降低負向情緒，還能促進正向情緒並協助回復基準狀態。在知覺同理的三個面向中，唯有「關係溫暖」顯著預測情緒調節成效。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="papers/10.pdf" target="_blank" rel="noopener">閱讀 PDF</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>曾鵬宇 Peng-Yu Zeng · 國立臺灣大學心理學系暨研究所</span>
+    <span>從專注到幸福：心理機制、個人實踐、人際影響力的探討</span>
+  </div>
+</footer>
+
+<script>
+// 在 Claude Artifact 上（沒有隨附的 PDF 檔案）隱藏本地 PDF 連結，避免點擊後出現錯誤頁。
+(function(){
+  var h = location.hostname;
+  if (h.indexOf('claude') !== -1 || h.indexOf('anthropic') !== -1) {
+    document.querySelectorAll('[data-local-pdf]').forEach(function(a){ a.style.display = 'none'; });
+  }
+})();
+</script>
