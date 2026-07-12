@@ -311,11 +311,13 @@ details.takeaway summary::-webkit-details-marker{display:none}
 /* ---------- side navigation ---------- */
 #sidenav{
   position:fixed; top:50%; transform:translateY(-50%);
-  right:calc((100vw - 880px) / 2 - 212px);
-  width:176px; z-index:60;
+  left:24px; width:180px; z-index:60;
   font-family:var(--sans); display:none; flex-direction:column; gap:1px;
 }
-@media (min-width:1300px){ #sidenav{display:flex} }
+@media (min-width:1120px){
+  #sidenav{display:flex}
+  body{padding-left:224px}
+}
 #sidenav .nav-title{
   font-size:11px; letter-spacing:.22em; color:var(--muted);
   padding:0 14px 10px; font-weight:600;
@@ -342,7 +344,7 @@ details.takeaway summary::-webkit-details-marker{display:none}
 :root[data-theme="dark"] #tocbtn{color:#10160f}
 @media (prefers-color-scheme: dark){ #tocbtn{color:#10160f} }
 :root[data-theme="light"] #tocbtn{color:#fff}
-@media (min-width:1300px){ #tocbtn{display:none} }
+@media (min-width:1120px){ #tocbtn{display:none} }
 #tocpanel{
   position:fixed; right:18px; bottom:80px; z-index:70;
   background:var(--surface); border:1px solid var(--line); border-radius:10px;
