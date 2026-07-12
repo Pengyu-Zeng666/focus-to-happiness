@@ -3,28 +3,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{
-  --bg:#F6F7F3; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
-  --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B;
-  --accent-soft:#E7EFE8; --gold:#A8823F; --shadow:0 1px 3px rgba(31,40,35,.06);
+  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#161F1A; --muted:#425046;
+  --line:#D6DCD3; --faint:#B9C3B7; --accent:#2E5C49; --accent-ink:#1F4436;
+  --accent-soft:#E4EDE5; --gold:#7E6329; --shadow:0 1px 3px rgba(22,31,26,.07);
   --serif:"Songti TC","Noto Serif TC","Source Han Serif TC","Times New Roman",serif;
   --sans:"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#121814; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
-    --line:#2A342D; --accent:#7FB49A; --accent-ink:#9CC7B0;
-    --accent-soft:#22322A; --gold:#C9A662; --shadow:0 1px 3px rgba(0,0,0,.3);
+    --bg:#111613; --surface:#1B221D; --ink:#EAF0E9; --muted:#AAB7AC;
+    --line:#2C362F; --faint:#43503F; --accent:#7FB49A; --accent-ink:#A9D2BC;
+    --accent-soft:#233529; --gold:#D3B36C; --shadow:0 1px 3px rgba(0,0,0,.3);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#121814; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
-  --line:#2A342D; --accent:#7FB49A; --accent-ink:#9CC7B0;
-  --accent-soft:#22322A; --gold:#C9A662; --shadow:0 1px 3px rgba(0,0,0,.3);
+  --bg:#111613; --surface:#1B221D; --ink:#EAF0E9; --muted:#AAB7AC;
+  --line:#2C362F; --faint:#43503F; --accent:#7FB49A; --accent-ink:#A9D2BC;
+  --accent-soft:#233529; --gold:#D3B36C; --shadow:0 1px 3px rgba(0,0,0,.3);
 }
 :root[data-theme="light"]{
-  --bg:#F6F7F3; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
-  --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B;
-  --accent-soft:#E7EFE8; --gold:#A8823F; --shadow:0 1px 3px rgba(31,40,35,.06);
+  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#161F1A; --muted:#425046;
+  --line:#D6DCD3; --faint:#B9C3B7; --accent:#2E5C49; --accent-ink:#1F4436;
+  --accent-soft:#E4EDE5; --gold:#7E6329; --shadow:0 1px 3px rgba(22,31,26,.07);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -121,7 +121,7 @@ h2{
 }
 
 /* ---------- chapters ---------- */
-.frame-note{max-width:42em; color:var(--muted); margin:0 0 40px; text-align:justify}
+.frame-note{max-width:42em; color:var(--ink); margin:0 0 40px; text-align:justify}
 .chapters{display:flex; flex-direction:column; gap:28px}
 .chapter{
   background:var(--surface); border:1px solid var(--line); border-radius:6px;
@@ -134,7 +134,7 @@ h2{
 }
 .ch-head h3{font-size:22px; font-weight:600; letter-spacing:.04em; margin:0}
 .ch-q{color:var(--accent-ink); font-size:16.5px; margin:2px 0 12px; letter-spacing:.03em}
-.chapter > p{color:var(--muted); margin:0 0 22px; text-align:justify; font-size:16px}
+.chapter > p{color:var(--ink); margin:0 0 22px; text-align:justify; font-size:16px}
 .studies{display:flex; flex-direction:column; border-top:1px solid var(--line)}
 
 details.study{border-bottom:1px solid var(--line)}
@@ -166,6 +166,7 @@ details[open] > summary .chev{transform:rotate(180deg)}
   padding:6px 2px 26px; border-top:1px dashed var(--line); margin-top:-1px;
 }
 .study-body p{font-size:15.5px; margin:14px 0 0; text-align:justify; color:var(--ink)}
+section[id], .chapter[id]{scroll-margin-top:24px}
 .study-body p b{
   font-family:var(--sans); font-size:12.5px; letter-spacing:.12em;
   color:var(--gold); font-weight:600; display:block; margin-bottom:2px;
@@ -195,7 +196,7 @@ details[open] > summary .chev{transform:rotate(180deg)}
 }
 .pub-no{
   grid-row:span 5; font-family:var(--sans); font-size:22px; font-weight:600;
-  color:var(--line); font-variant-numeric:tabular-nums; line-height:1.4;
+  color:var(--faint); font-variant-numeric:tabular-nums; line-height:1.4;
 }
 .pub[id]{scroll-margin-top:24px}
 .pub:target{border-color:var(--accent)}
@@ -203,6 +204,7 @@ details[open] > summary .chev{transform:rotate(180deg)}
   font-family:var(--sans); font-size:12.5px; letter-spacing:.08em;
   color:var(--gold); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; margin:0;
 }
+.pub-meta > span:first-child{color:var(--accent-ink); font-weight:600}
 .pub-meta .dtag{
   color:var(--accent-ink); background:var(--accent-soft);
   padding:2px 10px; border-radius:999px; letter-spacing:.06em;
@@ -210,7 +212,7 @@ details[open] > summary .chev{transform:rotate(180deg)}
 .pub h4{font-size:18.5px; font-weight:600; line-height:1.6; margin:4px 0 2px; letter-spacing:.02em; text-wrap:balance}
 .pub .authors{font-family:var(--sans); font-size:13.5px; color:var(--muted); margin:0}
 .pub .authors b{color:var(--ink); font-weight:600}
-.pub .summary{font-size:15.5px; color:var(--muted); margin:10px 0 14px; text-align:justify}
+.pub .summary{font-size:15.5px; color:var(--ink); margin:10px 0 14px; text-align:justify}
 .pub-actions{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center}
 .doi{
   font-family:var(--sans); font-size:13px; letter-spacing:.03em;
@@ -285,6 +287,53 @@ blockquote.epigraph cite{
   background:var(--gold); margin:0 auto 36px;
 }
 
+/* ---------- side navigation ---------- */
+#sidenav{
+  position:fixed; top:50%; transform:translateY(-50%);
+  right:calc((100vw - 880px) / 2 - 212px);
+  width:176px; z-index:60;
+  font-family:var(--sans); display:none; flex-direction:column; gap:1px;
+}
+@media (min-width:1300px){ #sidenav{display:flex} }
+#sidenav .nav-title{
+  font-size:11px; letter-spacing:.22em; color:var(--muted);
+  padding:0 14px 10px; font-weight:600;
+}
+#sidenav a{
+  font-size:13px; color:var(--muted); padding:6px 14px;
+  border-left:2px solid var(--line); line-height:1.5;
+}
+#sidenav a.sub{padding-left:28px; font-size:12.5px}
+#sidenav a:hover{color:var(--accent-ink); text-decoration:none}
+#sidenav a.active{
+  color:var(--accent-ink); font-weight:600;
+  border-left-color:var(--accent); background:var(--accent-soft);
+  border-radius:0 4px 4px 0;
+}
+
+/* ---------- mobile TOC ---------- */
+#tocbtn{
+  position:fixed; right:18px; bottom:18px; z-index:70;
+  width:52px; height:52px; border-radius:50%; border:1px solid var(--accent);
+  background:var(--accent); color:#fff; font-family:var(--sans); font-size:12px;
+  letter-spacing:.05em; cursor:pointer; box-shadow:0 3px 12px rgba(22,31,26,.25);
+}
+:root[data-theme="dark"] #tocbtn{color:#10160f}
+@media (prefers-color-scheme: dark){ #tocbtn{color:#10160f} }
+:root[data-theme="light"] #tocbtn{color:#fff}
+@media (min-width:1300px){ #tocbtn{display:none} }
+#tocpanel{
+  position:fixed; right:18px; bottom:80px; z-index:70;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  box-shadow:0 8px 30px rgba(22,31,26,.2); padding:14px 6px;
+  display:none; flex-direction:column; min-width:200px;
+  font-family:var(--sans); max-height:70vh; overflow-y:auto;
+}
+#tocpanel.open{display:flex}
+#tocpanel a{font-size:14px; color:var(--ink); padding:9px 18px; border-radius:6px}
+#tocpanel a.sub{padding-left:34px; font-size:13px; color:var(--muted)}
+#tocpanel a:hover{background:var(--accent-soft); text-decoration:none}
+
 /* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--line); padding:44px 0 64px;
@@ -292,6 +341,30 @@ footer{
 }
 footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-between}
 </style>
+
+<nav id="sidenav" aria-label="頁面目錄">
+  <span class="nav-title">目錄</span>
+  <a href="#abstract" data-spy="abstract">摘要</a>
+  <a href="#context" data-spy="context">研究背景</a>
+  <a href="#structure" data-spy="structure">論文架構</a>
+  <a href="#ch1" data-spy="ch1" class="sub">第一章 心理機制</a>
+  <a href="#ch2" data-spy="ch2" class="sub">第二章 個人實踐</a>
+  <a href="#ch3" data-spy="ch3" class="sub">第三章 人際影響力</a>
+  <a href="#publications" data-spy="publications">發表論文</a>
+  <a href="#closing" data-spy="closing">結語</a>
+</nav>
+
+<button id="tocbtn" aria-label="開啟目錄" aria-expanded="false">目錄</button>
+<div id="tocpanel" role="navigation" aria-label="頁面目錄">
+  <a href="#abstract">摘要</a>
+  <a href="#context">研究背景</a>
+  <a href="#structure">論文架構</a>
+  <a href="#ch1" class="sub">第一章 心理機制</a>
+  <a href="#ch2" class="sub">第二章 個人實踐</a>
+  <a href="#ch3" class="sub">第三章 人際影響力</a>
+  <a href="#publications">發表論文</a>
+  <a href="#closing">結語</a>
+</div>
 
 <header class="hero">
   <div class="breath" aria-hidden="true"></div>
@@ -353,7 +426,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
     <p class="frame-note">論文以 Seligman 的 PERMA 幸福感模型為理論框架，從個人層次（機制與實踐）到人際層次（影響力）逐步展開。點擊任一研究可展開閱讀研究問題、方法與主要發現；已發表的四個研究另可跳至對應的期刊發表。</p>
 
     <div class="chapters">
-      <article class="chapter">
+      <article class="chapter" id="ch1">
         <div class="ch-head"><span class="ch-num">第一章</span><h3>心理機制</h3></div>
         <p class="ch-q">專注與分心，如何影響幸福感？</p>
         <p>以經驗取樣法捕捉日常生活中即時的專注狀態，探討外在動機如何削弱「專注 → 幸福感」的正向關係，以及當人們分心時，自我慈悲特質如何緩衝分心帶來的負面影響。</p>
@@ -418,7 +491,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
         </div>
       </article>
 
-      <article class="chapter">
+      <article class="chapter" id="ch2">
         <div class="ch-head"><span class="ch-num">第二章</span><h3>個人實踐</h3></div>
         <p class="ch-q">哪些介入方法，能有效提升專注與幸福感？</p>
         <p>基於輕推理論（改變環境）與賦能理論（系統性訓練）的雙軌途徑，以縱貫視角檢驗自然介入與正念介入對日常專注狀態與幸福感的提升效果。</p>
@@ -493,7 +566,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
         </div>
       </article>
 
-      <article class="chapter">
+      <article class="chapter" id="ch3">
         <div class="ch-head"><span class="ch-num">第三章</span><h3>人際影響力</h3></div>
         <p class="ch-q">專注與正念，如何影響他人與關係？</p>
         <p>將視角從個人延伸至人際：正念特質較高者如何促進跨世代溝通品質；當生成式 AI 聊天機器人被賦予正念角色時，又如何重塑人際感恩的表達。</p>
@@ -742,5 +815,50 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
   if (h.indexOf('claude') !== -1 || h.indexOf('anthropic') !== -1) {
     document.querySelectorAll('[data-local-pdf],[data-local-fig]').forEach(function(a){ a.style.display = 'none'; });
   }
+})();
+
+// 側邊目錄：捲動時高亮目前所在的區塊
+(function(){
+  var links = document.querySelectorAll('#sidenav a[data-spy]');
+  if (!links.length) return;
+  var ids = Array.prototype.map.call(links, function(a){ return a.dataset.spy; });
+  var current = '';
+  function spy(){
+    var pos = window.scrollY + window.innerHeight * 0.3;
+    var active = '';
+    for (var i = 0; i < ids.length; i++){
+      var el = document.getElementById(ids[i]);
+      if (el && el.offsetTop <= pos) active = ids[i];
+    }
+    if (active !== current){
+      current = active;
+      links.forEach(function(a){
+        a.classList.toggle('active', a.dataset.spy === active);
+      });
+    }
+  }
+  var t = null;
+  window.addEventListener('scroll', function(){
+    if (t) return;
+    t = setTimeout(function(){ t = null; spy(); }, 80);
+  }, {passive: true});
+  spy();
+})();
+
+// 行動版目錄按鈕
+(function(){
+  var btn = document.getElementById('tocbtn');
+  var panel = document.getElementById('tocpanel');
+  if (!btn || !panel) return;
+  btn.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
 })();
 </script>
