@@ -223,6 +223,68 @@ details[open] > summary .chev{transform:rotate(180deg)}
   .chapter{padding:26px 22px}
 }
 
+/* ---------- figures ---------- */
+.fig{margin:20px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:14px}
+.fig .imgbox{background:#fff; border-radius:4px; padding:10px}
+.fig img{display:block; width:100%; height:auto}
+.fig figcaption{font-family:var(--sans); font-size:13px; color:var(--muted); margin-top:12px; line-height:1.8; text-align:justify}
+.fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px}
+.fig-grid .fig{margin:0}
+@media (max-width:640px){ .fig-grid{grid-template-columns:1fr} }
+
+/* ---------- context stats ---------- */
+blockquote.epigraph{
+  border-left:3px solid var(--gold); margin:0 0 36px; padding:8px 0 8px 24px;
+  font-size:19px; line-height:2; letter-spacing:.03em;
+}
+blockquote.epigraph cite{
+  display:block; font-family:var(--sans); font-style:normal; font-size:13px;
+  color:var(--muted); margin-top:8px; letter-spacing:.06em;
+}
+.bigstats{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.bigstat{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:26px 28px; box-shadow:var(--shadow);
+}
+.bigstat b{
+  display:block; font-size:42px; font-weight:600; color:var(--accent-ink);
+  line-height:1.2; font-variant-numeric:tabular-nums;
+}
+.bigstat span{
+  display:block; font-family:var(--sans); font-size:13.5px;
+  color:var(--muted); line-height:1.8; margin-top:10px;
+}
+@media (max-width:640px){ .bigstats{grid-template-columns:1fr} }
+
+/* ---------- chapter takeaway ---------- */
+.takeaway{margin-top:26px; background:var(--accent-soft); border-radius:6px; padding:24px 28px}
+.takeaway .tk-label{
+  font-family:var(--sans); font-size:12px; letter-spacing:.18em;
+  color:var(--accent-ink); font-weight:600; margin:0 0 6px;
+}
+.takeaway p{font-size:15.5px; margin:12px 0 0; color:var(--ink); text-align:justify}
+.takeaway p b{color:var(--accent-ink)}
+.takeaway .fig{background:var(--surface)}
+
+/* ---------- closing ---------- */
+.levels{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.level{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:26px 28px; box-shadow:var(--shadow);
+}
+.level h3{font-size:17.5px; font-weight:600; letter-spacing:.05em; margin:0 0 10px; color:var(--accent-ink)}
+.level p{font-family:var(--sans); font-size:14px; color:var(--muted); line-height:1.9; margin:0; text-align:justify}
+@media (max-width:640px){ .levels{grid-template-columns:1fr} }
+.closing-quote{
+  margin:56px auto 0; max-width:26em; text-align:center;
+  font-size:clamp(19px,3.2vw,26px); line-height:2; letter-spacing:.05em;
+  color:var(--accent-ink); text-wrap:balance;
+}
+.closing-quote::before{
+  content:""; display:block; width:56px; height:1px;
+  background:var(--gold); margin:0 auto 36px;
+}
+
 /* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--line); padding:44px 0 64px;
@@ -268,6 +330,22 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
   </div>
 </section>
 
+<section id="context">
+  <div class="wrap">
+    <p class="sec-label">研究背景 · WHY IT MATTERS</p>
+    <h2>注意力稀缺的時代</h2>
+    <blockquote class="epigraph">
+      「資訊消耗的是接收者的注意力。」
+      <cite>— Herbert Simon（1971），諾貝爾經濟學獎得主</cite>
+    </blockquote>
+    <div class="bigstats">
+      <div class="bigstat"><b>46.9%</b><span>日常生活中，人們分心於無關思緒的時間比例——而分心會降低幸福感（Killingsworth &amp; Gilbert, 2010）</span></div>
+      <div class="bigstat"><b>73%</b><span>AI 演算法讓人們多花在社群媒體上的時間（Guess et al., 2023）</span></div>
+      <div class="bigstat"><b>44 秒</b><span>人們在電腦螢幕前的平均注意力持續時間——2004 年還有 150 秒</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="structure">
   <div class="wrap">
     <p class="sec-label">論文架構 · THREE LEVELS</p>
@@ -291,6 +369,16 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
               <p><b>研究問題</b>專注當下能提升快樂，但為什麼有時效果不明顯？本研究檢驗「做這件事的動機」是否調節專注與幸福感的關係，以及正念特質高的人是否對動機更敏感。</p>
               <p><b>研究方法</b>以經驗取樣法追蹤 56 位臺灣大學生兩週的日常生活，每天三次隨機回報當下的專注程度、快樂感受，以及從事活動的動機類型（自主動機或外在動機）。</p>
               <p><b>主要發現</b>專注當下顯著正向預測快樂；但活動的外在動機越高，專注與快樂的正向關係越弱。此外，高正念特質者對自身動機的覺察更敏銳，反而放大了外在動機的削弱效果——提示正念訓練應同時留意降低外在動機的影響。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-mindfulness.png" alt="外在動機調節專注與幸福感關係的迴歸圖" loading="lazy"></div>
+                  <figcaption>外在動機高（紅線）時，專注當下與幸福感的正向關係明顯變平緩。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-moderation.png" alt="正念特質高低分組下外在動機的調節效果" loading="lazy"></div>
+                  <figcaption>高正念特質者（右圖）受外在動機的影響更強：外在動機高時，專注的幸福效益幾乎消失。</figcaption>
+                </figure>
+              </div>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=14&amp;title=博士論文 · 研究一">閱讀論文原文（第 14 頁起）</a>
                 <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">期刊版本 DOI</a>
@@ -308,12 +396,25 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
               <p><b>研究問題</b>分心一定會讓人不快樂嗎？本研究首次從「分心內容的動機屬性」切入：分心想著自主動機的事（如期待的聚會）與受控動機的事（如不得不做的工作），對幸福感的影響是否不同？年齡與自我慈悲又扮演什麼角色？</p>
               <p><b>研究方法</b>以經驗取樣法追蹤 91 位參與者（35 位長者、56 位年輕人）兩週，共回收 3,023 筆日常經驗資料，同時測量自我慈悲特質，以多層次調節中介模型分析。</p>
               <p><b>主要發現</b>參與者平均 39.3% 的時間處於分心，且分心時幸福感較低；但分心想「自主動機」內容顯著比想「受控動機」內容更快樂——當從事受控活動時，分心想自主動機的事，幸福感可與專注時相當，顯示分心可作為缺失自主性時的補償機制。此外，長者即使分心也不降低幸福感：因為長者具備更高的自我慈悲（其中正念與共同人性是關鍵成分），緩衝了分心的負面影響。</p>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study2-interaction.png" alt="專注狀態、活動動機與年齡的交互作用圖" loading="lazy"></div>
+                <figcaption>左：從事自主動機活動時，年輕人（藍）一分心幸福感就下降，長者（紅）則不受影響。右：從事受控動機活動時，分心想「自主動機」內容不會降低幸福感，分心想「受控動機」內容才會。</figcaption>
+              </figure>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=25&amp;title=博士論文 · 研究二">閱讀論文原文（第 25 頁起）</a>
               </div>
             </div>
           </details>
 
+        </div>
+
+        <div class="takeaway">
+          <p class="tk-label">第一章總結 · 專注與幸福感的「易損性」與「保護機制」</p>
+          <figure class="fig" data-local-fig>
+            <div class="imgbox"><img src="assets/ch1-summary.png" alt="第一章架構圖：主動專注與被動分心的心理機制" loading="lazy"></div>
+          </figure>
+          <p><b>易損性：</b>專注與幸福感的正向關係並不穩固，會被外在動機破壞。在組織層次中，可為個體建立支持自主性的環境，降低外在動機的干擾。</p>
+          <p><b>保護機制：</b>自我慈悲能緩解分心的負向效果。年輕人可以向長者學習，有意識地覺察分心時刻，並以自我慈悲回應自己，重塑抵抗分心影響的心理韌性。</p>
         </div>
       </article>
 
@@ -333,6 +434,16 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
               <p><b>研究問題</b>接觸自然能提升幸福感，但背後的心理機制是什麼？本研究假設「正念狀態」是自然介入促進幸福感的關鍵中介：身處自然時，人更容易回到當下。</p>
               <p><b>研究方法</b>兩個子研究：子研究一以經驗取樣法比較自然介入期間與基準日的快樂、壓力與自主動機；子研究二以日重建法測量快樂與自然連結感，皆以多層次迴歸分析。</p>
               <p><b>主要發現</b>相較於基準日，自然介入提升快樂、降低壓力，並增進自主動機與自然連結感；更重要的是，正念狀態顯著中介了自然介入與幸福感的關係，且介入期間正念狀態較高的時刻，幸福感也較高——未來的自然介入課程可納入正念元素以強化效果。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-farm.png" alt="農業療育場域照片" loading="lazy"></div>
+                  <figcaption>研究場域：農業療育——結合在地農業發展與鄉村環境的自然介入，為期十八週。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-mediation.png" alt="農業療育透過正念狀態影響幸福感的中介模型" loading="lazy"></div>
+                  <figcaption>中介模型：農業療育 → 正念狀態（專注當下＋非批判）→ 幸福感。經驗取樣法與日記重建法皆支持此路徑。</figcaption>
+                </figure>
+              </div>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=37&amp;title=博士論文 · 研究三">閱讀論文原文（第 37 頁起）</a>
                 <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">期刊版本 DOI</a>
@@ -349,13 +460,36 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
             <div class="study-body">
               <p><b>研究問題</b>正念課程的效果取決於「練了多少」。本研究提出正念練習的不對稱 U 型曲線模型：練習量低於某個門檻時，正念可能不增反減幸福感；超過門檻後才展現劑量效果。</p>
               <p><b>研究方法</b>21 位參與者完成八週正念認知療法（MBCT）課程，另有 27 位年齡性別配對的對照組（閱讀任務）。所有人連續 50 天填寫每日幸福感日記（個人、人際、環境、生理四面向），並於課程前後完成持續注意力、情緒記憶與情緒臉孔眼動三項電腦測驗。</p>
-              <p><b>主要發現</b>高練習組的正念特質與各面向每日幸福感顯著高於對照組；每天平均練習低於約 5 分鐘時，幸福感反而出現輕微下降，支持不對稱 U 型曲線。正念訓練主要降低「內在思緒分心」而非提升客觀注意力，支持內在注意力模型；低練習組在正向高激發刺激下的後設記憶能力下降，呼應初學者困境。交叉滯後分析並顯示：練習與幸福感、睡眠品質之間是雙向相互滋養的動態歷程。</p>
+              <p><b>主要發現</b>以每日平均練習 10 分鐘為切點，正念組分為高練習組（平均約 25 分鐘／天）與低練習組（平均約 5 分鐘／天）。高練習組的正念特質與各面向每日幸福感顯著高於對照組；每天平均練習低於約 5 分鐘時，幸福感反而出現輕微下降，支持不對稱 U 型曲線。正念訓練主要降低「內在思緒分心」而非提升客觀注意力，支持內在注意力模型；低練習組在正向高激發刺激下的後設記憶能力下降，呼應初學者困境。交叉滯後分析並顯示：練習與幸福感、睡眠品質之間是雙向相互滋養的動態歷程。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-trait.png" alt="三組正念特質前後測比較圖" loading="lazy"></div>
+                  <figcaption>八週後，只有高練習組（紅）的正念特質顯著提升（p = .008）；低練習組僅呈現邊緣顯著的趨勢。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-dose.png" alt="正念練習時間與幸福感的不對稱U型曲線" loading="lazy"></div>
+                  <figcaption>不對稱 U 型曲線：每天平均練習超過約 4.5–4.8 分鐘的轉折點後，人際與環境幸福感才隨練習時間上升。</figcaption>
+                </figure>
+              </div>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study4-crosslag.png" alt="個人幸福感與正念練習時間的交叉滯後模型" loading="lazy"></div>
+                <figcaption>交叉滯後模型：八週之間，個人幸福感與當週正念練習時間逐週相互預測（藍：幸福感 → 練習；綠：練習 → 幸福感），形成雙向滋養的正向循環。</figcaption>
+              </figure>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=51&amp;title=博士論文 · 研究四">閱讀論文原文（第 51 頁起）</a>
               </div>
             </div>
           </details>
 
+        </div>
+
+        <div class="takeaway">
+          <p class="tk-label">第二章總結 · 專注與幸福感的「強化」路徑</p>
+          <figure class="fig" data-local-fig>
+            <div class="imgbox"><img src="assets/ch2-summary.png" alt="第二章架構圖：自然介入與正念訓練的雙軌途徑" loading="lazy"></div>
+          </figure>
+          <p><b>深度連結，而非被動暴露：</b>單純待在自然環境中並非幸福感的關鍵，要專注且不批判地參與其中——正念地注視自然風景、正念地品味食物，與自然建立深度連結。</p>
+          <p><b>持久練習，而非上完課就好：</b>參加正念課程但缺乏練習，反而可能降低正念狀態。提升幸福感的核心在於日常持久的積累——每天至少保持 5 分鐘以上的自主練習，並藉由幸福感與睡眠品質的正向循環，滋養持續練習的動機。</p>
         </div>
       </article>
 
@@ -374,7 +508,17 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
             <div class="study-body">
               <p><b>研究問題</b>個人內正念（專注當下、不評判）與人際正念（覺察對話中的語言與非語言線索）如何分別影響跨世代溝通的品質？</p>
               <p><b>研究方法</b>44 組臺灣跨世代配對（年輕人＋長者）進行三種溝通情境，依人際化學模型從情緒、認知、行為三層面評估溝通品質，並以多層次迴歸與行動者—夥伴互依模型（APIM）分析。</p>
-              <p><b>主要發現</b>兩種正念皆能提升正向情緒、降低壓力、促進同理心與溝通滿意度、拉近心理距離，並在爭議話題上達成更高共識；其中人際正念的效益範圍更廣（還能降低負向情緒、加快合作速度）。APIM 分析顯示，正念對長者溝通品質的提升效果比對年輕人更全面——未來溝通工具的設計可納入正念元素。</p>
+              <p><b>主要發現</b>兩種正念皆能提升正向情緒、降低壓力、促進同理心與溝通滿意度、拉近心理距離，並在爭議話題上達成更高共識；其中人際正念的效益範圍更廣（還能降低負向情緒、加快合作速度）。APIM 分析顯示，正念對長者溝通品質的提升效果比對年輕人更全面。有趣的是，肢體同步性分析發現正念促進「反相位」同步——一方說話（身體動）時，另一方專注聆聽（身體不動），這正是專注傾聽的具體展現。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-indicators.png" alt="溝通滿意度的情感、認知、行為三層面指標" loading="lazy"></div>
+                  <figcaption>研究架構：從情感面（情緒變化、溝通壓力）、認知面（同理心、心理距離、共識）、行為面（合作速度、肢體同步）三個層面全方位評估跨世代溝通品質。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-sync.png" alt="正念溝通組的肢體同步性分析" loading="lazy"></div>
+                  <figcaption>肢體同步性：正念溝通組呈現顯著的反相位同步（左圖），呼應「一方表達、一方專注聆聽」的高品質互動節奏。</figcaption>
+                </figure>
+              </div>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=90&amp;title=博士論文 · 研究五">閱讀論文原文（第 90 頁起）</a>
                 <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">期刊版本 DOI</a>
@@ -391,7 +535,17 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
             <div class="study-body">
               <p><b>研究問題</b>當生成式 AI 介入感恩練習，改變的不只是效果，還有「歷程」。本研究比較 AI 對話式感恩與傳統感恩日記，檢驗 GenAI 如何重塑幸福感介入。</p>
               <p><b>研究方法</b>為期七天的隨機對照試驗，三組：感恩聊天機器人組（GenAI 對話式書寫）、感恩日記組（結構化提示書寫）、主動對照組（記錄每日事件），以線性混合效果模型結合主題分析（混合方法）。</p>
-              <p><b>主要發現</b>兩種感恩形式皆比對照組提升快樂與意義感；但聊天機器人組的知覺努力較低、感恩表達較淺，且更偏向自我導向。質性分析顯示參與者對 AI 生成的摘要感到驚喜與啟發。整體而言，GenAI 介入是把雙面刃：降低認知門檻、帶來靈感，卻可能侵蝕反思深度——未來的 AI 幸福感工具應讓使用者自行權衡是否納入 AI 中介。</p>
+              <p><b>主要發現</b>兩種感恩形式皆比對照組提升快樂與意義感；但聊天機器人組的知覺努力較低、感恩表達較淺（更多「知恩」、更少「謝恩」），且更偏向自我導向的感恩（擁有型、失去型、比較型）。質性分析顯示參與者對 AI 生成的摘要感到驚喜與啟發。整體而言，GenAI 介入是把雙面刃：降低認知門檻、帶來靈感，卻可能侵蝕反思深度——未來的 AI 幸福感工具應讓使用者自行權衡是否納入 AI 中介。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-chatbot.png" alt="研究六三組實驗設計流程圖" loading="lazy"></div>
+                  <figcaption>實驗設計：117 位參與者隨機分為正念機器人組（與 AI 對話分享感恩）、感恩日記組（線上書寫）、對照組（記錄日常事件），連續七天。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-depth.png" alt="兩組感恩深度人工編碼比較長條圖" loading="lazy"></div>
+                  <figcaption>感恩深度的人工編碼：正念機器人組（綠）比感恩日記組（橘）有更多淺層的「知恩」（68.5% vs 57.5%），更少深層的「謝恩」（16.2% vs 22.5%）。</figcaption>
+                </figure>
+              </div>
               <div class="study-links">
                 <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=117&amp;title=博士論文 · 研究六">閱讀論文原文（第 117 頁起）</a>
                 <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">期刊版本 DOI</a>
@@ -399,6 +553,15 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
             </div>
           </details>
 
+        </div>
+
+        <div class="takeaway">
+          <p class="tk-label">第三章總結 · 專注與幸福感的「外溢」路徑</p>
+          <figure class="fig" data-local-fig>
+            <div class="imgbox"><img src="assets/ch3-summary.png" alt="第三章架構圖：正念在人際溝通與人際感恩的影響路徑" loading="lazy"></div>
+          </figure>
+          <p><b>教育場域：</b>把正念訓練引入教育領域，透過學生、家長、老師正念特質的提高，改善跨世代溝通品質。</p>
+          <p><b>科技設計：</b>AI 的設計可以參考正念的核心元素，並把 AI 部署在人際感恩的脈絡中，讓 AI 的發展成為人際關係的助力而非阻力。</p>
         </div>
       </article>
     </div>
@@ -543,6 +706,28 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
   </div>
 </section>
 
+<section id="closing">
+  <div class="wrap">
+    <p class="sec-label">結語 · TAKEAWAYS</p>
+    <h2>注意力稀缺的時代，專注是值得守護的價值</h2>
+    <div class="levels">
+      <div class="level">
+        <h3>心理層次</h3>
+        <p>強化自主動機，培養自我慈悲，為專注建立「內在保護機制」。</p>
+      </div>
+      <div class="level">
+        <h3>實踐層次</h3>
+        <p>主動創造與自然、正念的深度連結，為專注建立「強化機制」。</p>
+      </div>
+      <div class="level">
+        <h3>社會層次</h3>
+        <p>讓正念的價值引導教育與科技設計，使「活在當下」成為時代的集體選擇。</p>
+      </div>
+    </div>
+    <p class="closing-quote">AI 時代最稀缺的資源，不是算力，而是人們的專注力。<br>守住當下的力量，也守住了人類的獨特價值。</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <span>曾鵬宇 Peng-Yu Zeng · 國立臺灣大學心理學系暨研究所</span>
@@ -551,11 +736,11 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
 </footer>
 
 <script>
-// 在 Claude Artifact 上（沒有隨附的 PDF 檔案）隱藏本地 PDF 連結，避免點擊後出現錯誤頁。
+// 在 Claude Artifact 上（沒有隨附的 PDF 與圖片檔案）隱藏本地連結與圖表，避免出現錯誤。
 (function(){
   var h = location.hostname;
   if (h.indexOf('claude') !== -1 || h.indexOf('anthropic') !== -1) {
-    document.querySelectorAll('[data-local-pdf]').forEach(function(a){ a.style.display = 'none'; });
+    document.querySelectorAll('[data-local-pdf],[data-local-fig]').forEach(function(a){ a.style.display = 'none'; });
   }
 })();
 </script>
