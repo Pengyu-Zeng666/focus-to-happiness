@@ -3,9 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{
-  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#161F1A; --muted:#425046;
-  --line:#D6DCD3; --faint:#B9C3B7; --accent:#2E5C49; --accent-ink:#1F4436;
-  --accent-soft:#E4EDE5; --gold:#7E6329; --shadow:0 1px 3px rgba(22,31,26,.07);
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#101712; --muted:#3C4A40;
+  --line:#D2D9CF; --faint:#C0C9BE; --accent:#2A5744; --accent-ink:#1C4033;
+  --accent-soft:#E9F0EA; --gold:#755C24; --shadow:0 1px 4px rgba(16,23,18,.08);
   --serif:"Songti TC","Noto Serif TC","Source Han Serif TC","Times New Roman",serif;
   --sans:"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;
 }
@@ -22,9 +22,9 @@
   --accent-soft:#233529; --gold:#D3B36C; --shadow:0 1px 3px rgba(0,0,0,.3);
 }
 :root[data-theme="light"]{
-  --bg:#F5F6F2; --surface:#FFFFFF; --ink:#161F1A; --muted:#425046;
-  --line:#D6DCD3; --faint:#B9C3B7; --accent:#2E5C49; --accent-ink:#1F4436;
-  --accent-soft:#E4EDE5; --gold:#7E6329; --shadow:0 1px 3px rgba(22,31,26,.07);
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#101712; --muted:#3C4A40;
+  --line:#D2D9CF; --faint:#C0C9BE; --accent:#2A5744; --accent-ink:#1C4033;
+  --accent-soft:#E9F0EA; --gold:#755C24; --shadow:0 1px 4px rgba(16,23,18,.08);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -44,7 +44,7 @@ a:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-
 .hero .wrap{padding-top:96px; padding-bottom:88px; position:relative; z-index:1}
 .breath{
   position:absolute; right:-140px; top:-140px; width:520px; height:520px;
-  border-radius:50%; border:1px solid var(--line); opacity:.8; z-index:0;
+  border-radius:50%; border:1px solid var(--line); opacity:.55; z-index:0;
   animation:breathe 9s ease-in-out infinite;
 }
 .breath::after{
@@ -139,16 +139,19 @@ h2{
 
 details.study{border-bottom:1px solid var(--line)}
 details.study summary{
-  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
-  padding:15px 2px; cursor:pointer; list-style:none;
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:18px 6px; cursor:pointer; list-style:none; border-radius:6px;
 }
+details.study summary:hover{background:var(--accent-soft)}
 details.study summary::-webkit-details-marker{display:none}
 details.study summary:hover .study-name{color:var(--accent-ink)}
-.study-name{flex:1 1 280px; min-width:0}
+.study-name{flex:1 1 280px; min-width:0; font-size:17px}
 .study-name em{font-style:normal; font-family:var(--sans); font-size:12px; letter-spacing:.1em; color:var(--muted); margin-right:10px}
 .chev{
-  font-family:var(--sans); font-size:12px; color:var(--muted);
-  transition:transform .25s ease; align-self:center;
+  font-family:var(--sans); font-size:15px; color:var(--accent-ink);
+  width:36px; height:36px; flex:none; border:1.5px solid var(--accent);
+  border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .25s ease; align-self:center; background:var(--surface);
 }
 details[open] > summary .chev{transform:rotate(180deg)}
 .pub-tag{
@@ -239,6 +242,10 @@ blockquote.epigraph{
   border-left:3px solid var(--gold); margin:0 0 36px; padding:8px 0 8px 24px;
   font-size:19px; line-height:2; letter-spacing:.03em;
 }
+blockquote.epigraph .en{
+  display:block; font-style:italic; font-size:16px; color:var(--muted);
+  letter-spacing:.01em; margin-bottom:10px;
+}
 blockquote.epigraph cite{
   display:block; font-family:var(--sans); font-style:normal; font-size:13px;
   color:var(--muted); margin-top:8px; letter-spacing:.06em;
@@ -259,14 +266,24 @@ blockquote.epigraph cite{
 @media (max-width:640px){ .bigstats{grid-template-columns:1fr} }
 
 /* ---------- chapter takeaway ---------- */
-.takeaway{margin-top:26px; background:var(--accent-soft); border-radius:6px; padding:24px 28px}
-.takeaway .tk-label{
-  font-family:var(--sans); font-size:12px; letter-spacing:.18em;
-  color:var(--accent-ink); font-weight:600; margin:0 0 6px;
+details.takeaway{margin-top:26px; background:var(--accent-soft); border-radius:6px}
+details.takeaway summary{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 28px; cursor:pointer; list-style:none;
 }
+details.takeaway summary::-webkit-details-marker{display:none}
+.takeaway .tk-label{
+  font-family:var(--sans); font-size:13px; letter-spacing:.14em;
+  color:var(--accent-ink); font-weight:600; margin:0; line-height:1.7;
+}
+.tk-body{padding:0 28px 26px}
 .takeaway p{font-size:15.5px; margin:12px 0 0; color:var(--ink); text-align:justify}
 .takeaway p b{color:var(--accent-ink)}
-.takeaway .fig{background:var(--surface)}
+.takeaway .fig{background:var(--surface); margin-top:0}
+@media (max-width:560px){
+  details.takeaway summary{padding:18px 20px}
+  .tk-body{padding:0 20px 22px}
+}
 
 /* ---------- closing ---------- */
 .levels{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
@@ -285,6 +302,10 @@ blockquote.epigraph cite{
 .closing-quote::before{
   content:""; display:block; width:56px; height:1px;
   background:var(--gold); margin:0 auto 36px;
+}
+.thanks-song{
+  font-family:var(--sans); font-size:14px; color:var(--muted);
+  text-align:center; margin:28px 0 0; letter-spacing:.04em;
 }
 
 /* ---------- side navigation ---------- */
@@ -352,6 +373,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
   <a href="#ch3" data-spy="ch3" class="sub">第三章 人際影響力</a>
   <a href="#publications" data-spy="publications">發表論文</a>
   <a href="#closing" data-spy="closing">結語</a>
+  <a href="#thanks" data-spy="thanks">謝辭</a>
 </nav>
 
 <button id="tocbtn" aria-label="開啟目錄" aria-expanded="false">目錄</button>
@@ -364,6 +386,7 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
   <a href="#ch3" class="sub">第三章 人際影響力</a>
   <a href="#publications">發表論文</a>
   <a href="#closing">結語</a>
+  <a href="#thanks">謝辭</a>
 </div>
 
 <header class="hero">
@@ -408,8 +431,9 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
     <p class="sec-label">研究背景 · WHY IT MATTERS</p>
     <h2>注意力稀缺的時代</h2>
     <blockquote class="epigraph">
-      「資訊消耗的是接收者的注意力。」
-      <cite>— Herbert Simon（1971），諾貝爾經濟學獎得主</cite>
+      <span class="en">"What information consumes is rather obvious: it consumes the attention of its recipients."</span>
+      「資訊消耗的是什麼，顯而易見——它消耗的是接收者的注意力。」
+      <cite>— Herbert A. Simon（1971），諾貝爾經濟學獎得主</cite>
     </blockquote>
     <div class="bigstats">
       <div class="bigstat"><b>46.9%</b><span>日常生活中，人們分心於無關思緒的時間比例——而分心會降低幸福感（Killingsworth &amp; Gilbert, 2010）</span></div>
@@ -481,14 +505,16 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
 
         </div>
 
-        <div class="takeaway">
-          <p class="tk-label">第一章總結 · 專注與幸福感的「易損性」與「保護機制」</p>
-          <figure class="fig" data-local-fig>
-            <div class="imgbox"><img src="assets/ch1-summary.png" alt="第一章架構圖：主動專注與被動分心的心理機制" loading="lazy"></div>
-          </figure>
-          <p><b>易損性：</b>專注與幸福感的正向關係並不穩固，會被外在動機破壞。在組織層次中，可為個體建立支持自主性的環境，降低外在動機的干擾。</p>
-          <p><b>保護機制：</b>自我慈悲能緩解分心的負向效果。年輕人可以向長者學習，有意識地覺察分心時刻，並以自我慈悲回應自己，重塑抵抗分心影響的心理韌性。</p>
-        </div>
+        <details class="takeaway" open>
+          <summary><span class="tk-label">第一章總結 · 專注與幸福感的「易損性」與「保護機制」</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch1-summary.png" alt="第一章架構圖：主動專注與被動分心的心理機制" loading="lazy"></div>
+            </figure>
+            <p><b>易損性：</b>專注與幸福感的正向關係並不穩固，會被外在動機破壞。在組織層次中，可為個體建立支持自主性的環境，降低外在動機的干擾。</p>
+            <p><b>保護機制：</b>自我慈悲能緩解分心的負向效果。年輕人可以向長者學習，有意識地覺察分心時刻，並以自我慈悲回應自己，重塑抵抗分心影響的心理韌性。</p>
+          </div>
+        </details>
       </article>
 
       <article class="chapter" id="ch2">
@@ -556,14 +582,16 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
 
         </div>
 
-        <div class="takeaway">
-          <p class="tk-label">第二章總結 · 專注與幸福感的「強化」路徑</p>
-          <figure class="fig" data-local-fig>
-            <div class="imgbox"><img src="assets/ch2-summary.png" alt="第二章架構圖：自然介入與正念訓練的雙軌途徑" loading="lazy"></div>
-          </figure>
-          <p><b>深度連結，而非被動暴露：</b>單純待在自然環境中並非幸福感的關鍵，要專注且不批判地參與其中——正念地注視自然風景、正念地品味食物，與自然建立深度連結。</p>
-          <p><b>持久練習，而非上完課就好：</b>參加正念課程但缺乏練習，反而可能降低正念狀態。提升幸福感的核心在於日常持久的積累——每天至少保持 5 分鐘以上的自主練習，並藉由幸福感與睡眠品質的正向循環，滋養持續練習的動機。</p>
-        </div>
+        <details class="takeaway" open>
+          <summary><span class="tk-label">第二章總結 · 專注與幸福感的「強化」路徑</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch2-summary.png" alt="第二章架構圖：自然介入與正念訓練的雙軌途徑" loading="lazy"></div>
+            </figure>
+            <p><b>深度連結，而非被動暴露：</b>單純待在自然環境中並非幸福感的關鍵，要專注且不批判地參與其中——正念地注視自然風景、正念地品味食物，與自然建立深度連結。</p>
+            <p><b>持久練習，而非上完課就好：</b>參加正念課程但缺乏練習，反而可能降低正念狀態。提升幸福感的核心在於日常持久的積累——每天至少保持 5 分鐘以上的自主練習，並藉由幸福感與睡眠品質的正向循環，滋養持續練習的動機。</p>
+          </div>
+        </details>
       </article>
 
       <article class="chapter" id="ch3">
@@ -628,14 +656,16 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
 
         </div>
 
-        <div class="takeaway">
-          <p class="tk-label">第三章總結 · 專注與幸福感的「外溢」路徑</p>
-          <figure class="fig" data-local-fig>
-            <div class="imgbox"><img src="assets/ch3-summary.png" alt="第三章架構圖：正念在人際溝通與人際感恩的影響路徑" loading="lazy"></div>
-          </figure>
-          <p><b>教育場域：</b>把正念訓練引入教育領域，透過學生、家長、老師正念特質的提高，改善跨世代溝通品質。</p>
-          <p><b>科技設計：</b>AI 的設計可以參考正念的核心元素，並把 AI 部署在人際感恩的脈絡中，讓 AI 的發展成為人際關係的助力而非阻力。</p>
-        </div>
+        <details class="takeaway" open>
+          <summary><span class="tk-label">第三章總結 · 專注與幸福感的「外溢」路徑</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch3-summary.png" alt="第三章架構圖：正念在人際溝通與人際感恩的影響路徑" loading="lazy"></div>
+            </figure>
+            <p><b>教育場域：</b>把正念訓練引入教育領域，透過學生、家長、老師正念特質的提高，改善跨世代溝通品質。</p>
+            <p><b>科技設計：</b>AI 的設計可以參考正念的核心元素，並把 AI 部署在人際感恩的脈絡中，讓 AI 的發展成為人際關係的助力而非阻力。</p>
+          </div>
+        </details>
       </article>
     </div>
   </div>
@@ -798,6 +828,21 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-
       </div>
     </div>
     <p class="closing-quote">AI 時代最稀缺的資源，不是算力，而是人們的專注力。<br>守住當下的力量，也守住了人類的獨特價值。</p>
+  </div>
+</section>
+
+<section id="thanks">
+  <div class="wrap">
+    <p class="sec-label">謝辭 · ACKNOWLEDGMENTS</p>
+    <h2>感謝一路相伴的人</h2>
+    <div class="prose">
+      <p>感謝指導教授葉素玲老師的悉心引導，感謝 EPA 實驗室夥伴們的相互扶持，也感謝一路支持我的重要親友。這份論文，是站在你們的肩膀上完成的。</p>
+    </div>
+    <figure class="fig" data-local-fig>
+      <div class="imgbox"><img src="assets/acknowledgment.jpg" alt="與葉素玲老師、EPA 實驗室成員的合照" loading="lazy"></div>
+      <figcaption>與素玲老師、EPA 實驗室夥伴的合影。</figcaption>
+    </figure>
+    <p class="thanks-song">謹以〈You Raise Me Up〉這首歌，獻給所有把我舉向更高處的人。</p>
   </div>
 </section>
 
