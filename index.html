@@ -603,9 +603,9 @@ details.takeaway summary::-webkit-details-marker{display:none}
       </div>
 
       <div class="pub-item">
-        <div class="pub-title" id="pub-10-title">Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</div>
-        <div class="pub-authors" id="pub-10-authors">Zeng, P.-Y., Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.</div>
-        <div class="pub-venue" id="pub-10-venue">IEEE RO-MAN, 2026</div>
+        <div class="pub-title">Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</div>
+        <div class="pub-authors"><b>Zeng, P.-Y.</b>, Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.</div>
+        <div class="pub-venue">IEEE RO-MAN, 2026</div>
       </div>
     </div>
 
@@ -2057,9 +2057,6 @@ const translations = {
     'pub-title': 'Publications',
     'pub-journal-label': 'Peer-Reviewed Journal Articles (9)',
     'pub-conf-label': 'Conference Paper (1)',
-    'pub-10-title': 'Can talking to AI chatbots help when you\'re feeling down? Examining the role of perceived empathy',
-    'pub-10-authors': 'Zeng, P.-Y., Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
-    'pub-10-venue': 'IEEE RO-MAN, 2026',
     'conf-pres-title': 'Conference Presentations',
     'awards-title': 'Grants, Fellowships, and Awards',
     'entrepreneurship-title': 'Research Translation & Entrepreneurship',
@@ -2109,9 +2106,6 @@ const translations = {
     'pub-title': '學術發表',
     'pub-journal-label': '同儕審查期刊論文（9 篇）',
     'pub-conf-label': '會議論文（1 篇）',
-    'pub-10-title': '談到感到沮喪時能否與 AI 聊天機器人交談有幫助？檢視感知同理心的角色',
-    'pub-10-authors': '曾鵬宇、Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
-    'pub-10-venue': 'IEEE RO-MAN, 2026',
     'conf-pres-title': '會議演講',
     'awards-title': '獎助金、研究獎與獎項',
     'entrepreneurship-title': '研究轉譯與創業',
@@ -2161,9 +2155,6 @@ const translations = {
     'pub-title': '学术发表',
     'pub-journal-label': '同行评审期刊论文（9 篇）',
     'pub-conf-label': '会议论文（1 篇）',
-    'pub-10-title': '谈到感到沮丧时能否与 AI 聊天机器人交谈有帮助？检视感知同理心的角色',
-    'pub-10-authors': '曾鹏宇、Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
-    'pub-10-venue': 'IEEE RO-MAN, 2026',
     'conf-pres-title': '会议演讲',
     'awards-title': '奖助金、研究奖与奖项',
     'entrepreneurship-title': '研究转译与创业',
@@ -2224,12 +2215,15 @@ function setLanguage(lang) {
 
 function renderPublications() {
   const list = document.getElementById('publications-list');
+  // Publications are always shown in English (academic citation convention);
+  // the author's own name is bolded.
   list.innerHTML = publications.map(pub => {
-    const content = pub[currentLang] || pub.zh || pub.en;
+    const content = pub.en;
+    const authors = content.authors.replace('Zeng, P.-Y.', '<b>Zeng, P.-Y.</b>');
     return `
       <div class="pub-item">
         <div class="pub-title">${content.title}</div>
-        <div class="pub-authors">${content.authors}</div>
+        <div class="pub-authors">${authors}</div>
         <div class="pub-venue">${content.venue}</div>
       </div>
     `;
