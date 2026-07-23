@@ -252,13 +252,14 @@ nav button:hover:not(.active){
   <div class="wrap">
     <div class="logo">Peng-Yu Zeng</div>
     <nav>
-      <button class="nav-btn active" data-section="cv" data-lang-en="Curriculum Vitae" data-lang-zh="履歷">Curriculum Vitae</button>
-      <button class="nav-btn" data-section="dissertation" data-lang-en="Dissertation" data-lang-zh="博士論文">Dissertation</button>
+      <button class="nav-btn active" data-section="cv" data-lang-en="Curriculum Vitae" data-lang-zh="履歷" data-lang-zh-cn="履历">Curriculum Vitae</button>
+      <button class="nav-btn" data-section="dissertation" data-lang-en="Dissertation" data-lang-zh="博士論文" data-lang-zh-cn="博士论文">Dissertation</button>
       <div class="lang-dropdown">
-        <button class="lang-btn" id="lang-toggle" data-lang-en="Language" data-lang-zh="語言">Language</button>
+        <button class="lang-btn" id="lang-toggle" data-lang-en="Language" data-lang-zh="語言" data-lang-zh-cn="语言">Language</button>
         <div class="lang-menu" id="lang-menu">
           <button class="lang-opt" data-lang="en">English</button>
-          <button class="lang-opt active" data-lang="zh">中文</button>
+          <button class="lang-opt active" data-lang="zh">繁體中文</button>
+          <button class="lang-opt" data-lang="zh-cn">简体中文</button>
         </div>
       </div>
     </nav>
@@ -392,17 +393,17 @@ const conferencePresentations = [
 ];
 
 const awards = [
-  {en:"Professor Kuo-Shu Yang Scholarship, Department of Psychology, National Taiwan University (July 2026)", zh:"楊國樞教授獎學金，國立臺灣大學心理學系（2026年7月）"},
-  {en:"Professor Chao-Ming Cheng Memorial Scholarship, Department of Psychology, National Taiwan University (June 2026)", zh:"鄭超明教授紀念獎學金，國立臺灣大學心理學系（2026年6月）"},
-  {en:"Graduate Student Scholarship, National Taiwan University (2021–2026)", zh:"國立臺灣大學研究生獎學金（2021–2026）"},
-  {en:"Honorable Mention, 11th NTU Department of Psychology Student Research Poster Competition (2025)", zh:"第11屆國立臺灣大學心理學系學生研究海報競賽榮譽獎（2025）"}
+  {en:"Professor Kuo-Shu Yang Scholarship, Department of Psychology, National Taiwan University (July 2026)", zh:"楊國樞教授獎學金，國立臺灣大學心理學系（2026年7月）", 'zh-cn':"杨国枢教授奖学金，国立台湾大学心理学系（2026年7月）"},
+  {en:"Professor Chao-Ming Cheng Memorial Scholarship, Department of Psychology, National Taiwan University (June 2026)", zh:"鄭昭明教授紀念獎學金，國立臺灣大學心理學系（2026年6月）", 'zh-cn':"郑昭明教授纪念奖学金，国立台湾大学心理学系（2026年6月）"},
+  {en:"Graduate Student Scholarship, National Taiwan University (2021–2026)", zh:"國立臺灣大學研究生獎學金（2021–2026）", 'zh-cn':"国立台湾大学研究生奖学金（2021–2026）"},
+  {en:"Honorable Mention, 11th NTU Department of Psychology Student Research Poster Competition (2025)", zh:"第11屆國立臺灣大學心理學系學生研究海報競賽榮譽獎（2025）", 'zh-cn':"第11届国立台湾大学心理学系学生研究海报竞赛荣誉奖（2025）"}
 ];
 
 const entrepreneurship = [
-  {role:"Co-Founder, PsybyPsy (2020–Present)", en:"Lead the psychological application and AI-driven system design of a platform that applies behavioral-science and well-being research to the workplace—reducing employee burnout and improving productivity.", zh:"領導一個平台的心理應用和AI驅動系統設計，該平台將行為科學和幸福感研究應用於工作場所，以減少員工倦怠和提高生產力。"},
-  {role:"Industry–Academia Collaboration, Delta Electronics (2025)", en:"Co-developed a conversational AI chatbot, applying psychological principles of human–AI interaction to the product design.", zh:"共同開發對話式AI聊天機器人，將人類–AI互動的心理學原理應用於產品設計。"},
-  {role:"Industry–Academia Collaboration, Cathay Life Insurance (2023–2024)", en:"Investigated the psychological mechanisms of insurance marketing to inform customer-centric, behaviorally grounded strategy.", zh:"調查保險營銷的心理機制，以告知以客戶為中心、行為為基礎的策略。"},
-  {role:"Teaching Assistant, The Uniqueness of Human Beings in the Age of AI, National Taiwan University (2025–2026)", en:"Designed course content and in-class activities, developed the course website, and assisted in recording online course materials.", zh:"設計課程內容和課堂活動，開發課程網站，協助錄製線上課程材料。"}
+  {role:"Co-Founder, PsybyPsy (2020–Present)", en:"Lead the psychological application and AI-driven system design of a platform that applies behavioral-science and well-being research to the workplace—reducing employee burnout and improving productivity.", zh:"領導一個平台的心理應用和AI驅動系統設計，該平台將行為科學和幸福感研究應用於工作場所，以減少員工倦怠和提高生產力。", 'zh-cn':"领导一个平台的心理应用和AI驱动系统设计，该平台将行为科学和幸福感研究应用于工作场所，以减少员工倦怠和提高生产力。"},
+  {role:"Industry–Academia Collaboration, Delta Electronics (2025)", en:"Co-developed a conversational AI chatbot, applying psychological principles of human–AI interaction to the product design.", zh:"共同開發對話式AI聊天機器人，將人類–AI互動的心理學原理應用於產品設計。", 'zh-cn':"共同开发对话式AI聊天机器人，将人类–AI互动的心理学原理应用于产品设计。"},
+  {role:"Industry–Academia Collaboration, Cathay Life Insurance (2023–2024)", en:"Investigated the psychological mechanisms of insurance marketing to inform customer-centric, behaviorally grounded strategy.", zh:"調查保險營銷的心理機制，以告知以客戶為中心、行為為基礎的策略。", 'zh-cn':"调查保险营销的心理机制，以告知以客户为中心、行为为基础的策略。"},
+  {role:"Teaching Assistant, The Uniqueness of Human Beings in the Age of AI, National Taiwan University (2025–2026)", en:"Designed course content and in-class activities, developed the course website, and assisted in recording online course materials.", zh:"設計課程內容和課堂活動，開發課程網站，協助錄製線上課程材料。", 'zh-cn':"设计课程内容和课堂活动，开发课程网站，协助录制线上课程材料。"}
 ];
 
 const publications = [
@@ -517,6 +518,56 @@ const translations = {
     'abs-1': '在數位科技高度滲透的當代，社群媒體的持續干擾使人們長期處於分心狀態；與此同時，個體內在紛擾的思緒亦不斷將注意力從當下抽離。這種普遍的分心狀態不僅削弱個體的認知功能，更對幸福感造成負面影響。如何形塑當下專注與幸福感已成為研究者與實踐者關注的核心問題。',
     'abs-2': '本論文以「專注當下」與「幸福感」為核心構念，從心理機制、個人實踐與人際影響力三個層次展開探討。第一章從機制層次切入，探討外在動機如何削弱專注與幸福感之間的正向關係，並檢視自我慈悲特質在個體分心時的關鍵緩衝作用。第二章轉向實踐層次，測試自然介入與正念訓練如何提升日常專注與幸福感。第三章擴展至人際影響力層次，探討正念特質較高的個體如何改善人際互動品質，以及正念角色的聊天機器人如何重塑人際感恩的表達。',
     'abs-3': '本論文不僅從理論層次揭示影響專注與幸福感的各種因素，亦在實踐層次為提升自身與他人福祉提供具體啟示。'
+  },
+  'zh-cn': {
+    'cv-name': '曾鹏宇',
+    'cv-dept': '国立台湾大学心理学系暨研究所',
+    'cv-email-label': '电子邮件：',
+    'cv-phone-label': '电话：',
+    'cv-site-label': '网站：',
+    'cv-scholar-label': 'Google Scholar：',
+    'research-title': '研究兴趣',
+    'ri-1': '人类与 AI 互动及数字福祉——生成式 AI 作为心理干预工具',
+    'ri-2': '幸福感干预——正念与正向心理学干预',
+    'ri-3': '沟通、决策制定与寿命——跨越寿命的沟通与决策差异',
+    'edu-title': '教育背景',
+    'edu-phd-title': '心理学博士',
+    'edu-phd-uni': '国立台湾大学，台北，台湾，2026',
+    'diss-label': '论文题目：',
+    'diss-title-text': '从专注到幸福：心理机制、个人实践与人际影响力的探讨',
+    'advisor-label': '指导教授：',
+    'edu-bs-title': '心理学与化学工程双学位学士',
+    'edu-bs-uni': '中原大学，桃园，台湾，2021',
+    'pub-title': '学术发表',
+    'pub-journal-label': '同行评审期刊论文（9 篇）',
+    'pub-conf-label': '会议论文（1 篇）',
+    'pub-10-title': '谈到感到沮丧时能否与 AI 聊天机器人交谈有帮助？检视感知同理心的角色',
+    'pub-10-authors': '曾鹏宇、Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
+    'pub-10-venue': 'IEEE RO-MAN（审查中）',
+    'conf-pres-title': '会议演讲',
+    'awards-title': '奖助金、研究奖与奖项',
+    'entrepreneurship-title': '研究转译与创业',
+    'page-title': '曾鹏宇 — 履历与博士论文',
+    'diss-subtitle': '国立台湾大学心理学系暨研究所·博士论文',
+    'diss-title-1': '从',
+    'diss-title-2': '专注',
+    'diss-title-3': '到',
+    'diss-title-4': '幸福',
+    'diss-desc': '心理机制、个人实践、人际影响力的探讨',
+    'diss-author-label': '研究生',
+    'diss-author': '曾鹏宇',
+    'diss-advisor-label': '指导教授',
+    'diss-advisor': '叶素玲',
+    'diss-stat-1': '章节',
+    'diss-stat-2': '研究',
+    'diss-stat-3': '期刊论文',
+    'diss-stat-4': '会议论文',
+    'diss-pdf-btn': '阅读完整博士论文',
+    'abs-label': '摘要',
+    'abs-title': '在分心的时代，重塑专注与幸福',
+    'abs-1': '在数字科技高度渗透的当代，社群媒体的持续干扰使人们长期处于分心状态；与此同时，个体内在纷扰的思绪亦不断将注意力从当下抽离。这种普遍的分心状态不仅削弱个体的认知功能，更对幸福感造成负面影响。如何形塑当下专注与幸福感已成为研究者与实践者关注的核心问题。',
+    'abs-2': '本论文以「专注当下」与「幸福感」为核心构念，从心理机制、个人实践与人际影响力三个层次展开探讨。第一章从机制层次切入，探讨外在动机如何削弱专注与幸福感之间的正向关系，并检视自我慈悲特质在个体分心时的关键缓冲作用。第二章转向实践层次，测试自然干预与正念训练如何提升日常专注与幸福感。第三章扩展至人际影响力层次，探讨正念特质较高的个体如何改善人际互动品质，以及正念角色的聊天机器人如何重塑人际感恩的表达。',
+    'abs-3': '本论文不仅从理论层次揭示影响专注与幸福感的各种因素，亦在实践层次为提升自身与他人福祉提供具体启示。'
   }
 };
 
@@ -533,10 +584,13 @@ function setLanguage(lang) {
   });
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.textContent = btn.getAttribute(`data-lang-${lang}`);
+    const attrName = lang === 'zh-cn' ? 'data-lang-zh-cn' : `data-lang-${lang}`;
+    btn.textContent = btn.getAttribute(attrName);
   });
 
-  document.getElementById('lang-toggle').textContent = document.getElementById('lang-toggle').getAttribute(`data-lang-${lang}`);
+  const toggleBtn = document.getElementById('lang-toggle');
+  const toggleAttrName = lang === 'zh-cn' ? 'data-lang-zh-cn' : `data-lang-${lang}`;
+  toggleBtn.textContent = toggleBtn.getAttribute(toggleAttrName);
 
   renderPublications();
   renderConferencePresentations();
