@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>閱讀 PDF — 從專注到幸福</title>
+<title>Read PDF — From Focus to Happiness</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{
   --bg:#ECEEE9; --surface:#FDFDFB; --ink:#1F2823; --muted:#5C6B60;
   --line:#DDE3DB; --accent:#2F5D4A; --accent-ink:#25493B; --accent-soft:#E7EFE8;
-  --sans:"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root{ --bg:#0E1310; --surface:#1A211C; --ink:#E6ECE5; --muted:#93A297;
@@ -54,12 +54,12 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
 </head>
 <body>
 <header>
-  <a class="back" href="index.html">返回網站</a>
-  <span id="vtitle">載入中⋯</span>
+  <a class="back" href="index.html">Back to site</a>
+  <span id="vtitle">Loading…</span>
   <span id="pageinfo"></span>
-  <a class="dl" id="vdl" href="#" download>下載</a>
+  <a class="dl" id="vdl" href="#" download>Download</a>
 </header>
-<div id="status"><span class="spin"></span><br>正在載入 PDF⋯</div>
+<div id="status"><span class="spin"></span><br>Loading PDF…</div>
 <div id="pages"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -67,15 +67,15 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
 (function(){
   var params = new URLSearchParams(location.search);
   var file = params.get('file') || '';
-  // 僅允許本站內的 PDF 檔案
+  // Only PDFs hosted on this site are allowed.
   if(!/^(thesis\.pdf|papers\/(0[1-9]|10)\.pdf)$/.test(file)){
-    document.getElementById('status').innerHTML = '找不到指定的檔案。<br><a href="index.html">返回網站</a>';
+    document.getElementById('status').innerHTML = 'The requested file could not be found.<br><a href="index.html">Back to site</a>';
     return;
   }
-  var title = params.get('title') || (file === 'thesis.pdf' ? '博士論文全文' : '論文 PDF');
+  var title = params.get('title') || (file === 'thesis.pdf' ? 'Full Dissertation' : 'Paper PDF');
   var targetPage = parseInt(params.get('page'), 10) || 1;
 
-  document.title = title + ' — 從專注到幸福';
+  document.title = title + ' — From Focus to Happiness';
   document.getElementById('vtitle').textContent = title;
   var dl = document.getElementById('vdl');
   dl.href = file;
@@ -83,7 +83,7 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
 
   if (typeof pdfjsLib === 'undefined'){
     document.getElementById('status').innerHTML =
-      'PDF 閱讀器載入失敗（可能是網路問題）。<br><a href="' + file + '">改為直接開啟 PDF 檔案</a>';
+      'The PDF reader failed to load (possibly a network issue).<br><a href="' + file + '">Open the PDF file directly instead</a>';
     return;
   }
   pdfjsLib.GlobalWorkerOptions.workerSrc =
@@ -115,7 +115,7 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
     });
   }
 
-  // 以捲動位置計算需要渲染的頁面（不依賴 IntersectionObserver，相容性最高）
+  // Decide which pages to render from the scroll position (no IntersectionObserver, for maximum compatibility).
   var ticking = false;
   function updateVisible(){
     ticking = false;
@@ -130,7 +130,7 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
       if (yb > top && y < bottom) renderPage(i + 1, h);
       if (y <= window.scrollY + window.innerHeight / 2) current = i + 1;
     }
-    infoEl.textContent = '第 ' + current + ' / ' + pdfDoc.numPages + ' 頁';
+    infoEl.textContent = 'Page ' + current + ' of ' + pdfDoc.numPages;
   }
   function requestUpdate(){
     if (!ticking){ ticking = true; requestAnimationFrame(updateVisible); }
@@ -160,7 +160,7 @@ header a:hover{text-decoration:underline; text-underline-offset:3px}
     }
     updateVisible();
   }).catch(function(err){
-    statusEl.innerHTML = 'PDF 載入失敗。<br><a href="' + file + '">改為直接開啟 PDF 檔案</a>';
+    statusEl.innerHTML = 'The PDF failed to load.<br><a href="' + file + '">Open the PDF file directly instead</a>';
   });
 })();
 </script>
