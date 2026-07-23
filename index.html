@@ -384,12 +384,12 @@ nav button:hover:not(.active){
 
 <script>
 const conferencePresentations = [
-  {en:"Autonomous thoughts, happier minds: Motivational content in mind wandering. Poster presented at the 2026 Asia-Pacific Psychological Association, Tainan, Taiwan. (2026)", zh:"自主思緒，更快樂的心靈：心理漂浮中的動機內容。海報發表於2026亞太心理學協會年會，台南，台灣。(2026)"},
-  {en:"Mindfulness facilitates bodily synchrony in intergenerational communication. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"正念促進跨世代溝通中的身體同步性。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)"},
-  {en:"Applications of chatbots in gratitude interventions. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"聊天機器人在感恩介入中的應用。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)"},
-  {en:"Effects of similarity-based identification on the human–AI interaction experience. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"相似性基礎認同對人類–AI互動體驗的影響。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)"},
-  {en:"Nurturing well-being through nature engagement: Insights from an experience sampling study. Poster presented at the 33rd International Congress of Psychology (ICP 2024), Prague, Czech Republic. (2024)", zh:"透過自然參與培養幸福感：經驗取樣研究的洞見。海報發表於第33屆國際心理學大會，布拉格，捷克。(2024)"},
-  {en:"Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication. Poster presented at the 63rd Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2024)", zh:"培養跨世代理解：個人內正念與人際正念在溝通中的角色。海報發表於臺灣心理學會第63屆年會，台北，台灣。(2024)"}
+  {en:"Autonomous thoughts, happier minds: Motivational content in mind wandering. Poster presented at the 2026 Asia-Pacific Psychological Association, Tainan, Taiwan. (2026)", zh:"自主思緒，更快樂的心靈：心理漂浮中的動機內容。海報發表於2026亞太心理學協會年會，台南，台灣。(2026)", 'zh-cn':"自主思绪，更快乐的心灵：心理漂浮中的动机内容。海报发表于2026亚太心理学协会年会，台南，台湾。(2026)"},
+  {en:"Mindfulness facilitates bodily synchrony in intergenerational communication. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"正念促進跨世代溝通中的身體同步性。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)", 'zh-cn':"正念促进跨世代沟通中的身体同步性。海报发表于台湾心理学会第64届年会，台北，台湾。(2025)"},
+  {en:"Applications of chatbots in gratitude interventions. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"聊天機器人在感恩介入中的應用。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)", 'zh-cn':"聊天机器人在感恩干预中的应用。海报发表于台湾心理学会第64届年会，台北，台湾。(2025)"},
+  {en:"Effects of similarity-based identification on the human–AI interaction experience. Poster presented at the 64th Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2025)", zh:"相似性基礎認同對人類–AI互動體驗的影響。海報發表於臺灣心理學會第64屆年會，台北，台灣。(2025)", 'zh-cn':"相似性基础认同对人类–AI互动体验的影响。海报发表于台湾心理学会第64届年会，台北，台湾。(2025)"},
+  {en:"Nurturing well-being through nature engagement: Insights from an experience sampling study. Poster presented at the 33rd International Congress of Psychology (ICP 2024), Prague, Czech Republic. (2024)", zh:"透過自然參與培養幸福感：經驗取樣研究的洞見。海報發表於第33屆國際心理學大會，布拉格，捷克。(2024)", 'zh-cn':"透过自然参与培养幸福感：经验取样研究的洞见。海报发表于第33届国际心理学大会，布拉格，捷克。(2024)"},
+  {en:"Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication. Poster presented at the 63rd Annual Conference of the Taiwanese Psychological Association, Taipei, Taiwan. (2024)", zh:"培養跨世代理解：個人內正念與人際正念在溝通中的角色。海報發表於臺灣心理學會第63屆年會，台北，台灣。(2024)", 'zh-cn':"培养跨世代理解：个人内正念与人际正念在沟通中的角色。海报发表于台湾心理学会第63届年会，台北，台湾。(2024)"}
 ];
 
 const awards = [
@@ -407,15 +407,15 @@ const entrepreneurship = [
 ];
 
 const publications = [
-  {id:1, en:{title:"How generative AI reshapes gratitude interventions: Benefits and risks", authors:"Zeng, P.-Y., Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.", venue:"Computers in Human Behavior: Artificial Humans, 2026"}, zh:{title:"生成式AI如何重塑感恩介入：益處與風險", authors:"曾鵬宇、Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.", venue:"Computers in Human Behavior: Artificial Humans, 2026"}},
-  {id:2, en:{title:"Nurturing well-being through nature-based intervention: The mediating role of mindfulness state", authors:"Zeng, P.-Y., Yeh, M.-S., & Yeh, S.-L.", venue:"Journal of Environmental Psychology, 2026"}, zh:{title:"透過自然介入培養幸福感：正念狀態的中介角色", authors:"曾鵬宇、Yeh, M.-S., & Yeh, S.-L.", venue:"Journal of Environmental Psychology, 2026"}},
-  {id:3, en:{title:"Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts", authors:"Zeng, P.-Y., Hsieh, T.-Y., & Yeh, S.-L.", venue:"Journal of Behavioral and Experimental Economics, 2026"}, zh:{title:"輕推朝向長期收益：跨年齡群體組合輕推策略的不同影響", authors:"曾鵬宇、Hsieh, T.-Y., & Yeh, S.-L.", venue:"Journal of Behavioral and Experimental Economics, 2026"}},
-  {id:4, en:{title:"Exploring semantic expression disparities in intragenerational and intergenerational communication", authors:"Zeng, P.-Y., & Yeh, S.-L.", venue:"Psychology and Aging, 2025"}, zh:{title:"探索世代內與跨世代溝通中的語義表達差異", authors:"曾鵬宇 & Yeh, S.-L.", venue:"Psychology and Aging, 2025"}},
-  {id:5, en:{title:"Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness", authors:"Zeng, P.-Y., & Yeh, S.-L.", venue:"Mindfulness, 2025"}, zh:{title:"擁抱當下專注以提升幸福感：外在動機與特質正念的調節效應", authors:"曾鵬宇 & Yeh, S.-L.", venue:"Mindfulness, 2025"}},
-  {id:6, en:{title:"Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication", authors:"Zeng, P.-Y., Wu, S.-H., Li, T.-V., & Yeh, S.-L.", venue:"Current Psychology, 2025"}, zh:{title:"培養跨世代理解：個人內正念與人際正念在溝通中的角色", authors:"曾鵬宇、Wu, S.-H., Li, T.-V., & Yeh, S.-L.", venue:"Current Psychology, 2025"}},
-  {id:7, en:{title:"Emotional impact on investment and insurance preferences in unit-linked insurance plans", authors:"Zeng, P.-Y., Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.", venue:"Research Square (Preprint), 2024"}, zh:{title:"情緒對投資型保單中投資與保險偏好的影響", authors:"曾鵬宇、Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.", venue:"Research Square (Preprint), 2024"}},
-  {id:8, en:{title:"Precision nudging: A customer-oriented approach to business applications", authors:"Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.", venue:"Research in Applied Psychology, 2024"}, zh:{title:"精準輕推：以客戶為導向的商業應用", authors:"黃振維、曾鵬宇、& Yeh, S.-L.", venue:"應用心理研究, 2024"}},
-  {id:9, en:{title:"Psychological dynamics of unit-linked insurance product decision-making: A cognitive model", authors:"Tsai, C.-C., Chen, L.-Y., Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.", venue:"Cogent Economics & Finance, 2024"}, zh:{title:"投資型保單決策的心理動態：認知模型", authors:"Tsai, C.-C., Chen, L.-Y., Huang, C.-W., 曾鵬宇, & Yeh, S.-L.", venue:"Cogent Economics & Finance, 2024"}}
+  {id:1, en:{title:"How generative AI reshapes gratitude interventions: Benefits and risks", authors:"Zeng, P.-Y., Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.", venue:"Computers in Human Behavior: Artificial Humans, 2026"}, zh:{title:"生成式AI如何重塑感恩介入：益處與風險", authors:"曾鵬宇、Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.", venue:"Computers in Human Behavior: Artificial Humans, 2026"}, 'zh-cn':{title:"生成式AI如何重塑感恩干预：益处与风险", authors:"曾鹏宇、Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.", venue:"Computers in Human Behavior: Artificial Humans, 2026"}},
+  {id:2, en:{title:"Nurturing well-being through nature-based intervention: The mediating role of mindfulness state", authors:"Zeng, P.-Y., Yeh, M.-S., & Yeh, S.-L.", venue:"Journal of Environmental Psychology, 2026"}, zh:{title:"透過自然介入培養幸福感：正念狀態的中介角色", authors:"曾鵬宇、Yeh, M.-S., & Yeh, S.-L.", venue:"Journal of Environmental Psychology, 2026"}, 'zh-cn':{title:"透过自然干预培养幸福感：正念状态的中介角色", authors:"曾鹏宇、Yeh, M.-S., & Yeh, S.-L.", venue:"Journal of Environmental Psychology, 2026"}},
+  {id:3, en:{title:"Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts", authors:"Zeng, P.-Y., Hsieh, T.-Y., & Yeh, S.-L.", venue:"Journal of Behavioral and Experimental Economics, 2026"}, zh:{title:"輕推朝向長期收益：跨年齡群體組合輕推策略的不同影響", authors:"曾鵬宇、Hsieh, T.-Y., & Yeh, S.-L.", venue:"Journal of Behavioral and Experimental Economics, 2026"}, 'zh-cn':{title:"轻推朝向长期收益：跨年龄群体组合轻推策略的不同影响", authors:"曾鹏宇、Hsieh, T.-Y., & Yeh, S.-L.", venue:"Journal of Behavioral and Experimental Economics, 2026"}},
+  {id:4, en:{title:"Exploring semantic expression disparities in intragenerational and intergenerational communication", authors:"Zeng, P.-Y., & Yeh, S.-L.", venue:"Psychology and Aging, 2025"}, zh:{title:"探索世代內與跨世代溝通中的語義表達差異", authors:"曾鵬宇 & Yeh, S.-L.", venue:"Psychology and Aging, 2025"}, 'zh-cn':{title:"探索世代内与跨世代沟通中的语义表达差异", authors:"曾鹏宇 & Yeh, S.-L.", venue:"Psychology and Aging, 2025"}},
+  {id:5, en:{title:"Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness", authors:"Zeng, P.-Y., & Yeh, S.-L.", venue:"Mindfulness, 2025"}, zh:{title:"擁抱當下專注以提升幸福感：外在動機與特質正念的調節效應", authors:"曾鵬宇 & Yeh, S.-L.", venue:"Mindfulness, 2025"}, 'zh-cn':{title:"拥抱当下专注以提升幸福感：外在动机与特质正念的调节效应", authors:"曾鹏宇 & Yeh, S.-L.", venue:"Mindfulness, 2025"}},
+  {id:6, en:{title:"Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication", authors:"Zeng, P.-Y., Wu, S.-H., Li, T.-V., & Yeh, S.-L.", venue:"Current Psychology, 2025"}, zh:{title:"培養跨世代理解：個人內正念與人際正念在溝通中的角色", authors:"曾鵬宇、Wu, S.-H., Li, T.-V., & Yeh, S.-L.", venue:"Current Psychology, 2025"}, 'zh-cn':{title:"培养跨世代理解：个人内正念与人际正念在沟通中的角色", authors:"曾鹏宇、Wu, S.-H., Li, T.-V., & Yeh, S.-L.", venue:"Current Psychology, 2025"}},
+  {id:7, en:{title:"Emotional impact on investment and insurance preferences in unit-linked insurance plans", authors:"Zeng, P.-Y., Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.", venue:"Research Square (Preprint), 2024"}, zh:{title:"情緒對投資型保單中投資與保險偏好的影響", authors:"曾鵬宇、Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.", venue:"Research Square (Preprint), 2024"}, 'zh-cn':{title:"情绪对投资型保单中投资与保险偏好的影响", authors:"曾鹏宇、Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.", venue:"Research Square (Preprint), 2024"}},
+  {id:8, en:{title:"Precision nudging: A customer-oriented approach to business applications", authors:"Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.", venue:"Research in Applied Psychology, 2024"}, zh:{title:"精準輕推：以客戶為導向的商業應用", authors:"黃振維、曾鵬宇、& Yeh, S.-L.", venue:"應用心理研究, 2024"}, 'zh-cn':{title:"精准轻推：以客户为导向的商业应用", authors:"黄振维、曾鹏宇、& Yeh, S.-L.", venue:"应用心理研究, 2024"}},
+  {id:9, en:{title:"Psychological dynamics of unit-linked insurance product decision-making: A cognitive model", authors:"Tsai, C.-C., Chen, L.-Y., Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.", venue:"Cogent Economics & Finance, 2024"}, zh:{title:"投資型保單決策的心理動態：認知模型", authors:"Tsai, C.-C., Chen, L.-Y., Huang, C.-W., 曾鵬宇, & Yeh, S.-L.", venue:"Cogent Economics & Finance, 2024"}, 'zh-cn':{title:"投资型保单决策的心理动态：认知模型", authors:"Tsai, C.-C., Chen, L.-Y., Huang, C.-W., 曾鹏宇, & Yeh, S.-L.", venue:"Cogent Economics & Finance, 2024"}}
 ];
 
 const translations = {
@@ -602,7 +602,7 @@ function setLanguage(lang) {
 function renderPublications() {
   const list = document.getElementById('publications-list');
   list.innerHTML = publications.map(pub => {
-    const content = pub[currentLang];
+    const content = pub[currentLang] || pub.zh || pub.en;
     return `
       <div class="pub-item">
         <div class="pub-title">${content.title}</div>
@@ -616,7 +616,7 @@ function renderPublications() {
 function renderConferencePresentations() {
   const list = document.getElementById('conference-presentations-list');
   list.innerHTML = conferencePresentations.map(pres => {
-    const text = pres[currentLang];
+    const text = pres[currentLang] || pres.zh || pres.en;
     return `<div class="cv-entry"><div class="cv-entry-desc">• ${text}</div></div>`;
   }).join('');
 }
@@ -624,7 +624,7 @@ function renderConferencePresentations() {
 function renderAwards() {
   const list = document.getElementById('awards-list');
   list.innerHTML = awards.map(award => {
-    const text = award[currentLang];
+    const text = award[currentLang] || award.zh || award.en;
     return `<div class="cv-entry"><div class="cv-entry-desc">• ${text}</div></div>`;
   }).join('');
 }
@@ -632,7 +632,7 @@ function renderAwards() {
 function renderEntrepreneurship() {
   const list = document.getElementById('entrepreneurship-list');
   list.innerHTML = entrepreneurship.map(item => {
-    const text = item[currentLang];
+    const text = item[currentLang] || item.zh || item.en;
     return `<div class="cv-entry"><div class="cv-entry-title">${item.role}</div><div class="cv-entry-desc">${text}</div></div>`;
   }).join('');
 }
