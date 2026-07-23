@@ -1,17 +1,9 @@
 <!doctype html>
 <html lang="en">
 <meta charset="utf-8">
-<title>Peng-Yu Zeng — From Focus to Happiness: Doctoral Dissertation &amp; Publications</title>
+<title id="page-title">Peng-Yu Zeng — CV & Doctoral Dissertation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Peng-Yu Zeng's doctoral dissertation, From Focus to Happiness: Psychological Mechanisms, Personal Practice, and Interpersonal Influence — three chapters and six studies, nine journal articles and one conference paper, with the full text readable online.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="From Focus to Happiness — Doctoral Dissertation of Peng-Yu Zeng">
-<meta property="og:description" content="Psychological mechanisms, personal practice, interpersonal influence: three chapters and six studies, nine journal articles and one conference paper.">
-<meta property="og:url" content="https://pengyu-zeng666.github.io/focus-to-happiness/">
-<meta property="og:image" content="https://pengyu-zeng666.github.io/focus-to-happiness/assets/og-cover.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Peng-Yu Zeng's Curriculum Vitae and Doctoral Dissertation on Focus and Well-Being.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <style>
 :root{
@@ -28,19 +20,11 @@
     --accent-soft:#233529; --gold:#D3B36C; --shadow:0 1px 3px rgba(0,0,0,.3);
   }
 }
-:root[data-theme="dark"]{
-  --bg:#111613; --surface:#1B221D; --ink:#EAF0E9; --muted:#AAB7AC;
-  --line:#2C362F; --faint:#43503F; --accent:#7FB49A; --accent-ink:#A9D2BC;
-  --accent-soft:#233529; --gold:#D3B36C; --shadow:0 1px 3px rgba(0,0,0,.3);
-}
-:root[data-theme="light"]{
-  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#101712; --muted:#3C4A40;
-  --line:#D2D9CF; --faint:#C0C9BE; --accent:#2A5744; --accent-ink:#1C4033;
-  --accent-soft:#E9F0EA; --gold:#755C24; --shadow:0 1px 4px rgba(16,23,18,.08);
-}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family:var(--serif); font-size:17.5px; line-height:1.72;
@@ -48,10 +32,50 @@ body{
 }
 a{color:var(--accent-ink); text-decoration:none}
 a:hover{text-decoration:underline; text-underline-offset:4px}
-a:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
 .wrap{max-width:880px; margin:0 auto; padding:0 24px}
 
-/* ---------- hero ---------- */
+/* Header */
+header{
+  position:sticky; top:0; z-index:100;
+  background:var(--surface); border-bottom:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; gap:20px;
+}
+.logo{font-weight:600; font-size:18px; color:var(--ink)}
+nav{display:flex; gap:20px; align-items:center}
+nav button{
+  background:none; border:1px solid var(--line); padding:6px 14px;
+  border-radius:4px; cursor:pointer; font-family:var(--sans);
+  color:var(--ink); font-size:13px; transition:all 0.2s;
+}
+nav button.active{background:var(--accent); color:#fff}
+nav button:hover{background:var(--accent-soft); border-color:var(--accent)}
+.lang-btn{margin-left:auto}
+
+/* Main content areas */
+#cv, #dissertation{
+  display:none; padding:60px 24px;
+}
+#cv.active, #dissertation.active{display:block}
+
+.section-title{
+  font-size:24px; font-weight:600; margin:40px 0 20px;
+  color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:12px;
+}
+.subsection-title{
+  font-size:16px; font-weight:600; margin:24px 0 12px;
+  color:var(--accent-ink);
+}
+.entry{margin:16px 0; line-height:1.6}
+.entry strong{color:var(--ink); font-weight:600}
+.pub-item{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:18px 24px; margin:12px 0;
+}
+.pub-item .authors{font-family:var(--sans); font-size:13px; color:var(--muted); margin:4px 0}
+.pub-item .doi{font-family:var(--sans); font-size:12px; color:var(--accent-ink); margin-top:8px}
+
+/* Dissertation styles (from original) */
 .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
 .hero .wrap{padding-top:96px; padding-bottom:88px; position:relative; z-index:1}
 .breath{
@@ -67,7 +91,7 @@ a:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-
   content:""; position:absolute; inset:150px; border-radius:50%;
   background:var(--accent-soft); opacity:.6;
 }
-@keyframes breathe{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 .eyebrow{
   font-family:var(--sans); font-size:12.5px; letter-spacing:.2em;
   text-transform:uppercase; color:var(--muted); margin:0 0 28px;
@@ -76,7 +100,6 @@ h1{
   font-size:clamp(42px,7.4vw,68px); font-weight:600; letter-spacing:-.015em;
   line-height:1.12; margin:0 0 14px; text-wrap:balance;
 }
-h1 .kanji-accent{color:var(--accent-ink)}
 .subtitle{
   font-size:clamp(18px,2.6vw,23px); color:var(--muted);
   letter-spacing:0; line-height:1.4; margin:0 0 40px; max-width:22em;
@@ -87,10 +110,7 @@ h1 .kanji-accent{color:var(--accent-ink)}
 }
 .byline strong{color:var(--ink); font-weight:600}
 .stats{display:flex; flex-wrap:wrap; gap:0}
-.stat{
-  padding:6px 28px 6px 0; margin-right:28px;
-  border-right:1px solid var(--line);
-}
+.stat{padding:6px 28px 6px 0; margin-right:28px; border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
 .stat b{
   display:block; font-size:30px; font-weight:600; color:var(--accent-ink);
@@ -100,22 +120,7 @@ h1 .kanji-accent{color:var(--accent-ink)}
   font-family:var(--sans); font-size:11.5px; letter-spacing:.13em;
   text-transform:uppercase; color:var(--muted);
 }
-.hero-thesis{margin-top:40px}
 
-/* ---------- buttons ---------- */
-.btn-pdf{
-  font-family:var(--sans); font-size:13px; letter-spacing:.02em;
-  display:inline-flex; align-items:center; gap:7px;
-  background:var(--accent); color:#fff; padding:7px 18px;
-  border-radius:999px; white-space:nowrap;
-}
-:root[data-theme="dark"] .btn-pdf{color:#10160f}
-@media (prefers-color-scheme: dark){ .btn-pdf{color:#10160f} }
-:root[data-theme="light"] .btn-pdf{color:#fff}
-.btn-pdf:hover{text-decoration:none; filter:brightness(1.08)}
-.btn-pdf::before{content:"⬒"; font-size:12px}
-
-/* ---------- sections ---------- */
 section{padding:72px 0}
 section + section{border-top:1px solid var(--line)}
 .sec-label{
@@ -128,878 +133,388 @@ h2{
 }
 .prose{max-width:38em}
 .prose p{margin:0 0 1.2em}
-.keywords{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
-.kw{
-  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
-  color:var(--accent-ink); background:var(--accent-soft);
-  padding:5px 14px; border-radius:999px;
-}
 
-/* ---------- chapters ---------- */
-.frame-note{max-width:38em; color:var(--ink); margin:0 0 40px}
-.chapters{display:flex; flex-direction:column; gap:28px}
-.chapter{
-  background:var(--surface); border:1px solid var(--line); border-radius:6px;
-  box-shadow:var(--shadow); padding:34px 38px;
+.btn-pdf{
+  font-family:var(--sans); font-size:13px; letter-spacing:.02em;
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--accent); color:#fff; padding:7px 18px;
+  border-radius:999px; white-space:nowrap;
 }
-.ch-head{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px}
-.ch-num{
-  font-family:var(--sans); font-size:11.5px; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--gold); white-space:nowrap;
-}
-.ch-head h3{font-size:23px; font-weight:600; letter-spacing:-.01em; margin:0}
-.ch-q{color:var(--accent-ink); font-size:17px; margin:4px 0 12px; line-height:1.4}
-.chapter > p{color:var(--ink); margin:0 0 22px; font-size:16.5px}
-.studies{display:flex; flex-direction:column; border-top:1px solid var(--line)}
+.btn-pdf:hover{text-decoration:none; filter:brightness(1.08)}
+.btn-pdf::before{content:"⬒"; font-size:12px}
 
-details.study{border-bottom:1px solid var(--line)}
-details.study summary{
-  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-  padding:18px 6px; cursor:pointer; list-style:none; border-radius:6px;
-}
-details.study summary:hover{background:var(--accent-soft)}
-details.study summary::-webkit-details-marker{display:none}
-details.study summary:hover .study-name{color:var(--accent-ink)}
-.study-name{flex:1 1 280px; min-width:0; font-size:17px; line-height:1.4}
-.study-name em{
-  font-style:normal; font-family:var(--sans); font-size:11.5px; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--muted); margin-right:10px; white-space:nowrap;
-}
-.chev{
-  font-family:var(--sans); font-size:15px; color:var(--accent-ink);
-  width:36px; height:36px; flex:none; border:1.5px solid var(--accent);
-  border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
-  transition:transform .25s ease; align-self:center; background:var(--surface);
-}
-details[open] > summary .chev{transform:rotate(180deg)}
-.pub-tag{
-  font-family:var(--sans); font-size:12px; letter-spacing:.02em;
-  color:var(--accent-ink); background:var(--accent-soft);
-  padding:3px 12px; border-radius:999px; white-space:nowrap;
-}
-.pub-tag:hover{text-decoration:none; filter:brightness(.96)}
-.unpub{
-  font-family:var(--sans); font-size:12px; letter-spacing:.02em;
-  color:var(--muted); border:1px solid var(--line);
-  padding:2px 12px; border-radius:999px; white-space:nowrap;
-}
-.study-body{
-  padding:6px 2px 26px; border-top:1px dashed var(--line); margin-top:-1px;
-}
-.study-body p{font-size:16px; margin:16px 0 0; color:var(--ink)}
-section[id], .chapter[id]{scroll-margin-top:24px}
-.study-body p b{
-  font-family:var(--sans); font-size:11.5px; letter-spacing:.12em;
-  text-transform:uppercase; color:var(--gold); font-weight:600;
-  display:block; margin-bottom:3px;
-}
-.study-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; align-items:center}
-.thesis-link{
-  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
-  display:inline-flex; align-items:center; gap:6px;
-  border:1px solid var(--accent); color:var(--accent-ink);
-  padding:6px 16px; border-radius:999px; white-space:nowrap;
-}
-.thesis-link:hover{text-decoration:none; background:var(--accent-soft)}
-.thesis-link::before{content:"⬒"; font-size:12px}
-
-/* ---------- publications ---------- */
-.pub-group{margin-top:44px}
-.pub-group:first-of-type{margin-top:0}
-.pub-group h3{
-  font-family:var(--sans); font-size:12.5px; letter-spacing:.18em;
-  text-transform:uppercase; font-weight:600;
-  color:var(--muted); margin:0 0 20px;
-}
-.pubs{display:flex; flex-direction:column; gap:20px}
-.pub{
-  background:var(--surface); border:1px solid var(--line); border-radius:6px;
-  box-shadow:var(--shadow); padding:26px 30px;
-  display:grid; grid-template-columns:56px 1fr; gap:4px 22px;
-}
-.pub-no{
-  grid-row:span 5; font-family:var(--sans); font-size:22px; font-weight:600;
-  color:var(--faint); font-variant-numeric:tabular-nums; line-height:1.4;
-}
-.pub[id]{scroll-margin-top:24px}
-.pub:target{border-color:var(--accent)}
-.pub-meta{
-  font-family:var(--sans); font-size:12.5px; letter-spacing:.04em;
-  color:var(--gold); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; margin:0;
-}
-.pub-meta > span:first-child{color:var(--accent-ink); font-weight:600}
-.pub-meta .dtag{
-  color:var(--accent-ink); background:var(--accent-soft);
-  padding:2px 10px; border-radius:999px; letter-spacing:.02em;
-}
-.pub h4{font-size:18.5px; font-weight:600; line-height:1.35; margin:6px 0 4px; letter-spacing:-.005em; text-wrap:balance}
-.pub .authors{font-family:var(--sans); font-size:13.5px; color:var(--muted); margin:0}
-.pub .authors b{color:var(--ink); font-weight:600}
-.pub .summary{font-size:16px; color:var(--ink); margin:10px 0 14px}
-.pub-actions{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center}
-.doi{
-  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
-  display:inline-flex; align-items:center; gap:6px;
-}
-.doi::before{content:"→"; color:var(--gold)}
-@media (max-width:560px){
-  .pub{grid-template-columns:1fr}
-  .pub-no{grid-row:auto}
-  .chapter{padding:26px 22px}
-}
-
-/* ---------- figures ---------- */
-.fig{margin:20px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:14px}
-.fig .imgbox{background:#fff; border-radius:4px; padding:10px}
-.fig img{display:block; width:100%; height:auto}
-.fig figcaption{font-family:var(--sans); font-size:13px; color:var(--muted); margin-top:12px; line-height:1.6}
-.fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px}
-.fig-grid .fig{margin:0}
-@media (max-width:640px){ .fig-grid{grid-template-columns:1fr} }
-
-/* ---------- context stats ---------- */
-blockquote.epigraph{
-  border-left:3px solid var(--gold); margin:0 0 36px; padding:8px 0 8px 24px;
-  font-size:20px; line-height:1.55; letter-spacing:-.005em; max-width:32em;
-}
-blockquote.epigraph .en{
-  display:block; font-style:italic; color:var(--ink); margin-bottom:10px;
-}
-blockquote.epigraph cite{
-  display:block; font-family:var(--sans); font-style:normal; font-size:13px;
-  color:var(--muted); margin-top:12px; letter-spacing:.03em;
-}
-.bigstats{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
-.bigstat{
-  background:var(--surface); border:1px solid var(--line); border-radius:6px;
-  padding:26px 28px; box-shadow:var(--shadow);
-}
-.bigstat b{
-  display:block; font-size:42px; font-weight:600; color:var(--accent-ink);
-  line-height:1.2; font-variant-numeric:tabular-nums;
-}
-.bigstat span{
-  display:block; font-family:var(--sans); font-size:13.5px;
-  color:var(--muted); line-height:1.55; margin-top:10px;
-}
-@media (max-width:640px){ .bigstats{grid-template-columns:1fr} }
-
-/* ---------- chapter takeaway ---------- */
-details.takeaway{margin-top:26px; background:var(--accent-soft); border-radius:6px}
-details.takeaway summary{
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  padding:20px 28px; cursor:pointer; list-style:none;
-}
-details.takeaway summary::-webkit-details-marker{display:none}
-.takeaway .tk-label{
-  font-family:var(--sans); font-size:13px; letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--accent-ink); font-weight:600; margin:0; line-height:1.5;
-}
-.tk-body{padding:0 28px 26px}
-.takeaway p{font-size:16px; margin:14px 0 0; color:var(--ink)}
-.takeaway p b{color:var(--accent-ink)}
-.takeaway .fig{background:var(--surface); margin-top:0}
-@media (max-width:560px){
-  details.takeaway summary{padding:18px 20px}
-  .tk-body{padding:0 20px 22px}
-}
-
-/* ---------- closing ---------- */
-.levels{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
-.level{
-  background:var(--surface); border:1px solid var(--line); border-radius:6px;
-  padding:26px 28px; box-shadow:var(--shadow);
-}
-.level h3{font-size:18px; font-weight:600; letter-spacing:-.005em; margin:0 0 10px; color:var(--accent-ink)}
-.level p{font-family:var(--sans); font-size:14px; color:var(--muted); line-height:1.65; margin:0}
-@media (max-width:640px){ .levels{grid-template-columns:1fr} }
-.closing-quote{
-  margin:56px auto 0; max-width:20em; text-align:center;
-  font-size:clamp(20px,3.2vw,27px); line-height:1.5; letter-spacing:-.01em;
-  color:var(--accent-ink); text-wrap:balance;
-}
-.closing-quote::before{
-  content:""; display:block; width:56px; height:1px;
-  background:var(--gold); margin:0 auto 36px;
-}
-.thanks-song{
-  font-family:var(--sans); font-size:14px; color:var(--muted);
-  text-align:center; margin:28px 0 0; letter-spacing:.01em;
-}
-
-/* ---------- reading progress & reveal ---------- */
-#progress{
-  position:fixed; top:0; left:0; height:3px; width:0;
-  background:var(--accent); z-index:100;
-}
-.reveal-init{opacity:0; transform:translateY(16px)}
-.reveal-in{opacity:1; transform:none; transition:opacity .65s ease, transform .65s ease}
-@media (prefers-reduced-motion: reduce){
-  .reveal-init{opacity:1; transform:none}
-}
-
-/* ---------- side navigation ---------- */
-#sidenav{
-  position:fixed; top:50%; transform:translateY(-50%);
-  left:24px; width:186px; z-index:60;
-  font-family:var(--sans); display:none; flex-direction:column; gap:1px;
-}
-@media (min-width:1120px){
-  #sidenav{display:flex}
-  body{padding-left:230px}
-}
-#sidenav .nav-title{
-  font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);
-  padding:0 14px 10px; font-weight:600;
-}
-#sidenav a{
-  font-size:13px; color:var(--muted); padding:6px 14px;
-  border-left:2px solid var(--line); line-height:1.4;
-}
-#sidenav a.sub{padding-left:28px; font-size:12.5px}
-#sidenav a:hover{color:var(--accent-ink); text-decoration:none}
-#sidenav a.active{
-  color:var(--accent-ink); font-weight:600;
-  border-left-color:var(--accent); background:var(--accent-soft);
-  border-radius:0 4px 4px 0;
-}
-
-/* ---------- mobile TOC ---------- */
-#tocbtn{
-  position:fixed; right:18px; bottom:18px; z-index:70;
-  width:52px; height:52px; border-radius:50%; border:1px solid var(--accent);
-  background:var(--accent); color:#fff; font-family:var(--sans); font-size:11px;
-  letter-spacing:.06em; text-transform:uppercase; cursor:pointer;
-  box-shadow:0 3px 12px rgba(22,31,26,.25);
-}
-:root[data-theme="dark"] #tocbtn{color:#10160f}
-@media (prefers-color-scheme: dark){ #tocbtn{color:#10160f} }
-:root[data-theme="light"] #tocbtn{color:#fff}
-@media (min-width:1120px){ #tocbtn{display:none} }
-#tocpanel{
-  position:fixed; right:18px; bottom:80px; z-index:70;
-  background:var(--surface); border:1px solid var(--line); border-radius:10px;
-  box-shadow:0 8px 30px rgba(22,31,26,.2); padding:14px 6px;
-  display:none; flex-direction:column; min-width:230px;
-  font-family:var(--sans); max-height:70vh; overflow-y:auto;
-}
-#tocpanel.open{display:flex}
-#tocpanel a{font-size:14px; color:var(--ink); padding:9px 18px; border-radius:6px}
-#tocpanel a.sub{padding-left:34px; font-size:13px; color:var(--muted)}
-#tocpanel a:hover{background:var(--accent-soft); text-decoration:none}
-
-/* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--line); padding:44px 0 64px;
   font-family:var(--sans); font-size:13.5px; color:var(--muted);
 }
-footer .wrap{display:flex; flex-wrap:wrap; gap:10px 30px; justify-content:space-between}
+
+@media (max-width:640px){
+  header{flex-direction:column; align-items:flex-start}
+  nav{flex-direction:column; width:100%; gap:8px}
+  nav button{width:100%}
+}
 </style>
 
-<div id="progress" aria-hidden="true"></div>
-
-<nav id="sidenav" aria-label="Page contents">
-  <span class="nav-title">Contents</span>
-  <a href="#abstract" data-spy="abstract">Abstract</a>
-  <a href="#context" data-spy="context">Why It Matters</a>
-  <a href="#structure" data-spy="structure">Structure</a>
-  <a href="#ch1" data-spy="ch1" class="sub">Ch. 1 Mechanisms</a>
-  <a href="#ch2" data-spy="ch2" class="sub">Ch. 2 Practice</a>
-  <a href="#ch3" data-spy="ch3" class="sub">Ch. 3 Influence</a>
-  <a href="#publications" data-spy="publications">Publications</a>
-  <a href="#closing" data-spy="closing">Closing</a>
-  <a href="#thanks" data-spy="thanks">Acknowledgments</a>
-</nav>
-
-<button id="tocbtn" aria-label="Open table of contents" aria-expanded="false">Menu</button>
-<div id="tocpanel" role="navigation" aria-label="Page contents">
-  <a href="#abstract">Abstract</a>
-  <a href="#context">Why It Matters</a>
-  <a href="#structure">Structure</a>
-  <a href="#ch1" class="sub">Ch. 1 Mechanisms</a>
-  <a href="#ch2" class="sub">Ch. 2 Practice</a>
-  <a href="#ch3" class="sub">Ch. 3 Influence</a>
-  <a href="#publications">Publications</a>
-  <a href="#closing">Closing</a>
-  <a href="#thanks">Acknowledgments</a>
-</div>
-
-<header class="hero">
-  <div class="breath" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">Department of Psychology, National Taiwan University · Doctoral Dissertation</p>
-    <h1>From <span class="kanji-accent">Focus</span> to <span class="kanji-accent">Happiness</span></h1>
-    <p class="subtitle">Psychological Mechanisms, Personal Practice, and Interpersonal Influence</p>
-    <div class="byline">
-      <span>Author <strong>Peng-Yu Zeng</strong></span>
-      <span>Advisor <strong>Su-Ling Yeh</strong>, Ph.D.</span>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>3</b><span>Chapters</span></div>
-      <div class="stat"><b>6</b><span>Studies</span></div>
-      <div class="stat"><b>9</b><span>Journal Articles</span></div>
-      <div class="stat"><b>1</b><span>Conference Paper</span></div>
-    </div>
-    <p class="hero-thesis"><a class="btn-pdf" data-local-pdf href="viewer.html?file=thesis.pdf&amp;title=Full Dissertation">Read the Full Dissertation (PDF)</a></p>
-  </div>
+<header>
+  <div class="logo">Peng-Yu Zeng</div>
+  <nav>
+    <button class="nav-btn active" data-section="cv" data-lang-en="Curriculum Vitae" data-lang-zh="履歷">Curriculum Vitae</button>
+    <button class="nav-btn" data-section="dissertation" data-lang-en="Dissertation" data-lang-zh="博士論文">Dissertation</button>
+    <button class="lang-btn" id="lang-toggle" data-lang-en="中文" data-lang-zh="English">中文</button>
+  </nav>
 </header>
 
-<section id="abstract">
+<!-- CV Section -->
+<main id="cv" class="active">
   <div class="wrap">
-    <p class="sec-label">Abstract</p>
-    <h2>Reclaiming Focus and Happiness in an Age of Distraction</h2>
-    <div class="prose">
-      <p>In an era saturated by digital technology, the constant interruptions of social media keep people in a chronic state of distraction, while our own restless streams of thought continually pull attention away from the present moment. This pervasive distraction not only undermines cognitive functioning but also erodes well-being. How to cultivate present-moment focus and happiness has therefore become a central question for researchers and practitioners alike.</p>
-      <p>Taking present-moment focus and well-being as its core constructs, this dissertation examines them across three levels: psychological mechanisms, personal practice, and interpersonal influence. Chapter One works at the level of mechanism, asking how external motivation weakens the positive relationship between focus and happiness, and examining the buffering role that trait self-compassion plays when the mind wanders. Chapter Two turns to personal practice, testing how nature-based and mindfulness-based interventions raise everyday focus and well-being. Chapter Three extends the lens to interpersonal influence, exploring how more mindful individuals improve the quality of interpersonal interaction, and how a chatbot cast in a mindful role shapes the expression of interpersonal gratitude.</p>
-      <p>Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people's — in practice.</p>
+    <h1 id="cv-title">Peng-Yu Zeng</h1>
+    <p class="byline" id="cv-subtitle">Department of Psychology, National Taiwan University</p>
+
+    <div class="section-title" id="contact-title">Contact Information</div>
+    <div class="entry" id="contact-details">
+      <strong>Email:</strong> zengmaterial@gmail.com<br>
+      <strong>Phone:</strong> +886 966 671 363<br>
+      <strong>Website:</strong> <a href="https://pengyu-zeng.vercel.app">pengyu-zeng.vercel.app</a><br>
+      <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=VF4lZkYAAAAJ">VF4lZkYAAAAJ</a>
     </div>
-    <div class="keywords">
-      <span class="kw">Present-Moment Focus</span><span class="kw">Well-Being</span><span class="kw">Motivation</span>
-      <span class="kw">Self-Compassion</span><span class="kw">Nature-Based Intervention</span><span class="kw">Mindfulness Training</span>
-      <span class="kw">Interpersonal Relationships</span><span class="kw">Human–AI Relationships</span>
+
+    <div class="section-title" id="research-title">Research Interests</div>
+    <div class="entry" id="research-text">
+      <p>• Human–AI interaction and digital well-being — generative AI as a vehicle for psychological intervention</p>
+      <p>• Well-being interventions — mindfulness and positive-psychology interventions</p>
+      <p>• Communication, decision-making, and the lifespan — lifespan differences in communication and decision-making</p>
     </div>
-  </div>
-</section>
 
-<section id="context">
-  <div class="wrap">
-    <p class="sec-label">Why It Matters</p>
-    <h2>An Age of Scarce Attention</h2>
-    <blockquote class="epigraph">
-      <span class="en">"What information consumes is rather obvious: it consumes the attention of its recipients."</span>
-      <cite>— Herbert A. Simon (1971), Nobel laureate in Economics</cite>
-    </blockquote>
-    <div class="bigstats">
-      <div class="bigstat"><b>46.9%</b><span>of waking life is spent with the mind wandering away from the task at hand — and mind-wandering lowers happiness (Killingsworth &amp; Gilbert, 2010)</span></div>
-      <div class="bigstat"><b>73%</b><span>more time spent on social media because of AI-driven algorithms (Guess et al., 2023)</span></div>
-      <div class="bigstat"><b>44 sec</b><span>average attention span in front of a computer screen today — it was 150 seconds in 2004</span></div>
+    <div class="section-title" id="edu-title">Education</div>
+    <div class="entry" id="edu-phd">
+      <strong>Ph.D. in Psychology</strong><br>
+      National Taiwan University, Taipei, Taiwan, 2026<br>
+      <em>Dissertation:</em> From Focus to Happiness: Exploring Psychological Mechanisms, Personal Practice, and Interpersonal Influence<br>
+      <em>Advisor:</em> Su-Ling Yeh, Ph.D.
     </div>
-  </div>
-</section>
+    <div class="entry" id="edu-bs">
+      <strong>B.S. in Psychology and Chemical Engineering (Double Major)</strong><br>
+      Chung Yuan Christian University, Taoyuan, Taiwan, 2021
+    </div>
 
-<section id="structure">
-  <div class="wrap">
-    <p class="sec-label">Three Levels</p>
-    <h2>Three Levels, Six Studies</h2>
-    <p class="frame-note">The dissertation is framed by Seligman's PERMA model of well-being and moves outward from the personal level (mechanism and practice) to the interpersonal level (influence). Click any study to read its research question, method, and key findings; the four published studies also link to the corresponding journal article below.</p>
+    <div class="section-title" id="pub-title">Publications</div>
 
-    <div class="chapters">
-      <article class="chapter" id="ch1">
-        <div class="ch-head"><span class="ch-num">Chapter One</span><h3>Psychological Mechanisms</h3></div>
-        <p class="ch-q">How do focus and distraction shape happiness?</p>
-        <p>Using experience sampling to capture momentary states of focus in daily life, this chapter asks how external motivation weakens the positive relationship from focus to happiness, and how trait self-compassion buffers the cost of mind-wandering.</p>
-        <div class="studies">
+    <div class="subsection-title" id="pub-journal-title">Peer-Reviewed Journal Articles (9)</div>
+    <div id="publications-list"></div>
 
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 1</em>How motivation shapes the path from focus to happiness</span>
-              <a class="pub-tag" href="#pub-5">Published · Mindfulness (2025)</a>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>Focusing on the present moment makes people happier — so why is the effect sometimes so faint? This study tests whether the motivation behind an activity moderates the relationship between focus and happiness, and whether people high in trait mindfulness are more sensitive to that motivation.</p>
-              <p><b>Method</b>Fifty-six Taiwanese university students were followed for two weeks with experience sampling, reporting three times a day at random on how focused they were, how happy they felt, and the type of motivation behind the activity at hand (autonomous or external).</p>
-              <p><b>Key findings</b>Present-moment focus significantly and positively predicted happiness; the more externally motivated the activity, however, the weaker that positive relationship became. People high in trait mindfulness were more attuned to their own motivation, which amplified rather than reduced the undermining effect of external motivation — suggesting that mindfulness training should also work to lower the influence of external motivation.</p>
-              <div class="fig-grid" data-local-fig>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study1-mindfulness.png" alt="Regression plot showing external motivation moderating the relationship between focus and well-being" loading="lazy"></div>
-                  <figcaption>When external motivation is high (red line), the positive relationship between present-moment focus and well-being flattens markedly.</figcaption>
-                </figure>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study1-moderation.png" alt="Moderating effect of external motivation split by high and low trait mindfulness" loading="lazy"></div>
-                  <figcaption>Participants high in trait mindfulness (right panel) are affected more strongly by external motivation: when it is high, the happiness benefit of focus all but disappears.</figcaption>
-                </figure>
-              </div>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=14&amp;title=Dissertation · Study 1">Read in the dissertation (from p. 14)</a>
-                <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">Journal version (DOI)</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 2</em>When the mind wanders, the motivation behind the thought shapes happiness</span>
-              <span class="unpub">Dissertation chapter</span>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>Does mind-wandering always make people unhappy? This study is the first to approach the question through the motivational content of the wandering thought: does drifting toward something autonomously motivated (a gathering you look forward to) differ from drifting toward something controlled (work that simply has to be done)? And what roles do age and self-compassion play?</p>
-              <p><b>Method</b>Ninety-one participants (35 older adults, 56 younger adults) were followed for two weeks by experience sampling, yielding 3,023 momentary reports of daily experience. Trait self-compassion was also measured, and the data analyzed with multilevel moderated mediation models.</p>
-              <p><b>Key findings</b>Participants were mind-wandering 39.3% of the time on average, and were less happy when they were. Yet wandering toward autonomously motivated content was significantly happier than wandering toward controlled content — during controlled activities, mind-wandering toward autonomous content left happiness on par with being focused, suggesting that mind-wandering can compensate for a lack of autonomy. Older adults, moreover, showed no drop in happiness when their minds wandered, because their higher trait self-compassion (with mindfulness and common humanity as the key components) buffered the cost.</p>
-              <figure class="fig" data-local-fig>
-                <div class="imgbox"><img src="assets/study2-interaction.png" alt="Interaction plot of attentional state, activity motivation, and age" loading="lazy"></div>
-                <figcaption>Left: during autonomously motivated activities, younger adults (blue) lose happiness as soon as their minds wander, while older adults (red) are unaffected. Right: during controlled activities, wandering toward autonomously motivated content does not reduce happiness — only wandering toward controlled content does.</figcaption>
-              </figure>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=25&amp;title=Dissertation · Study 2">Read in the dissertation (from p. 25)</a>
-              </div>
-            </div>
-          </details>
-
-        </div>
-
-        <details class="takeaway">
-          <summary><span class="tk-label">Chapter One Summary · The Fragility and the Safeguards of Focus and Happiness</span><span class="chev">▾</span></summary>
-          <div class="tk-body">
-            <figure class="fig" data-local-fig>
-              <div class="imgbox"><img src="assets/ch1-summary.png" alt="Chapter One framework: psychological mechanisms of active focus and passive mind-wandering" loading="lazy"></div>
-            </figure>
-            <p><b>Fragility:</b> The positive link between focus and happiness is not robust — external motivation can break it. At the organizational level, building environments that support autonomy reduces that interference.</p>
-            <p><b>Safeguards:</b> Self-compassion softens the negative effect of mind-wandering. Younger adults can learn from older ones: notice the moment attention drifts, meet it with self-compassion, and rebuild the resilience that keeps distraction from taking a toll.</p>
-          </div>
-        </details>
-      </article>
-
-      <article class="chapter" id="ch2">
-        <div class="ch-head"><span class="ch-num">Chapter Two</span><h3>Personal Practice</h3></div>
-        <p class="ch-q">Which interventions actually strengthen focus and happiness?</p>
-        <p>Drawing on a two-track approach — nudge theory (changing the environment) and empowerment theory (systematic training) — this chapter takes a longitudinal view of how nature-based and mindfulness-based interventions raise everyday focus and well-being.</p>
-        <div class="studies">
-
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 3</em>Nature-based intervention, focus, and happiness</span>
-              <a class="pub-tag" href="#pub-2">Published · J. Environ. Psychol. (2026)</a>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>Contact with nature improves well-being, but through what psychological mechanism? This study proposes that mindfulness state is the key mediator: in nature, it is easier to return to the present moment.</p>
-              <p><b>Method</b>Two sub-studies: the first used experience sampling to compare happiness, stress, and autonomous motivation during the intervention with baseline days; the second used the day reconstruction method to measure happiness and connectedness to nature. Both were analyzed with multilevel regression.</p>
-              <p><b>Key findings</b>Relative to baseline days, the nature-based intervention raised happiness, lowered stress, and increased both autonomous motivation and connectedness to nature. More importantly, mindfulness state significantly mediated the relationship between the intervention and well-being, and moments of higher mindfulness during the intervention were also moments of greater happiness — future nature-based programs may strengthen their effects by building in mindfulness elements.</p>
-              <div class="fig-grid" data-local-fig>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study3-farm.png" alt="Photograph of the care farming field site" loading="lazy"></div>
-                  <figcaption>The field site: care farming — an eighteen-week nature-based intervention combining local agricultural development with a rural setting.</figcaption>
-                </figure>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study3-mediation.png" alt="Mediation model of care farming influencing well-being through mindfulness state" loading="lazy"></div>
-                  <figcaption>The mediation model: care farming → mindfulness state (present-moment focus + non-judgment) → well-being. Both experience sampling and day reconstruction support this pathway.</figcaption>
-                </figure>
-              </div>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=37&amp;title=Dissertation · Study 3">Read in the dissertation (from p. 37)</a>
-                <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">Journal version (DOI)</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 4</em>Mindfulness intervention, focus, and happiness</span>
-              <span class="unpub">Dissertation chapter</span>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>The benefit of a mindfulness course depends on how much people actually practice. This study proposes an asymmetric U-shaped model of mindfulness practice: below a certain threshold, mindfulness may lower rather than raise well-being; only above it does a dose-response effect appear.</p>
-              <p><b>Method</b>Twenty-one participants completed an eight-week Mindfulness-Based Cognitive Therapy (MBCT) course, alongside 27 age- and gender-matched controls (a reading task). All kept a daily well-being diary for 50 consecutive days (personal, interpersonal, environmental, and physical dimensions) and completed three computer-based tasks — sustained attention, emotional memory, and eye tracking of emotional faces — before and after the course.</p>
-              <p><b>Key findings</b>Using an average of 10 minutes of daily practice as the cut point, the mindfulness group split into high practicers (about 25 min/day) and low practicers (about 5 min/day). High practicers showed significantly higher trait mindfulness and higher daily well-being on every dimension than controls; below roughly 5 minutes a day, well-being dipped slightly instead, supporting the asymmetric U-shaped curve. Mindfulness training mainly reduced internally generated distraction rather than improving objective attention, supporting an internal-attention account; low practicers showed a decline in metamemory for positive high-arousal stimuli, echoing the beginner's dilemma. Cross-lagged analyses further showed that practice, well-being, and sleep quality nourish one another in both directions over time.</p>
-              <div class="fig-grid" data-local-fig>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study4-trait.png" alt="Pre- and post-test comparison of trait mindfulness across three groups" loading="lazy"></div>
-                  <figcaption>After eight weeks, only the high-practice group (red) showed a significant increase in trait mindfulness (p = .008); the low-practice group showed a marginally significant trend.</figcaption>
-                </figure>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study4-dose.png" alt="Asymmetric U-shaped curve between mindfulness practice time and well-being" loading="lazy"></div>
-                  <figcaption>The asymmetric U-shaped curve: only past the inflection point of roughly 4.5–4.8 minutes of daily practice do interpersonal and environmental well-being rise with practice time.</figcaption>
-                </figure>
-              </div>
-              <figure class="fig" data-local-fig>
-                <div class="imgbox"><img src="assets/study4-crosslag.png" alt="Cross-lagged model of personal well-being and mindfulness practice time" loading="lazy"></div>
-                <figcaption>Cross-lagged model: across the eight weeks, personal well-being and weekly practice time predicted each other week by week (blue: well-being → practice; green: practice → well-being), forming a mutually reinforcing cycle.</figcaption>
-              </figure>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=51&amp;title=Dissertation · Study 4">Read in the dissertation (from p. 51)</a>
-              </div>
-            </div>
-          </details>
-
-        </div>
-
-        <details class="takeaway">
-          <summary><span class="tk-label">Chapter Two Summary · Pathways That Strengthen Focus and Happiness</span><span class="chev">▾</span></summary>
-          <div class="tk-body">
-            <figure class="fig" data-local-fig>
-              <div class="imgbox"><img src="assets/ch2-summary.png" alt="Chapter Two framework: the two-track path of nature-based intervention and mindfulness training" loading="lazy"></div>
-            </figure>
-            <p><b>Deep connection, not passive exposure:</b> simply being in a natural setting is not what matters. Well-being comes from engaging with it attentively and without judgment — looking at the landscape mindfully, savoring food mindfully, building a deep connection with the natural world.</p>
-            <p><b>Sustained practice, not just finishing the course:</b> taking a mindfulness course without practicing may actually lower mindfulness state. What raises well-being is daily accumulation — keeping at least five minutes of self-directed practice a day, and letting the positive cycle between well-being and sleep quality feed the motivation to keep going.</p>
-          </div>
-        </details>
-      </article>
-
-      <article class="chapter" id="ch3">
-        <div class="ch-head"><span class="ch-num">Chapter Three</span><h3>Interpersonal Influence</h3></div>
-        <p class="ch-q">How do focus and mindfulness shape other people and our relationships?</p>
-        <p>Extending the lens from the individual to the interpersonal: how people higher in trait mindfulness improve the quality of intergenerational communication, and how a generative AI chatbot cast in a mindful role reshapes the expression of interpersonal gratitude.</p>
-        <div class="studies">
-
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 5</em>Trait mindfulness and the quality of communication</span>
-              <a class="pub-tag" href="#pub-6">Published · Current Psychology (2025)</a>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>How do intrapersonal mindfulness (present-moment focus, non-judgment) and interpersonal mindfulness (attending to verbal and nonverbal cues in conversation) each shape the quality of intergenerational communication?</p>
-              <p><b>Method</b>Forty-four Taiwanese intergenerational dyads (a younger and an older adult) completed three communication scenarios. Communication quality was assessed on emotional, cognitive, and behavioral dimensions following the interpersonal chemistry model, and analyzed with multilevel regression and the Actor–Partner Interdependence Model (APIM).</p>
-              <p><b>Key findings</b>Both forms of mindfulness increased positive affect, lowered stress, strengthened empathy and communication satisfaction, narrowed psychological distance, and produced greater consensus on contentious topics; interpersonal mindfulness carried the broader benefit (it also reduced negative affect and sped up cooperation). APIM analyses showed that mindfulness improved communication quality more comprehensively for older adults than for younger ones. Intriguingly, body-synchrony analyses revealed that mindfulness promoted anti-phase synchrony — when one person speaks (and moves), the other listens attentively (and stays still) — the embodied signature of attentive listening.</p>
-              <div class="fig-grid" data-local-fig>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study5-indicators.png" alt="Affective, cognitive, and behavioral indicators of communication satisfaction" loading="lazy"></div>
-                  <figcaption>The research framework: intergenerational communication quality assessed across affective (emotional change, communication stress), cognitive (empathy, psychological distance, consensus), and behavioral (speed of cooperation, body synchrony) dimensions.</figcaption>
-                </figure>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study5-sync.png" alt="Body synchrony analysis for the mindful communication group" loading="lazy"></div>
-                  <figcaption>Body synchrony: the mindful communication group showed significant anti-phase synchrony (left panel), the rhythm of high-quality interaction in which one person expresses while the other listens attentively.</figcaption>
-                </figure>
-              </div>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=90&amp;title=Dissertation · Study 5">Read in the dissertation (from p. 90)</a>
-                <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">Journal version (DOI)</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="study">
-            <summary>
-              <span class="study-name"><em>Study 6</em>A mindful chatbot and interpersonal gratitude</span>
-              <a class="pub-tag" href="#pub-1">Published · CHB: Artificial Humans (2026)</a>
-              <span class="chev">▾</span>
-            </summary>
-            <div class="study-body">
-              <p><b>Research question</b>When generative AI enters a gratitude practice, it changes not only the outcome but the process. This study compares AI-based conversational gratitude with a traditional gratitude journal to examine how generative AI reshapes well-being interventions.</p>
-              <p><b>Method</b>A seven-day randomized controlled trial with three arms: a gratitude chatbot group (conversational writing with generative AI), a gratitude journal group (structured writing prompts), and an active control group (recording daily events), analyzed with linear mixed-effects models combined with thematic analysis (mixed methods).</p>
-              <p><b>Key findings</b>Both forms of gratitude raised happiness and meaning relative to control; the chatbot group, however, reported lower perceived effort, expressed gratitude more shallowly (more recognizing, less thanking), and leaned toward self-oriented gratitude (having, losing, comparing). Qualitative analysis showed participants were surprised and inspired by the AI-generated summaries. Overall, generative AI cuts both ways: it lowers the cognitive barrier and sparks insight, yet may erode reflective depth — future AI well-being tools should let users decide for themselves whether to bring AI into the loop.</p>
-              <div class="fig-grid" data-local-fig>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study6-chatbot.png" alt="Flow chart of the three-arm experimental design in Study 6" loading="lazy"></div>
-                  <figcaption>Study design: 117 participants were randomly assigned to a mindful chatbot group (sharing gratitude in conversation with AI), a gratitude journal group (writing online), or a control group (recording daily events), for seven consecutive days.</figcaption>
-                </figure>
-                <figure class="fig">
-                  <div class="imgbox"><img src="assets/study6-depth.png" alt="Bar chart comparing hand-coded depth of gratitude across two groups" loading="lazy"></div>
-                  <figcaption>Hand-coded depth of gratitude: the mindful chatbot group (green) produced more shallow "recognizing" than the gratitude journal group (orange) (68.5% vs. 57.5%), and less deep "thanking" (16.2% vs. 22.5%).</figcaption>
-                </figure>
-              </div>
-              <div class="study-links">
-                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=117&amp;title=Dissertation · Study 6">Read in the dissertation (from p. 117)</a>
-                <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">Journal version (DOI)</a>
-              </div>
-            </div>
-          </details>
-
-        </div>
-
-        <details class="takeaway">
-          <summary><span class="tk-label">Chapter Three Summary · How Focus and Happiness Spill Over</span><span class="chev">▾</span></summary>
-          <div class="tk-body">
-            <figure class="fig" data-local-fig>
-              <div class="imgbox"><img src="assets/ch3-summary.png" alt="Chapter Three framework: pathways of mindfulness in interpersonal communication and gratitude" loading="lazy"></div>
-            </figure>
-            <p><b>Education:</b> bringing mindfulness training into schools raises trait mindfulness in students, parents, and teachers alike, improving the quality of intergenerational communication.</p>
-            <p><b>Technology design:</b> AI can be designed around the core elements of mindfulness and deployed in contexts of interpersonal gratitude, so that its development becomes a help to human relationships rather than an obstacle.</p>
-          </div>
-        </details>
-      </article>
+    <div class="subsection-title" id="pub-conf-title">Conference Paper (1)</div>
+    <div class="pub-item">
+      <strong id="pub-10-title">Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</strong><br>
+      <div class="authors" id="pub-10-authors">Zeng, P.-Y., Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.</div>
+      <em id="pub-10-venue">IEEE RO-MAN (under review)</em>
     </div>
   </div>
-</section>
+</main>
 
-<section id="publications">
-  <div class="wrap">
-    <p class="sec-label">Publications</p>
-    <h2>List of Publications</h2>
+<!-- Dissertation Section -->
+<main id="dissertation">
+  <header class="hero">
+    <div class="breath" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow" id="diss-subtitle">Department of Psychology, National Taiwan University · Doctoral Dissertation</p>
+      <h1><span id="diss-title-1">From</span> <span class="kanji-accent" id="diss-title-2">Focus</span> <span id="diss-title-3">to</span> <span class="kanji-accent" id="diss-title-4">Happiness</span></h1>
+      <p class="subtitle" id="diss-desc">Psychological Mechanisms, Personal Practice, and Interpersonal Influence</p>
+      <div class="byline">
+        <span id="diss-author-label">Author</span> <strong id="diss-author">Peng-Yu Zeng</strong>
+        <span id="diss-advisor-label">Advisor</span> <strong id="diss-advisor">Su-Ling Yeh</strong>, Ph.D.
+      </div>
+      <div class="stats">
+        <div class="stat"><b>3</b><span id="diss-stat-1">Chapters</span></div>
+        <div class="stat"><b>6</b><span id="diss-stat-2">Studies</span></div>
+        <div class="stat"><b>9</b><span id="diss-stat-3">Journal Articles</span></div>
+        <div class="stat"><b>1</b><span id="diss-stat-4">Conference Paper</span></div>
+      </div>
+      <p class="hero-thesis"><a class="btn-pdf" href="viewer.html?file=thesis.pdf&title=Full Dissertation" id="diss-pdf-btn">Read the Full Dissertation (PDF)</a></p>
+    </div>
+  </header>
 
-    <div class="pub-group">
-      <h3>Journal Articles (9)</h3>
-      <div class="pubs">
-
-        <article class="pub" id="pub-1">
-          <span class="pub-no">01</span>
-          <p class="pub-meta"><span>Computers in Human Behavior: Artificial Humans · 2026</span><span class="dtag">Dissertation · Study 6</span></p>
-          <h4>How generative AI reshapes gratitude interventions: Benefits and risks</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Chang, K.Y., Lin, K.Y., &amp; Yeh, S.L.*</p>
-          <p class="summary">A seven-day randomized controlled trial comparing a gratitude chatbot with a traditional gratitude journal. Generative AI cuts both ways: it lowers the cognitive barrier to writing and brings surprise and inspiration, but it also makes gratitude shallower and more self-oriented. Both forms of gratitude raised happiness and a sense of meaning.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/01.pdf&amp;title=CHB: Artificial Humans (2026)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">doi.org/10.1016/j.chbah.2026.100333</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-2">
-          <span class="pub-no">02</span>
-          <p class="pub-meta"><span>Journal of Environmental Psychology · 2026</span><span class="dtag">Dissertation · Study 3</span></p>
-          <h4>Nurturing well-being through nature-based intervention: The mediating role of mindfulness state</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Yeh, M.S., &amp; Yeh, S.L.*</p>
-          <p class="summary">Two studies combining experience sampling with the day reconstruction method show that a nature-based intervention raises happiness, lowers stress, and increases both autonomous motivation and connectedness to nature — and, crucially, that mindfulness state is the key mechanism carrying nature's benefit to well-being.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/02.pdf&amp;title=J. Environmental Psychology (2026)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">doi.org/10.1016/j.jenvp.2025.102849</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-3">
-          <span class="pub-no">03</span>
-          <p class="pub-meta"><span>Journal of Behavioral and Experimental Economics · 2026</span></p>
-          <h4>Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Hsieh, T.Y., &amp; Yeh, S.L.*</p>
-          <p class="summary">A test of how default options, social norms, and positive framing combine: the more nudges used, the stronger the effect, with no interaction between strategies. "Default + positive framing" worked only for younger adults, while "default + social norms" was more effective for older adults — evidence for age-tailored nudge design.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/03.pdf&amp;title=J. Behavioral and Experimental Economics (2026)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1016/j.socec.2026.102598" target="_blank" rel="noopener">doi.org/10.1016/j.socec.2026.102598</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-4">
-          <span class="pub-no">04</span>
-          <p class="pub-meta"><span>Psychology and Aging · 2025</span></p>
-          <h4>Exploring semantic expression disparities in intragenerational and intergenerational communication: A novel perspective on socioemotional selectivity theory</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
-          <p class="summary">A linguistic analysis (LIWC) of 36 conversations. Within generations, older adults used more present-oriented and family-related words than younger adults, consistent with socioemotional selectivity theory; in intergenerational conversation, however, the two groups' language converged, showing that between-group linguistic accommodation outweighs the age differences the theory predicts.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/04.pdf&amp;title=Psychology and Aging (2025)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1037/pag0000877" target="_blank" rel="noopener">doi.org/10.1037/pag0000877</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-5">
-          <span class="pub-no">05</span>
-          <p class="pub-meta"><span>Mindfulness · 2025</span><span class="dtag">Dissertation · Study 1</span></p>
-          <h4>Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
-          <p class="summary">Fifty-six university students were followed for two weeks of daily life by experience sampling. Present-moment focus positively predicted happiness, but external motivation weakened that relationship; participants high in trait mindfulness were more sensitive to external motivation, amplifying its moderating effect — a reminder that mindfulness training should also address the influence of external motivation.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/05.pdf&amp;title=Mindfulness (2025)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">doi.org/10.1007/s12671-025-02534-7</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-6">
-          <span class="pub-no">06</span>
-          <p class="pub-meta"><span>Current Psychology · 2025</span><span class="dtag">Dissertation · Study 5</span></p>
-          <h4>Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Wu, S.H., Li, T.V., &amp; Yeh, S.L.*</p>
-          <p class="summary">Forty-four Taiwanese intergenerational dyads completed three communication scenarios. Both intrapersonal and interpersonal mindfulness raised positive affect, empathy, and communication satisfaction and narrowed psychological distance; interpersonal mindfulness carried the broader benefit, and mindfulness improved older adults' communication quality more comprehensively than younger adults'.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/06.pdf&amp;title=Current Psychology (2025)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">doi.org/10.1007/s12144-025-07849-1</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-7">
-          <span class="pub-no">07</span>
-          <p class="pub-meta"><span>Research Square (Preprint) · 2024</span></p>
-          <h4>Emotional impact on investment and insurance preferences in unit-linked insurance plans</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Liu, H.Y., Chen, L.Y., &amp; Yeh, S.L.*</p>
-          <p class="summary">Framed by the Affect Infusion Model, this paper examines how emotional states shape the trade-off between investment and insurance preferences in unit-linked insurance plans, bringing a psychological perspective to financial product design and consumer decision-making.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/07.pdf&amp;title=Research Square Preprint (2024)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.21203/rs.3.rs-4733981/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-4733981/v1</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-8">
-          <span class="pub-no">08</span>
-          <p class="pub-meta"><span>Research in Applied Psychology · 2024</span></p>
-          <h4>Precision nudging: A customer-oriented approach to business applications <em>(in Chinese)</em></h4>
-          <p class="authors">Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
-          <p class="summary">A systematic review of nudge applications in government, business, and finance, extended to how personality traits and emotions shape a nudge's effectiveness. The paper proposes a "precision nudging" framework that matches the form and strength of a nudge to its purpose and its audience.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/08.pdf&amp;title=Research in Applied Psychology (2024)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.53106/156092512024120081001" target="_blank" rel="noopener">doi.org/10.53106/156092512024120081001</a>
-          </div>
-        </article>
-
-        <article class="pub" id="pub-9">
-          <span class="pub-no">09</span>
-          <p class="pub-meta"><span>Cogent Economics &amp; Finance · 2024</span></p>
-          <h4>Psychological dynamics of unit-linked insurance product decision-making: A cognitive model</h4>
-          <p class="authors">Tsai, C.C., Chen, L.Y., Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
-          <p class="summary">A cognitive model of decision-making for unit-linked insurance products, analyzing the psychological dynamics through which consumers form preferences and make choices about financial products that combine investment with protection.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/09.pdf&amp;title=Cogent Economics %26 Finance (2024)">Read PDF</a>
-            <a class="doi" href="https://doi.org/10.1080/23322039.2024.2422966" target="_blank" rel="noopener">doi.org/10.1080/23322039.2024.2422966</a>
-          </div>
-        </article>
-
+  <section id="diss-abstract">
+    <div class="wrap">
+      <p class="sec-label" id="diss-abs-label">Abstract</p>
+      <h2 id="diss-abs-title">Reclaiming Focus and Happiness in an Age of Distraction</h2>
+      <div class="prose" id="diss-abs-content">
+        <p id="diss-abs-1">In an era saturated by digital technology, the constant interruptions of social media keep people in a chronic state of distraction, while our own restless streams of thought continually pull attention away from the present moment. This pervasive distraction not only undermines cognitive functioning but also erodes well-being. How to cultivate present-moment focus and happiness has therefore become a central question for researchers and practitioners alike.</p>
+        <p id="diss-abs-2">Taking present-moment focus and well-being as its core constructs, this dissertation examines them across three levels: psychological mechanisms, personal practice, and interpersonal influence. Chapter One works at the level of mechanism, asking how external motivation weakens the positive relationship between focus and happiness, and examining the buffering role that trait self-compassion plays when the mind wanders. Chapter Two turns to personal practice, testing how nature-based and mindfulness-based interventions raise everyday focus and well-being. Chapter Three extends the lens to interpersonal influence, exploring how more mindful individuals improve the quality of interpersonal interaction, and how a chatbot cast in a mindful role shapes the expression of interpersonal gratitude.</p>
+        <p id="diss-abs-3">Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people's — in practice.</p>
       </div>
     </div>
-
-    <div class="pub-group">
-      <h3>Conference Paper (1)</h3>
-      <div class="pubs">
-        <article class="pub" id="pub-10">
-          <span class="pub-no">10</span>
-          <p class="pub-meta"><span>IEEE RO-MAN · (under review)</span></p>
-          <h4>Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</h4>
-          <p class="authors"><b>Zeng, P.Y.</b>, Hou, C.A., Pan, C.H., Liu, Y.C., Liu, T., Chiu, T.W., &amp; Yeh, S.L.*</p>
-          <p class="summary">Two experiments testing the emotion-regulation effects of AI chatbots: a 20-minute conversation not only reduced negative affect but also increased positive affect and helped participants return to baseline. Among three facets of perceived empathy, only relational warmth significantly predicted the success of emotion regulation.</p>
-          <div class="pub-actions">
-            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/10.pdf&amp;title=IEEE RO-MAN Conference Paper">Read PDF</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="closing">
-  <div class="wrap">
-    <p class="sec-label">Takeaways</p>
-    <h2>In an Age of Scarce Attention, Focus Is Worth Protecting</h2>
-    <div class="levels">
-      <div class="level">
-        <h3>Psychological Level</h3>
-        <p>Strengthen autonomous motivation and cultivate self-compassion — an inner safeguard for focus.</p>
-      </div>
-      <div class="level">
-        <h3>Practical Level</h3>
-        <p>Actively build a deep connection with nature and with mindfulness — a mechanism that strengthens focus.</p>
-      </div>
-      <div class="level">
-        <h3>Societal Level</h3>
-        <p>Let the value of mindfulness guide education and technology design, so that living in the present becomes a collective choice of our time.</p>
-      </div>
-    </div>
-    <p class="closing-quote">In the age of AI, the scarcest resource is not computing power but human attention.<br>To hold on to the present is to hold on to what makes us human.</p>
-  </div>
-</section>
-
-<section id="thanks">
-  <div class="wrap">
-    <p class="sec-label">Acknowledgments</p>
-    <h2>To Everyone Who Walked This Road With Me</h2>
-    <div class="prose">
-      <p>My deepest thanks to my advisor, Professor Su-Ling Yeh, for her careful guidance; to my colleagues in the EPA Lab for their support along the way; and to the family and friends who stood by me throughout. This dissertation was written standing on your shoulders.</p>
-    </div>
-    <figure class="fig" data-local-fig>
-      <div class="imgbox"><img src="assets/acknowledgment.jpg" alt="Group photo with Professor Su-Ling Yeh and members of the EPA Lab" loading="lazy"></div>
-      <figcaption>With Professor Su-Ling Yeh and friends from the EPA Lab.</figcaption>
-    </figure>
-    <p class="thanks-song">Dedicated, with the song "You Raise Me Up," to everyone who lifted me higher.</p>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <span>Peng-Yu Zeng · Department of Psychology, National Taiwan University</span>
-    <span>From Focus to Happiness: Psychological Mechanisms, Personal Practice, and Interpersonal Influence</span>
+    <span id="footer-text">Peng-Yu Zeng · Department of Psychology, National Taiwan University</span>
   </div>
 </footer>
 
 <script>
-// On Claude Artifacts (where the PDFs and figure images are not bundled),
-// hide local links and figures so nothing renders as a broken asset.
-(function(){
-  var h = location.hostname;
-  if (h.indexOf('claude') !== -1 || h.indexOf('anthropic') !== -1) {
-    document.querySelectorAll('[data-local-pdf],[data-local-fig]').forEach(function(a){ a.style.display = 'none'; });
-  }
-})();
-
-// Side navigation: highlight the section currently in view while scrolling.
-(function(){
-  var links = document.querySelectorAll('#sidenav a[data-spy]');
-  if (!links.length) return;
-  var ids = Array.prototype.map.call(links, function(a){ return a.dataset.spy; });
-  var current = '';
-  function spy(){
-    var pos = window.scrollY + window.innerHeight * 0.3;
-    var active = '';
-    for (var i = 0; i < ids.length; i++){
-      var el = document.getElementById(ids[i]);
-      if (el && el.offsetTop <= pos) active = ids[i];
+const publications = [
+  {
+    id: 1,
+    en: {
+      title: "How generative AI reshapes gratitude interventions: Benefits and risks",
+      authors: "Zeng, P.-Y., Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.",
+      venue: "Computers in Human Behavior: Artificial Humans, 2026"
+    },
+    zh: {
+      title: "生成式AI如何重塑感恩介入：益處與風險",
+      authors: "曾鵬宇、Chang, K.-Y., Lin, K.-Y., & Yeh, S.-L.",
+      venue: "Computers in Human Behavior: Artificial Humans, 2026"
     }
-    if (active !== current){
-      current = active;
-      links.forEach(function(a){
-        a.classList.toggle('active', a.dataset.spy === active);
-      });
+  },
+  {
+    id: 2,
+    en: {
+      title: "Nurturing well-being through nature-based intervention: The mediating role of mindfulness state",
+      authors: "Zeng, P.-Y., Yeh, M.-S., & Yeh, S.-L.",
+      venue: "Journal of Environmental Psychology, 2026"
+    },
+    zh: {
+      title: "透過自然介入培養幸福感：正念狀態的中介角色",
+      authors: "曾鵬宇、Yeh, M.-S., & Yeh, S.-L.",
+      venue: "Journal of Environmental Psychology, 2026"
+    }
+  },
+  {
+    id: 3,
+    en: {
+      title: "Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts",
+      authors: "Zeng, P.-Y., Hsieh, T.-Y., & Yeh, S.-L.",
+      venue: "Journal of Behavioral and Experimental Economics, 2026"
+    },
+    zh: {
+      title: "輕推朝向長期收益：跨年齡群體組合輕推策略的不同影響",
+      authors: "曾鵬宇、Hsieh, T.-Y., & Yeh, S.-L.",
+      venue: "Journal of Behavioral and Experimental Economics, 2026"
+    }
+  },
+  {
+    id: 4,
+    en: {
+      title: "Exploring semantic expression disparities in intragenerational and intergenerational communication",
+      authors: "Zeng, P.-Y., & Yeh, S.-L.",
+      venue: "Psychology and Aging, 2025"
+    },
+    zh: {
+      title: "探索世代內與跨世代溝通中的語義表達差異",
+      authors: "曾鵬宇 & Yeh, S.-L.",
+      venue: "Psychology and Aging, 2025"
+    }
+  },
+  {
+    id: 5,
+    en: {
+      title: "Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness",
+      authors: "Zeng, P.-Y., & Yeh, S.-L.",
+      venue: "Mindfulness, 2025"
+    },
+    zh: {
+      title: "擁抱當下專注以提升幸福感：外在動機與特質正念的調節效應",
+      authors: "曾鵬宇 & Yeh, S.-L.",
+      venue: "Mindfulness, 2025"
+    }
+  },
+  {
+    id: 6,
+    en: {
+      title: "Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication",
+      authors: "Zeng, P.-Y., Wu, S.-H., Li, T.-V., & Yeh, S.-L.",
+      venue: "Current Psychology, 2025"
+    },
+    zh: {
+      title: "培養跨世代理解：個人內正念與人際正念在溝通中的角色",
+      authors: "曾鵬宇、Wu, S.-H., Li, T.-V., & Yeh, S.-L.",
+      venue: "Current Psychology, 2025"
+    }
+  },
+  {
+    id: 7,
+    en: {
+      title: "Emotional impact on investment and insurance preferences in unit-linked insurance plans",
+      authors: "Zeng, P.-Y., Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.",
+      venue: "Research Square (Preprint), 2024"
+    },
+    zh: {
+      title: "情緒對投資型保單中投資與保險偏好的影響",
+      authors: "曾鵬宇、Liu, H.-Y., Chen, L.-Y., & Yeh, S.-L.",
+      venue: "Research Square (Preprint), 2024"
+    }
+  },
+  {
+    id: 8,
+    en: {
+      title: "Precision nudging: A customer-oriented approach to business applications",
+      authors: "Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.",
+      venue: "Research in Applied Psychology, 2024"
+    },
+    zh: {
+      title: "精準輕推：以客戶為導向的商業應用",
+      authors: "黃振維、曾鵬宇、& Yeh, S.-L.",
+      venue: "應用心理研究, 2024"
+    }
+  },
+  {
+    id: 9,
+    en: {
+      title: "Psychological dynamics of unit-linked insurance product decision-making: A cognitive model",
+      authors: "Tsai, C.-C., Chen, L.-Y., Huang, C.-W., Zeng, P.-Y., & Yeh, S.-L.",
+      venue: "Cogent Economics & Finance, 2024"
+    },
+    zh: {
+      title: "投資型保單決策的心理動態：認知模型",
+      authors: "Tsai, C.-C., Chen, L.-Y., Huang, C.-W., 曾鵬宇, & Yeh, S.-L.",
+      venue: "Cogent Economics & Finance, 2024"
     }
   }
-  var t = null;
-  window.addEventListener('scroll', function(){
-    if (t) return;
-    t = setTimeout(function(){ t = null; spy(); }, 80);
-  }, {passive: true});
-  spy();
-})();
+];
 
-// Reading progress bar
-(function(){
-  var bar = document.getElementById('progress');
-  if (!bar) return;
-  function upd(){
-    var h = document.documentElement;
-    var max = h.scrollHeight - window.innerHeight;
-    bar.style.width = (max > 0 ? (window.scrollY / max * 100) : 0) + '%';
+const translations = {
+  en: {
+    'page-title': 'Peng-Yu Zeng — CV & Doctoral Dissertation',
+    'cv-title': 'Peng-Yu Zeng',
+    'cv-subtitle': 'Department of Psychology, National Taiwan University',
+    'contact-title': 'Contact Information',
+    'contact-details': '<strong>Email:</strong> zengmaterial@gmail.com<br><strong>Phone:</strong> +886 966 671 363<br><strong>Website:</strong> <a href="https://pengyu-zeng.vercel.app">pengyu-zeng.vercel.app</a><br><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=VF4lZkYAAAAJ">VF4lZkYAAAAJ</a>',
+    'research-title': 'Research Interests',
+    'research-text': '<p>• Human–AI interaction and digital well-being — generative AI as a vehicle for psychological intervention</p><p>• Well-being interventions — mindfulness and positive-psychology interventions</p><p>• Communication, decision-making, and the lifespan — lifespan differences in communication and decision-making</p>',
+    'edu-title': 'Education',
+    'edu-phd': '<strong>Ph.D. in Psychology</strong><br>National Taiwan University, Taipei, Taiwan, 2026<br><em>Dissertation:</em> From Focus to Happiness: Exploring Psychological Mechanisms, Personal Practice, and Interpersonal Influence<br><em>Advisor:</em> Su-Ling Yeh, Ph.D.',
+    'edu-bs': '<strong>B.S. in Psychology and Chemical Engineering (Double Major)</strong><br>Chung Yuan Christian University, Taoyuan, Taiwan, 2021',
+    'pub-title': 'Publications',
+    'pub-journal-title': 'Peer-Reviewed Journal Articles (9)',
+    'pub-conf-title': 'Conference Paper (1)',
+    'pub-10-title': 'Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy',
+    'pub-10-authors': 'Zeng, P.-Y., Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
+    'pub-10-venue': 'IEEE RO-MAN (under review)',
+    'diss-subtitle': 'Department of Psychology, National Taiwan University · Doctoral Dissertation',
+    'diss-title-1': 'From',
+    'diss-title-2': 'Focus',
+    'diss-title-3': 'to',
+    'diss-title-4': 'Happiness',
+    'diss-desc': 'Psychological Mechanisms, Personal Practice, and Interpersonal Influence',
+    'diss-author-label': 'Author',
+    'diss-author': 'Peng-Yu Zeng',
+    'diss-advisor-label': 'Advisor',
+    'diss-advisor': 'Su-Ling Yeh',
+    'diss-stat-1': 'Chapters',
+    'diss-stat-2': 'Studies',
+    'diss-stat-3': 'Journal Articles',
+    'diss-stat-4': 'Conference Paper',
+    'diss-pdf-btn': 'Read the Full Dissertation (PDF)',
+    'diss-abs-label': 'Abstract',
+    'diss-abs-title': 'Reclaiming Focus and Happiness in an Age of Distraction',
+    'diss-abs-1': 'In an era saturated by digital technology, the constant interruptions of social media keep people in a chronic state of distraction, while our own restless streams of thought continually pull attention away from the present moment. This pervasive distraction not only undermines cognitive functioning but also erodes well-being. How to cultivate present-moment focus and happiness has therefore become a central question for researchers and practitioners alike.',
+    'diss-abs-2': 'Taking present-moment focus and well-being as its core constructs, this dissertation examines them across three levels: psychological mechanisms, personal practice, and interpersonal influence. Chapter One works at the level of mechanism, asking how external motivation weakens the positive relationship between focus and happiness, and examining the buffering role that trait self-compassion plays when the mind wanders. Chapter Two turns to personal practice, testing how nature-based and mindfulness-based interventions raise everyday focus and well-being. Chapter Three extends the lens to interpersonal influence, exploring how more mindful individuals improve the quality of interpersonal interaction, and how a chatbot cast in a mindful role shapes the expression of interpersonal gratitude.',
+    'diss-abs-3': 'Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people\'s — in practice.',
+    'footer-text': 'Peng-Yu Zeng · Department of Psychology, National Taiwan University'
+  },
+  zh: {
+    'page-title': '曾鵬宇 — 履歷與博士論文',
+    'cv-title': '曾鵬宇',
+    'cv-subtitle': '國立臺灣大學心理學系暨研究所',
+    'contact-title': '聯絡方式',
+    'contact-details': '<strong>電子郵件：</strong> zengmaterial@gmail.com<br><strong>電話：</strong> +886 966 671 363<br><strong>個人網站：</strong> <a href="https://pengyu-zeng.vercel.app">pengyu-zeng.vercel.app</a><br><strong>Google Scholar：</strong> <a href="https://scholar.google.com/citations?user=VF4lZkYAAAAJ">VF4lZkYAAAAJ</a>',
+    'research-title': '研究興趣',
+    'research-text': '<p>• 人類與 AI 互動及數位福祉——生成式 AI 作為心理介入工具</p><p>• 幸福感介入——正念與正向心理學介入</p><p>• 溝通、決策制定與壽命——跨越壽命的溝通與決策差異</p>',
+    'edu-title': '教育背景',
+    'edu-phd': '<strong>心理學博士</strong><br>國立臺灣大學，台北，台灣，2026<br><em>論文題目：</em>從專注到幸福：心理機制、個人實踐與人際影響力的探討<br><em>指導教授：</em>葉素玲博士',
+    'edu-bs': '<strong>心理學與化學工程雙學位學士</strong><br>中原大學，桃園，台灣，2021',
+    'pub-title': '學術發表',
+    'pub-journal-title': '同儕審查期刊論文（9 篇）',
+    'pub-conf-title': '會議論文（1 篇）',
+    'pub-10-title': '談到感到沮喪時能否與 AI 聊天機器人交談有幫助？檢視感知同理心的角色',
+    'pub-10-authors': '曾鵬宇、Hou, C.-A., Pan, C.-H., Liu, Y.-C., Liu, T., Chiu, T.-W., & Yeh, S.-L.',
+    'pub-10-venue': 'IEEE RO-MAN（審查中）',
+    'diss-subtitle': '國立臺灣大學心理學系暨研究所·博士論文',
+    'diss-title-1': '從',
+    'diss-title-2': '專注',
+    'diss-title-3': '到',
+    'diss-title-4': '幸福',
+    'diss-desc': '心理機制、個人實踐、人際影響力的探討',
+    'diss-author-label': '研究生',
+    'diss-author': '曾鵬宇',
+    'diss-advisor-label': '指導教授',
+    'diss-advisor': '葉素玲',
+    'diss-stat-1': '章節',
+    'diss-stat-2': '研究',
+    'diss-stat-3': '期刊論文',
+    'diss-stat-4': '會議論文',
+    'diss-pdf-btn': '閱讀完整博士論文（PDF）',
+    'diss-abs-label': '摘要',
+    'diss-abs-title': '在分心的時代，重塑專注與幸福',
+    'diss-abs-1': '在數位科技高度滲透的當代，社群媒體的持續干擾使人們長期處於分心狀態；與此同時，個體內在紛擾的思緒亦不斷將注意力從當下抽離。這種普遍的分心狀態不僅削弱個體的認知功能，更對幸福感造成負面影響。如何形塑當下專注與幸福感已成為研究者與實踐者關注的核心問題。',
+    'diss-abs-2': '本論文以「專注當下」與「幸福感」為核心構念，從心理機制、個人實踐與人際影響力三個層次展開探討。第一章從機制層次切入，探討外在動機如何削弱專注與幸福感之間的正向關係，並檢視自我慈悲特質在個體分心時的關鍵緩衝作用。第二章轉向實踐層次，測試自然介入與正念訓練如何提升日常專注與幸福感。第三章擴展至人際影響力層次，探討正念特質較高的個體如何改善人際互動品質，以及正念角色的聊天機器人如何重塑人際感恩的表達。',
+    'diss-abs-3': '本論文不僅從理論層次揭示影響專注與幸福感的各種因素，亦在實踐層次為提升自身與他人福祉提供具體啟示。',
+    'footer-text': '曾鵬宇·國立臺灣大學心理學系暨研究所'
   }
-  window.addEventListener('scroll', upd, {passive:true});
-  window.addEventListener('resize', upd);
-  upd();
-})();
+};
 
-// Fade sections in on scroll (respects reduced-motion; shows everything where unsupported).
-(function(){
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var els = document.querySelectorAll('.sec-label, h2, .prose, .epigraph, .bigstat, .frame-note, .chapter, .pub, .level, .closing-quote, #thanks .fig, .thanks-song, .keywords, .pub-group h3');
-  els.forEach(function(e){ e.classList.add('reveal-init'); });
-  function show(e){ e.classList.add('reveal-in'); }
-  if (!('IntersectionObserver' in window)){ els.forEach(show); return; }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(x){
-      if (x.isIntersecting){ show(x.target); io.unobserve(x.target); }
-    });
-  }, {rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){ io.observe(e); });
-  setTimeout(function(){ els.forEach(show); }, 3000); // fail-safe: reveal everything after 3s
-})();
+let currentLang = 'en';
 
-// Count-up animation for the hero statistics
-(function(){
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var run = false;
-  function animate(){
-    // Only ever run once, and only while the page is actually on screen — in a
-    // background tab rAF and timers are throttled, which would strand the
-    // counters part-way through and show the wrong numbers.
-    if (run || document.visibilityState !== 'visible') return;
-    run = true;
-    document.querySelectorAll('.stat b').forEach(function(el){
-      var target = parseInt(el.textContent, 10);
-      if (isNaN(target)) return;
-      var start = null, dur = 900;
-      el.textContent = '0';
-      function step(t){
-        if (!start) start = t;
-        var p = Math.min((t - start) / dur, 1);
-        el.textContent = String(Math.round(target * p));
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      setTimeout(function(){ el.textContent = String(target); }, dur + 300); // fail-safe
-    });
-  }
-  document.addEventListener('visibilitychange', animate);
-  animate();
-})();
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
 
-// Mobile table-of-contents button
-(function(){
-  var btn = document.getElementById('tocbtn');
-  var panel = document.getElementById('tocpanel');
-  if (!btn || !panel) return;
-  btn.addEventListener('click', function(){
-    var open = panel.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  // Update all text elements
+  Object.keys(translations[lang]).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) {
+      el.innerHTML = translations[lang][key];
+    }
   });
-  panel.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      panel.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
+
+  // Update nav buttons
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.textContent = btn.getAttribute(`data-lang-${lang}`);
   });
-})();
+
+  document.getElementById('lang-toggle').textContent = btn.getAttribute(`data-lang-${lang}`);
+
+  // Render publications
+  renderPublications();
+
+  // Update page title
+  document.title = translations[lang]['page-title'];
+}
+
+function renderPublications() {
+  const list = document.getElementById('publications-list');
+  list.innerHTML = publications.map(pub => {
+    const content = pub[currentLang];
+    return `
+      <div class="pub-item">
+        <strong>${content.title}</strong><br>
+        <div class="authors">${content.authors}</div>
+        <em>${content.venue}</em>
+      </div>
+    `;
+  }).join('');
+}
+
+// Event listeners
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.getElementById('cv').classList.remove('active');
+    document.getElementById('dissertation').classList.remove('active');
+    document.getElementById(btn.dataset.section).classList.add('active');
+    window.scrollTo(0, 0);
+  });
+});
+
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  const newLang = currentLang === 'en' ? 'zh' : 'en';
+  setLanguage(newLang);
+});
+
+// Initialize
+setLanguage('en');
 </script>
 </html>
