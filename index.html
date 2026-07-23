@@ -558,7 +558,7 @@ details.takeaway summary::-webkit-details-marker{display:none}
         <div><strong id="cv-email-label">Email:</strong> <a href="mailto:zengmaterial@gmail.com">zengmaterial@gmail.com</a></div>
         <div><strong id="cv-phone-label">Phone:</strong> +886 966 671 363</div>
         <div><strong id="cv-site-label">Website:</strong> <a href="https://pengyu-zeng.vercel.app">pengyu-zeng.vercel.app</a></div>
-        <div><strong id="cv-scholar-label">Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=VF4lZkYAAAAJ">VF4lZkYAAAAJ</a></div>
+        <div><strong id="cv-scholar-label">Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=VF4lZkYAAAAJ" target="_blank" rel="noopener" id="cv-scholar-link">View Profile</a></div>
       </div>
     </div>
 
@@ -2014,10 +2014,10 @@ const awards = [
 ];
 
 const entrepreneurship = [
-  {role:"Co-Founder, PsybyPsy (2020–Present)", en:"Lead the psychological application and AI-driven system design of a platform that applies behavioral-science and well-being research to the workplace—reducing employee burnout and improving productivity.", zh:"領導一個平台的心理應用和AI驅動系統設計，該平台將行為科學和幸福感研究應用於工作場所，以減少員工倦怠和提高生產力。", 'zh-cn':"领导一个平台的心理应用和AI驱动系统设计，该平台将行为科学和幸福感研究应用于工作场所，以减少员工倦怠和提高生产力。"},
-  {role:"Industry–Academia Collaboration, Delta Electronics (2025)", en:"Co-developed a conversational AI chatbot, applying psychological principles of human–AI interaction to the product design.", zh:"共同開發對話式AI聊天機器人，將人類–AI互動的心理學原理應用於產品設計。", 'zh-cn':"共同开发对话式AI聊天机器人，将人类–AI互动的心理学原理应用于产品设计。"},
-  {role:"Industry–Academia Collaboration, Cathay Life Insurance (2023–2024)", en:"Investigated the psychological mechanisms of insurance marketing to inform customer-centric, behaviorally grounded strategy.", zh:"調查保險營銷的心理機制，以告知以客戶為中心、行為為基礎的策略。", 'zh-cn':"调查保险营销的心理机制，以告知以客户为中心、行为为基础的策略。"},
-  {role:"Teaching Assistant, The Uniqueness of Human Beings in the Age of AI, National Taiwan University (2025–2026)", en:"Designed course content and in-class activities, developed the course website, and assisted in recording online course materials.", zh:"設計課程內容和課堂活動，開發課程網站，協助錄製線上課程材料。", 'zh-cn':"设计课程内容和课堂活动，开发课程网站，协助录制线上课程材料。"}
+  {role:{en:"Co-Founder, PsybyPsy (2020–Present)", zh:"共同創辦人，PsybyPsy（2020–至今）", 'zh-cn':"联合创始人，PsybyPsy（2020–至今）"}, en:"Lead the psychological application and AI-driven system design of a platform that applies behavioral-science and well-being research to the workplace—reducing employee burnout and improving productivity.", zh:"領導一個平台的心理應用和AI驅動系統設計，該平台將行為科學和幸福感研究應用於工作場所，以減少員工倦怠和提高生產力。", 'zh-cn':"领导一个平台的心理应用和AI驱动系统设计，该平台将行为科学和幸福感研究应用于工作场所，以减少员工倦怠和提高生产力。"},
+  {role:{en:"Industry–Academia Collaboration, Delta Electronics (2025)", zh:"產學合作，台達電子（2025）", 'zh-cn':"产学合作，台达电子（2025）"}, en:"Co-developed a conversational AI chatbot, applying psychological principles of human–AI interaction to the product design.", zh:"共同開發對話式AI聊天機器人，將人類–AI互動的心理學原理應用於產品設計。", 'zh-cn':"共同开发对话式AI聊天机器人，将人类–AI互动的心理学原理应用于产品设计。"},
+  {role:{en:"Industry–Academia Collaboration, Cathay Life Insurance (2023–2024)", zh:"產學合作，國泰人壽（2023–2024）", 'zh-cn':"产学合作，国泰人寿（2023–2024）"}, en:"Investigated the psychological mechanisms of insurance marketing to inform customer-centric, behaviorally grounded strategy.", zh:"調查保險營銷的心理機制，以告知以客戶為中心、行為為基礎的策略。", 'zh-cn':"调查保险营销的心理机制，以告知以客户为中心、行为为基础的策略。"},
+  {role:{en:"Teaching Assistant, The Uniqueness of Human Beings in the Age of AI, National Taiwan University (2025–2026)", zh:"教學助理，「AI 時代的人之獨特性」，國立臺灣大學（2025–2026）", 'zh-cn':"教学助理，「AI 时代的人之独特性」，国立台湾大学（2025–2026）"}, en:"Designed course content and in-class activities, developed the course website, and assisted in recording online course materials.", zh:"設計課程內容和課堂活動，開發課程網站，協助錄製線上課程材料。", 'zh-cn':"设计课程内容和课堂活动，开发课程网站，协助录制线上课程材料。"}
 ];
 
 const publications = [
@@ -2040,10 +2040,11 @@ const translations = {
     'cv-phone-label': 'Phone:',
     'cv-site-label': 'Website:',
     'cv-scholar-label': 'Google Scholar:',
+    'cv-scholar-link': 'View Profile',
     'research-title': 'Research Interests',
     'ri-1': 'Human–AI interaction and digital well-being — generative AI as a vehicle for psychological intervention',
     'ri-2': 'Well-being interventions — mindfulness and positive-psychology interventions',
-    'ri-3': 'Communication, decision-making, and the lifespan — lifespan differences in communication and decision-making',
+    'ri-3': 'Communication, decision-making, and age differences — age-related differences in communication and decision-making',
     'edu-title': 'Education',
     'edu-phd-title': 'Ph.D. in Psychology',
     'edu-phd-uni': 'National Taiwan University, Taipei, Taiwan, 2026',
@@ -2091,10 +2092,11 @@ const translations = {
     'cv-phone-label': '電話：',
     'cv-site-label': '網站：',
     'cv-scholar-label': 'Google Scholar：',
+    'cv-scholar-link': '查看個人檔案',
     'research-title': '研究興趣',
     'ri-1': '人類與 AI 互動及數位福祉——生成式 AI 作為心理介入工具',
     'ri-2': '幸福感介入——正念與正向心理學介入',
-    'ri-3': '溝通、決策制定與壽命——跨越壽命的溝通與決策差異',
+    'ri-3': '溝通、決策制定與年齡差異——不同年齡層的溝通與決策差異',
     'edu-title': '教育背景',
     'edu-phd-title': '心理學博士',
     'edu-phd-uni': '國立臺灣大學，台北，台灣，2026',
@@ -2142,10 +2144,11 @@ const translations = {
     'cv-phone-label': '电话：',
     'cv-site-label': '网站：',
     'cv-scholar-label': 'Google Scholar：',
+    'cv-scholar-link': '查看个人档案',
     'research-title': '研究兴趣',
     'ri-1': '人类与 AI 互动及数字福祉——生成式 AI 作为心理干预工具',
     'ri-2': '幸福感干预——正念与正向心理学干预',
-    'ri-3': '沟通、决策制定与寿命——跨越寿命的沟通与决策差异',
+    'ri-3': '沟通、决策制定与年龄差异——不同年龄层的沟通与决策差异',
     'edu-title': '教育背景',
     'edu-phd-title': '心理学博士',
     'edu-phd-uni': '国立台湾大学，台北，台湾，2026',
@@ -2253,7 +2256,8 @@ function renderEntrepreneurship() {
   const list = document.getElementById('entrepreneurship-list');
   list.innerHTML = entrepreneurship.map(item => {
     const text = item[currentLang] || item.zh || item.en;
-    return `<div class="cv-entry"><div class="cv-entry-title">${item.role}</div><div class="cv-entry-desc">${text}</div></div>`;
+    const role = item.role[currentLang] || item.role.zh || item.role.en;
+    return `<div class="cv-entry"><div class="cv-entry-title">${role}</div><div class="cv-entry-desc">${text}</div></div>`;
   }).join('');
 }
 
