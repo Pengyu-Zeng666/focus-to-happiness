@@ -246,6 +246,288 @@ nav button:hover:not(.active){
   .diss-subtitle{font-size:16px}
   .diss-stats{grid-template-columns:1fr 1fr}
 }
+
+/* ===== Restored rich dissertation styles (scoped) ===== */
+#dissertation .diss-content{display:none}
+#dissertation .diss-content.active{display:block}
+/* ---------- hero ---------- */
+#dissertation .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+#dissertation .hero .wrap{padding-top:96px; padding-bottom:88px; position:relative; z-index:1}
+.breath{
+  position:absolute; right:-140px; top:-140px; width:520px; height:520px;
+  border-radius:50%; border:1px solid var(--line); opacity:.55; z-index:0;
+  animation:breathe 9s ease-in-out infinite;
+}
+.breath::after{
+  content:""; position:absolute; inset:70px; border-radius:50%;
+  border:1px solid var(--line);
+}
+.breath::before{
+  content:""; position:absolute; inset:150px; border-radius:50%;
+  background:var(--accent-soft); opacity:.6;
+}
+@keyframes breathe{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+.eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 28px;
+}
+#dissertation h1{
+  font-size:clamp(42px,7.4vw,68px); font-weight:600; letter-spacing:-.015em;
+  line-height:1.12; margin:0 0 14px; text-wrap:balance;
+}
+#dissertation h1 .kanji-accent{color:var(--accent-ink)}
+.subtitle{
+  font-size:clamp(18px,2.6vw,23px); color:var(--muted);
+  letter-spacing:0; line-height:1.4; margin:0 0 40px; max-width:22em;
+}
+.byline{
+  font-family:var(--sans); font-size:14.5px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:8px 28px; margin:0 0 44px;
+}
+.byline strong{color:var(--ink); font-weight:600}
+.stats{display:flex; flex-wrap:wrap; gap:0}
+.stat{
+  padding:6px 28px 6px 0; margin-right:28px;
+  border-right:1px solid var(--line);
+}
+.stat:last-child{border-right:none}
+.stat b{
+  display:block; font-size:30px; font-weight:600; color:var(--accent-ink);
+  font-variant-numeric:tabular-nums; line-height:1.3;
+}
+.stat span{
+  font-family:var(--sans); font-size:11.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--muted);
+}
+.hero-thesis{margin-top:40px}
+
+/* ---------- buttons ---------- */
+.btn-pdf{
+  font-family:var(--sans); font-size:13px; letter-spacing:.02em;
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--accent); color:#fff; padding:7px 18px;
+  border-radius:999px; white-space:nowrap;
+}
+:root[data-theme="dark"] .btn-pdf{color:#10160f}
+@media (prefers-color-scheme: dark){ .btn-pdf{color:#10160f} }
+:root[data-theme="light"] .btn-pdf{color:#fff}
+.btn-pdf:hover{text-decoration:none; filter:brightness(1.08)}
+.btn-pdf::before{content:"⬒"; font-size:12px}
+
+/* ---------- sections ---------- */
+#dissertation section{padding:72px 0}
+#dissertation section + section{border-top:1px solid var(--line)}
+.sec-label{
+  font-family:var(--sans); font-size:12px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold); margin:0 0 14px;
+}
+#dissertation h2{
+  font-size:clamp(27px,4.2vw,34px); font-weight:600; letter-spacing:-.01em;
+  line-height:1.2; margin:0 0 30px; text-wrap:balance;
+}
+.prose{max-width:38em}
+.prose p{margin:0 0 1.2em}
+.keywords{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.kw{
+  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:5px 14px; border-radius:999px;
+}
+
+/* ---------- chapters ---------- */
+.frame-note{max-width:38em; color:var(--ink); margin:0 0 40px}
+.chapters{display:flex; flex-direction:column; gap:28px}
+.chapter{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  box-shadow:var(--shadow); padding:34px 38px;
+}
+.ch-head{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px}
+.ch-num{
+  font-family:var(--sans); font-size:11.5px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold); white-space:nowrap;
+}
+.ch-head h3{font-size:23px; font-weight:600; letter-spacing:-.01em; margin:0}
+.ch-q{color:var(--accent-ink); font-size:17px; margin:4px 0 12px; line-height:1.4}
+.chapter > p{color:var(--ink); margin:0 0 22px; font-size:16.5px}
+.studies{display:flex; flex-direction:column; border-top:1px solid var(--line)}
+
+details.study{border-bottom:1px solid var(--line)}
+details.study summary{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:18px 6px; cursor:pointer; list-style:none; border-radius:6px;
+}
+details.study summary:hover{background:var(--accent-soft)}
+details.study summary::-webkit-details-marker{display:none}
+details.study summary:hover .study-name{color:var(--accent-ink)}
+.study-name{flex:1 1 280px; min-width:0; font-size:17px; line-height:1.4}
+.study-name em{
+  font-style:normal; font-family:var(--sans); font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted); margin-right:10px; white-space:nowrap;
+}
+.chev{
+  font-family:var(--sans); font-size:15px; color:var(--accent-ink);
+  width:36px; height:36px; flex:none; border:1.5px solid var(--accent);
+  border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .25s ease; align-self:center; background:var(--surface);
+}
+details[open] > summary .chev{transform:rotate(180deg)}
+.pub-tag{
+  font-family:var(--sans); font-size:12px; letter-spacing:.02em;
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:3px 12px; border-radius:999px; white-space:nowrap;
+}
+.pub-tag:hover{text-decoration:none; filter:brightness(.96)}
+.unpub{
+  font-family:var(--sans); font-size:12px; letter-spacing:.02em;
+  color:var(--muted); border:1px solid var(--line);
+  padding:2px 12px; border-radius:999px; white-space:nowrap;
+}
+.study-body{
+  padding:6px 2px 26px; border-top:1px dashed var(--line); margin-top:-1px;
+}
+.study-body p{font-size:16px; margin:16px 0 0; color:var(--ink)}
+#dissertation section[id], #dissertation .chapter[id]{scroll-margin-top:24px}
+.study-body p b{
+  font-family:var(--sans); font-size:11.5px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--gold); font-weight:600;
+  display:block; margin-bottom:3px;
+}
+.study-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; align-items:center}
+.thesis-link{
+  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid var(--accent); color:var(--accent-ink);
+  padding:6px 16px; border-radius:999px; white-space:nowrap;
+}
+.thesis-link:hover{text-decoration:none; background:var(--accent-soft)}
+.thesis-link::before{content:"⬒"; font-size:12px}
+
+/* ---------- publications ---------- */
+.pub-group{margin-top:44px}
+.pub-group:first-of-type{margin-top:0}
+.pub-group h3{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.18em;
+  text-transform:uppercase; font-weight:600;
+  color:var(--muted); margin:0 0 20px;
+}
+.pubs{display:flex; flex-direction:column; gap:20px}
+.pub{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  box-shadow:var(--shadow); padding:26px 30px;
+  display:grid; grid-template-columns:56px 1fr; gap:4px 22px;
+}
+.pub-no{
+  grid-row:span 5; font-family:var(--sans); font-size:22px; font-weight:600;
+  color:var(--faint); font-variant-numeric:tabular-nums; line-height:1.4;
+}
+.pub[id]{scroll-margin-top:24px}
+.pub:target{border-color:var(--accent)}
+.pub-meta{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:.04em;
+  color:var(--gold); display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; margin:0;
+}
+.pub-meta > span:first-child{color:var(--accent-ink); font-weight:600}
+.pub-meta .dtag{
+  color:var(--accent-ink); background:var(--accent-soft);
+  padding:2px 10px; border-radius:999px; letter-spacing:.02em;
+}
+.pub h4{font-size:18.5px; font-weight:600; line-height:1.35; margin:6px 0 4px; letter-spacing:-.005em; text-wrap:balance}
+.pub .authors{font-family:var(--sans); font-size:13.5px; color:var(--muted); margin:0}
+.pub .authors b{color:var(--ink); font-weight:600}
+.pub .summary{font-size:16px; color:var(--ink); margin:10px 0 14px}
+.pub-actions{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center}
+.doi{
+  font-family:var(--sans); font-size:13px; letter-spacing:.01em;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.doi::before{content:"→"; color:var(--gold)}
+@media (max-width:560px){
+  .pub{grid-template-columns:1fr}
+  .pub-no{grid-row:auto}
+  .chapter{padding:26px 22px}
+}
+
+/* ---------- figures ---------- */
+.fig{margin:20px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:14px}
+.fig .imgbox{background:#fff; border-radius:4px; padding:10px}
+.fig img{display:block; width:100%; height:auto}
+.fig figcaption{font-family:var(--sans); font-size:13px; color:var(--muted); margin-top:12px; line-height:1.6}
+.fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px}
+.fig-grid .fig{margin:0}
+@media (max-width:640px){ .fig-grid{grid-template-columns:1fr} }
+
+/* ---------- context stats ---------- */
+blockquote.epigraph{
+  border-left:3px solid var(--gold); margin:0 0 36px; padding:8px 0 8px 24px;
+  font-size:20px; line-height:1.55; letter-spacing:-.005em; max-width:32em;
+}
+blockquote.epigraph .en{
+  display:block; font-style:italic; color:var(--ink); margin-bottom:10px;
+}
+blockquote.epigraph cite{
+  display:block; font-family:var(--sans); font-style:normal; font-size:13px;
+  color:var(--muted); margin-top:12px; letter-spacing:.03em;
+}
+.bigstats{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.bigstat{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:26px 28px; box-shadow:var(--shadow);
+}
+.bigstat b{
+  display:block; font-size:42px; font-weight:600; color:var(--accent-ink);
+  line-height:1.2; font-variant-numeric:tabular-nums;
+}
+.bigstat span{
+  display:block; font-family:var(--sans); font-size:13.5px;
+  color:var(--muted); line-height:1.55; margin-top:10px;
+}
+@media (max-width:640px){ .bigstats{grid-template-columns:1fr} }
+
+/* ---------- chapter takeaway ---------- */
+details.takeaway{margin-top:26px; background:var(--accent-soft); border-radius:6px}
+details.takeaway summary{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:20px 28px; cursor:pointer; list-style:none;
+}
+details.takeaway summary::-webkit-details-marker{display:none}
+.takeaway .tk-label{
+  font-family:var(--sans); font-size:13px; letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent-ink); font-weight:600; margin:0; line-height:1.5;
+}
+.tk-body{padding:0 28px 26px}
+.takeaway p{font-size:16px; margin:14px 0 0; color:var(--ink)}
+.takeaway p b{color:var(--accent-ink)}
+.takeaway .fig{background:var(--surface); margin-top:0}
+@media (max-width:560px){
+  details.takeaway summary{padding:18px 20px}
+  .tk-body{padding:0 20px 22px}
+}
+
+/* ---------- closing ---------- */
+.levels{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.level{
+  background:var(--surface); border:1px solid var(--line); border-radius:6px;
+  padding:26px 28px; box-shadow:var(--shadow);
+}
+.level h3{font-size:18px; font-weight:600; letter-spacing:-.005em; margin:0 0 10px; color:var(--accent-ink)}
+.level p{font-family:var(--sans); font-size:14px; color:var(--muted); line-height:1.65; margin:0}
+@media (max-width:640px){ .levels{grid-template-columns:1fr} }
+.closing-quote{
+  margin:56px auto 0; max-width:20em; text-align:center;
+  font-size:clamp(20px,3.2vw,27px); line-height:1.5; letter-spacing:-.01em;
+  color:var(--accent-ink); text-wrap:balance;
+}
+.closing-quote::before{
+  content:""; display:block; width:56px; height:1px;
+  background:var(--gold); margin:0 auto 36px;
+}
+.thanks-song{
+  font-family:var(--sans); font-size:14px; color:var(--muted);
+  text-align:center; margin:28px 0 0; letter-spacing:.01em;
+}
+
+
 </style>
 
 <header>
@@ -257,8 +539,8 @@ nav button:hover:not(.active){
       <div class="lang-dropdown">
         <button class="lang-btn" id="lang-toggle" data-lang-en="Language" data-lang-zh="語言" data-lang-zh-cn="语言">Language</button>
         <div class="lang-menu" id="lang-menu">
-          <button class="lang-opt" data-lang="en">English</button>
-          <button class="lang-opt active" data-lang="zh">繁體中文</button>
+          <button class="lang-opt active" data-lang="en">English</button>
+          <button class="lang-opt" data-lang="zh">繁體中文</button>
           <button class="lang-opt" data-lang="zh-cn">简体中文</button>
         </div>
       </div>
@@ -299,7 +581,7 @@ nav button:hover:not(.active){
         <div class="cv-entry-title" id="edu-phd-title">Ph.D. in Psychology</div>
         <div class="cv-entry-meta" id="edu-phd-uni">National Taiwan University, Taipei, Taiwan, 2026</div>
         <div class="cv-entry-desc" id="edu-phd-diss"><strong id="diss-label">Dissertation:</strong> <span id="diss-title-text">From Focus to Happiness: Exploring Psychological Mechanisms, Personal Practice, and Interpersonal Influence</span></div>
-        <div class="cv-entry-desc" id="edu-phd-advisor"><strong id="advisor-label">Advisor:</strong> Su-Ling Yeh, Ph.D.</div>
+        <div class="cv-entry-desc" id="edu-phd-advisor"><strong id="advisor-label">Advisor:</strong> <span id="advisor-name">Su-Ling Yeh, Ph.D.</span></div>
       </div>
       <div class="cv-entry">
         <div class="cv-entry-title" id="edu-bs-title">B.S. in Psychology and Chemical Engineering (Double Major)</div>
@@ -346,40 +628,1372 @@ nav button:hover:not(.active){
 
 <!-- Dissertation Section -->
 <main id="dissertation">
-  <div class="diss-hero">
-    <div class="breath" aria-hidden="true"></div>
-    <div class="wrap" style="position:relative; z-index:1">
-      <div class="diss-eyebrow" id="diss-subtitle">Department of Psychology, National Taiwan University · Doctoral Dissertation</div>
-      <h1 class="diss-h1">
-        <span id="diss-title-1">From</span> <span style="color:var(--accent-ink)" id="diss-title-2">Focus</span>
-        <span id="diss-title-3">to</span> <span style="color:var(--accent-ink)" id="diss-title-4">Happiness</span>
-      </h1>
-      <div class="diss-subtitle" id="diss-desc">Psychological Mechanisms, Personal Practice, and Interpersonal Influence</div>
-      <div class="diss-byline">
-        <span><span id="diss-author-label">Author</span> <strong id="diss-author">Peng-Yu Zeng</strong></span>
-        <span><span id="diss-advisor-label">Advisor</span> <strong id="diss-advisor">Su-Ling Yeh</strong>, Ph.D.</span>
-      </div>
-      <div class="diss-stats">
-        <div class="diss-stat"><b>3</b><span id="diss-stat-1">Chapters</span></div>
-        <div class="diss-stat"><b>6</b><span id="diss-stat-2">Studies</span></div>
-        <div class="diss-stat"><b>9</b><span id="diss-stat-3">Journal Articles</span></div>
-        <div class="diss-stat"><b>1</b><span id="diss-stat-4">Conference Paper</span></div>
-      </div>
-      <a class="btn-pdf" href="viewer.html?file=thesis.pdf&title=Full Dissertation" id="diss-pdf-btn">Read the Full Dissertation</a>
-    </div>
-  </div>
-
+<div class="diss-content" data-diss-lang="en">
+<div class="hero">
+  <div class="breath" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="diss-section">
-      <div class="diss-section-label" id="abs-label">Abstract</div>
-      <h2 class="diss-section-title" id="abs-title">Reclaiming Focus and Happiness in an Age of Distraction</h2>
-      <div class="diss-prose" id="abs-content">
-        <p id="abs-1">In an era saturated by digital technology, the constant interruptions of social media keep people in a chronic state of distraction, while our own restless streams of thought continually pull attention away from the present moment. This pervasive distraction not only undermines cognitive functioning but also erodes well-being. How to cultivate present-moment focus and happiness has therefore become a central question for researchers and practitioners alike.</p>
-        <p id="abs-2">Taking present-moment focus and well-being as its core constructs, this dissertation examines them across three levels: psychological mechanisms, personal practice, and interpersonal influence. Chapter One works at the level of mechanism, asking how external motivation weakens the positive relationship between focus and happiness, and examining the buffering role that trait self-compassion plays when the mind wanders. Chapter Two turns to personal practice, testing how nature-based and mindfulness-based interventions raise everyday focus and well-being. Chapter Three extends the lens to interpersonal influence, exploring how more mindful individuals improve the quality of interpersonal interaction, and how a chatbot cast in a mindful role shapes the expression of interpersonal gratitude.</p>
-        <p id="abs-3">Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people's — in practice.</p>
+    <p class="eyebrow">Department of Psychology, National Taiwan University · Doctoral Dissertation</p>
+    <h1>From <span class="kanji-accent">Focus</span> to <span class="kanji-accent">Happiness</span></h1>
+    <p class="subtitle">Psychological Mechanisms, Personal Practice, and Interpersonal Influence</p>
+    <div class="byline">
+      <span>Author <strong>Peng-Yu Zeng</strong></span>
+      <span>Advisor <strong>Su-Ling Yeh</strong>, Ph.D.</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>Chapters</span></div>
+      <div class="stat"><b>6</b><span>Studies</span></div>
+      <div class="stat"><b>9</b><span>Journal Articles</span></div>
+      <div class="stat"><b>1</b><span>Conference Paper</span></div>
+    </div>
+    <p class="hero-thesis"><a class="btn-pdf" data-local-pdf href="viewer.html?file=thesis.pdf&amp;title=Full Dissertation">Read the Full Dissertation (PDF)</a></p>
+  </div>
+</div>
+
+<section id="abstract">
+  <div class="wrap">
+    <p class="sec-label">Abstract</p>
+    <h2>Reclaiming Focus and Happiness in an Age of Distraction</h2>
+    <div class="prose">
+      <p>In an era saturated by digital technology, the constant interruptions of social media keep people in a chronic state of distraction, while our own restless streams of thought continually pull attention away from the present moment. This pervasive distraction not only undermines cognitive functioning but also erodes well-being. How to cultivate present-moment focus and happiness has therefore become a central question for researchers and practitioners alike.</p>
+      <p>Taking present-moment focus and well-being as its core constructs, this dissertation examines them across three levels: psychological mechanisms, personal practice, and interpersonal influence. Chapter One works at the level of mechanism, asking how external motivation weakens the positive relationship between focus and happiness, and examining the buffering role that trait self-compassion plays when the mind wanders. Chapter Two turns to personal practice, testing how nature-based and mindfulness-based interventions raise everyday focus and well-being. Chapter Three extends the lens to interpersonal influence, exploring how more mindful individuals improve the quality of interpersonal interaction, and how a chatbot cast in a mindful role shapes the expression of interpersonal gratitude.</p>
+      <p>Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people's — in practice.</p>
+    </div>
+    <div class="keywords">
+      <span class="kw">Present-Moment Focus</span><span class="kw">Well-Being</span><span class="kw">Motivation</span>
+      <span class="kw">Self-Compassion</span><span class="kw">Nature-Based Intervention</span><span class="kw">Mindfulness Training</span>
+      <span class="kw">Interpersonal Relationships</span><span class="kw">Human–AI Relationships</span>
+    </div>
+  </div>
+</section>
+
+<section id="context">
+  <div class="wrap">
+    <p class="sec-label">Why It Matters</p>
+    <h2>An Age of Scarce Attention</h2>
+    <blockquote class="epigraph">
+      <span class="en">"What information consumes is rather obvious: it consumes the attention of its recipients."</span>
+      <cite>— Herbert A. Simon (1971), Nobel laureate in Economics</cite>
+    </blockquote>
+    <div class="bigstats">
+      <div class="bigstat"><b>46.9%</b><span>of waking life is spent with the mind wandering away from the task at hand — and mind-wandering lowers happiness (Killingsworth &amp; Gilbert, 2010)</span></div>
+      <div class="bigstat"><b>73%</b><span>more time spent on social media because of AI-driven algorithms (Guess et al., 2023)</span></div>
+      <div class="bigstat"><b>44 sec</b><span>average attention span in front of a computer screen today — it was 150 seconds in 2004</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="structure">
+  <div class="wrap">
+    <p class="sec-label">Three Levels</p>
+    <h2>Three Levels, Six Studies</h2>
+    <p class="frame-note">The dissertation is framed by Seligman's PERMA model of well-being and moves outward from the personal level (mechanism and practice) to the interpersonal level (influence). Click any study to read its research question, method, and key findings; the four published studies also link to the corresponding journal article below.</p>
+
+    <div class="chapters">
+      <article class="chapter" id="ch1">
+        <div class="ch-head"><span class="ch-num">Chapter One</span><h3>Psychological Mechanisms</h3></div>
+        <p class="ch-q">How do focus and distraction shape happiness?</p>
+        <p>Using experience sampling to capture momentary states of focus in daily life, this chapter asks how external motivation weakens the positive relationship from focus to happiness, and how trait self-compassion buffers the cost of mind-wandering.</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 1</em>How motivation shapes the path from focus to happiness</span>
+              <a class="pub-tag" href="#pub-5">Published · Mindfulness (2025)</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>Focusing on the present moment makes people happier — so why is the effect sometimes so faint? This study tests whether the motivation behind an activity moderates the relationship between focus and happiness, and whether people high in trait mindfulness are more sensitive to that motivation.</p>
+              <p><b>Method</b>Fifty-six Taiwanese university students were followed for two weeks with experience sampling, reporting three times a day at random on how focused they were, how happy they felt, and the type of motivation behind the activity at hand (autonomous or external).</p>
+              <p><b>Key findings</b>Present-moment focus significantly and positively predicted happiness; the more externally motivated the activity, however, the weaker that positive relationship became. People high in trait mindfulness were more attuned to their own motivation, which amplified rather than reduced the undermining effect of external motivation — suggesting that mindfulness training should also work to lower the influence of external motivation.</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-mindfulness.png" alt="Regression plot showing external motivation moderating the relationship between focus and well-being" loading="lazy"></div>
+                  <figcaption>When external motivation is high (red line), the positive relationship between present-moment focus and well-being flattens markedly.</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-moderation.png" alt="Moderating effect of external motivation split by high and low trait mindfulness" loading="lazy"></div>
+                  <figcaption>Participants high in trait mindfulness (right panel) are affected more strongly by external motivation: when it is high, the happiness benefit of focus all but disappears.</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=14&amp;title=Dissertation · Study 1">Read in the dissertation (from p. 14)</a>
+                <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">Journal version (DOI)</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 2</em>When the mind wanders, the motivation behind the thought shapes happiness</span>
+              <span class="unpub">Dissertation chapter</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>Does mind-wandering always make people unhappy? This study is the first to approach the question through the motivational content of the wandering thought: does drifting toward something autonomously motivated (a gathering you look forward to) differ from drifting toward something controlled (work that simply has to be done)? And what roles do age and self-compassion play?</p>
+              <p><b>Method</b>Ninety-one participants (35 older adults, 56 younger adults) were followed for two weeks by experience sampling, yielding 3,023 momentary reports of daily experience. Trait self-compassion was also measured, and the data analyzed with multilevel moderated mediation models.</p>
+              <p><b>Key findings</b>Participants were mind-wandering 39.3% of the time on average, and were less happy when they were. Yet wandering toward autonomously motivated content was significantly happier than wandering toward controlled content — during controlled activities, mind-wandering toward autonomous content left happiness on par with being focused, suggesting that mind-wandering can compensate for a lack of autonomy. Older adults, moreover, showed no drop in happiness when their minds wandered, because their higher trait self-compassion (with mindfulness and common humanity as the key components) buffered the cost.</p>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study2-interaction.png" alt="Interaction plot of attentional state, activity motivation, and age" loading="lazy"></div>
+                <figcaption>Left: during autonomously motivated activities, younger adults (blue) lose happiness as soon as their minds wander, while older adults (red) are unaffected. Right: during controlled activities, wandering toward autonomously motivated content does not reduce happiness — only wandering toward controlled content does.</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=25&amp;title=Dissertation · Study 2">Read in the dissertation (from p. 25)</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">Chapter One Summary · The Fragility and the Safeguards of Focus and Happiness</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch1-summary.png" alt="Chapter One framework: psychological mechanisms of active focus and passive mind-wandering" loading="lazy"></div>
+            </figure>
+            <p><b>Fragility:</b> The positive link between focus and happiness is not robust — external motivation can break it. At the organizational level, building environments that support autonomy reduces that interference.</p>
+            <p><b>Safeguards:</b> Self-compassion softens the negative effect of mind-wandering. Younger adults can learn from older ones: notice the moment attention drifts, meet it with self-compassion, and rebuild the resilience that keeps distraction from taking a toll.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch2">
+        <div class="ch-head"><span class="ch-num">Chapter Two</span><h3>Personal Practice</h3></div>
+        <p class="ch-q">Which interventions actually strengthen focus and happiness?</p>
+        <p>Drawing on a two-track approach — nudge theory (changing the environment) and empowerment theory (systematic training) — this chapter takes a longitudinal view of how nature-based and mindfulness-based interventions raise everyday focus and well-being.</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 3</em>Nature-based intervention, focus, and happiness</span>
+              <a class="pub-tag" href="#pub-2">Published · J. Environ. Psychol. (2026)</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>Contact with nature improves well-being, but through what psychological mechanism? This study proposes that mindfulness state is the key mediator: in nature, it is easier to return to the present moment.</p>
+              <p><b>Method</b>Two sub-studies: the first used experience sampling to compare happiness, stress, and autonomous motivation during the intervention with baseline days; the second used the day reconstruction method to measure happiness and connectedness to nature. Both were analyzed with multilevel regression.</p>
+              <p><b>Key findings</b>Relative to baseline days, the nature-based intervention raised happiness, lowered stress, and increased both autonomous motivation and connectedness to nature. More importantly, mindfulness state significantly mediated the relationship between the intervention and well-being, and moments of higher mindfulness during the intervention were also moments of greater happiness — future nature-based programs may strengthen their effects by building in mindfulness elements.</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-farm.png" alt="Photograph of the care farming field site" loading="lazy"></div>
+                  <figcaption>The field site: care farming — an eighteen-week nature-based intervention combining local agricultural development with a rural setting.</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-mediation.png" alt="Mediation model of care farming influencing well-being through mindfulness state" loading="lazy"></div>
+                  <figcaption>The mediation model: care farming → mindfulness state (present-moment focus + non-judgment) → well-being. Both experience sampling and day reconstruction support this pathway.</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=37&amp;title=Dissertation · Study 3">Read in the dissertation (from p. 37)</a>
+                <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">Journal version (DOI)</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 4</em>Mindfulness intervention, focus, and happiness</span>
+              <span class="unpub">Dissertation chapter</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>The benefit of a mindfulness course depends on how much people actually practice. This study proposes an asymmetric U-shaped model of mindfulness practice: below a certain threshold, mindfulness may lower rather than raise well-being; only above it does a dose-response effect appear.</p>
+              <p><b>Method</b>Twenty-one participants completed an eight-week Mindfulness-Based Cognitive Therapy (MBCT) course, alongside 27 age- and gender-matched controls (a reading task). All kept a daily well-being diary for 50 consecutive days (personal, interpersonal, environmental, and physical dimensions) and completed three computer-based tasks — sustained attention, emotional memory, and eye tracking of emotional faces — before and after the course.</p>
+              <p><b>Key findings</b>Using an average of 10 minutes of daily practice as the cut point, the mindfulness group split into high practicers (about 25 min/day) and low practicers (about 5 min/day). High practicers showed significantly higher trait mindfulness and higher daily well-being on every dimension than controls; below roughly 5 minutes a day, well-being dipped slightly instead, supporting the asymmetric U-shaped curve. Mindfulness training mainly reduced internally generated distraction rather than improving objective attention, supporting an internal-attention account; low practicers showed a decline in metamemory for positive high-arousal stimuli, echoing the beginner's dilemma. Cross-lagged analyses further showed that practice, well-being, and sleep quality nourish one another in both directions over time.</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-trait.png" alt="Pre- and post-test comparison of trait mindfulness across three groups" loading="lazy"></div>
+                  <figcaption>After eight weeks, only the high-practice group (red) showed a significant increase in trait mindfulness (p = .008); the low-practice group showed a marginally significant trend.</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-dose.png" alt="Asymmetric U-shaped curve between mindfulness practice time and well-being" loading="lazy"></div>
+                  <figcaption>The asymmetric U-shaped curve: only past the inflection point of roughly 4.5–4.8 minutes of daily practice do interpersonal and environmental well-being rise with practice time.</figcaption>
+                </figure>
+              </div>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study4-crosslag.png" alt="Cross-lagged model of personal well-being and mindfulness practice time" loading="lazy"></div>
+                <figcaption>Cross-lagged model: across the eight weeks, personal well-being and weekly practice time predicted each other week by week (blue: well-being → practice; green: practice → well-being), forming a mutually reinforcing cycle.</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=51&amp;title=Dissertation · Study 4">Read in the dissertation (from p. 51)</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">Chapter Two Summary · Pathways That Strengthen Focus and Happiness</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch2-summary.png" alt="Chapter Two framework: the two-track path of nature-based intervention and mindfulness training" loading="lazy"></div>
+            </figure>
+            <p><b>Deep connection, not passive exposure:</b> simply being in a natural setting is not what matters. Well-being comes from engaging with it attentively and without judgment — looking at the landscape mindfully, savoring food mindfully, building a deep connection with the natural world.</p>
+            <p><b>Sustained practice, not just finishing the course:</b> taking a mindfulness course without practicing may actually lower mindfulness state. What raises well-being is daily accumulation — keeping at least five minutes of self-directed practice a day, and letting the positive cycle between well-being and sleep quality feed the motivation to keep going.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch3">
+        <div class="ch-head"><span class="ch-num">Chapter Three</span><h3>Interpersonal Influence</h3></div>
+        <p class="ch-q">How do focus and mindfulness shape other people and our relationships?</p>
+        <p>Extending the lens from the individual to the interpersonal: how people higher in trait mindfulness improve the quality of intergenerational communication, and how a generative AI chatbot cast in a mindful role reshapes the expression of interpersonal gratitude.</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 5</em>Trait mindfulness and the quality of communication</span>
+              <a class="pub-tag" href="#pub-6">Published · Current Psychology (2025)</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>How do intrapersonal mindfulness (present-moment focus, non-judgment) and interpersonal mindfulness (attending to verbal and nonverbal cues in conversation) each shape the quality of intergenerational communication?</p>
+              <p><b>Method</b>Forty-four Taiwanese intergenerational dyads (a younger and an older adult) completed three communication scenarios. Communication quality was assessed on emotional, cognitive, and behavioral dimensions following the interpersonal chemistry model, and analyzed with multilevel regression and the Actor–Partner Interdependence Model (APIM).</p>
+              <p><b>Key findings</b>Both forms of mindfulness increased positive affect, lowered stress, strengthened empathy and communication satisfaction, narrowed psychological distance, and produced greater consensus on contentious topics; interpersonal mindfulness carried the broader benefit (it also reduced negative affect and sped up cooperation). APIM analyses showed that mindfulness improved communication quality more comprehensively for older adults than for younger ones. Intriguingly, body-synchrony analyses revealed that mindfulness promoted anti-phase synchrony — when one person speaks (and moves), the other listens attentively (and stays still) — the embodied signature of attentive listening.</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-indicators.png" alt="Affective, cognitive, and behavioral indicators of communication satisfaction" loading="lazy"></div>
+                  <figcaption>The research framework: intergenerational communication quality assessed across affective (emotional change, communication stress), cognitive (empathy, psychological distance, consensus), and behavioral (speed of cooperation, body synchrony) dimensions.</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-sync.png" alt="Body synchrony analysis for the mindful communication group" loading="lazy"></div>
+                  <figcaption>Body synchrony: the mindful communication group showed significant anti-phase synchrony (left panel), the rhythm of high-quality interaction in which one person expresses while the other listens attentively.</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=90&amp;title=Dissertation · Study 5">Read in the dissertation (from p. 90)</a>
+                <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">Journal version (DOI)</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>Study 6</em>A mindful chatbot and interpersonal gratitude</span>
+              <a class="pub-tag" href="#pub-1">Published · CHB: Artificial Humans (2026)</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>Research question</b>When generative AI enters a gratitude practice, it changes not only the outcome but the process. This study compares AI-based conversational gratitude with a traditional gratitude journal to examine how generative AI reshapes well-being interventions.</p>
+              <p><b>Method</b>A seven-day randomized controlled trial with three arms: a gratitude chatbot group (conversational writing with generative AI), a gratitude journal group (structured writing prompts), and an active control group (recording daily events), analyzed with linear mixed-effects models combined with thematic analysis (mixed methods).</p>
+              <p><b>Key findings</b>Both forms of gratitude raised happiness and meaning relative to control; the chatbot group, however, reported lower perceived effort, expressed gratitude more shallowly (more recognizing, less thanking), and leaned toward self-oriented gratitude (having, losing, comparing). Qualitative analysis showed participants were surprised and inspired by the AI-generated summaries. Overall, generative AI cuts both ways: it lowers the cognitive barrier and sparks insight, yet may erode reflective depth — future AI well-being tools should let users decide for themselves whether to bring AI into the loop.</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-chatbot.png" alt="Flow chart of the three-arm experimental design in Study 6" loading="lazy"></div>
+                  <figcaption>Study design: 117 participants were randomly assigned to a mindful chatbot group (sharing gratitude in conversation with AI), a gratitude journal group (writing online), or a control group (recording daily events), for seven consecutive days.</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-depth.png" alt="Bar chart comparing hand-coded depth of gratitude across two groups" loading="lazy"></div>
+                  <figcaption>Hand-coded depth of gratitude: the mindful chatbot group (green) produced more shallow "recognizing" than the gratitude journal group (orange) (68.5% vs. 57.5%), and less deep "thanking" (16.2% vs. 22.5%).</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=117&amp;title=Dissertation · Study 6">Read in the dissertation (from p. 117)</a>
+                <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">Journal version (DOI)</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">Chapter Three Summary · How Focus and Happiness Spill Over</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch3-summary.png" alt="Chapter Three framework: pathways of mindfulness in interpersonal communication and gratitude" loading="lazy"></div>
+            </figure>
+            <p><b>Education:</b> bringing mindfulness training into schools raises trait mindfulness in students, parents, and teachers alike, improving the quality of intergenerational communication.</p>
+            <p><b>Technology design:</b> AI can be designed around the core elements of mindfulness and deployed in contexts of interpersonal gratitude, so that its development becomes a help to human relationships rather than an obstacle.</p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <p class="sec-label">Publications</p>
+    <h2>List of Publications</h2>
+
+    <div class="pub-group">
+      <h3>Journal Articles (9)</h3>
+      <div class="pubs">
+
+        <article class="pub" id="pub-1">
+          <span class="pub-no">01</span>
+          <p class="pub-meta"><span>Computers in Human Behavior: Artificial Humans · 2026</span><span class="dtag">Dissertation · Study 6</span></p>
+          <h4>How generative AI reshapes gratitude interventions: Benefits and risks</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Chang, K.Y., Lin, K.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">A seven-day randomized controlled trial comparing a gratitude chatbot with a traditional gratitude journal. Generative AI cuts both ways: it lowers the cognitive barrier to writing and brings surprise and inspiration, but it also makes gratitude shallower and more self-oriented. Both forms of gratitude raised happiness and a sense of meaning.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/01.pdf&amp;title=CHB: Artificial Humans (2026)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">doi.org/10.1016/j.chbah.2026.100333</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-2">
+          <span class="pub-no">02</span>
+          <p class="pub-meta"><span>Journal of Environmental Psychology · 2026</span><span class="dtag">Dissertation · Study 3</span></p>
+          <h4>Nurturing well-being through nature-based intervention: The mediating role of mindfulness state</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Yeh, M.S., &amp; Yeh, S.L.*</p>
+          <p class="summary">Two studies combining experience sampling with the day reconstruction method show that a nature-based intervention raises happiness, lowers stress, and increases both autonomous motivation and connectedness to nature — and, crucially, that mindfulness state is the key mechanism carrying nature's benefit to well-being.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/02.pdf&amp;title=J. Environmental Psychology (2026)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">doi.org/10.1016/j.jenvp.2025.102849</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-3">
+          <span class="pub-no">03</span>
+          <p class="pub-meta"><span>Journal of Behavioral and Experimental Economics · 2026</span></p>
+          <h4>Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hsieh, T.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">A test of how default options, social norms, and positive framing combine: the more nudges used, the stronger the effect, with no interaction between strategies. "Default + positive framing" worked only for younger adults, while "default + social norms" was more effective for older adults — evidence for age-tailored nudge design.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/03.pdf&amp;title=J. Behavioral and Experimental Economics (2026)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.socec.2026.102598" target="_blank" rel="noopener">doi.org/10.1016/j.socec.2026.102598</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-4">
+          <span class="pub-no">04</span>
+          <p class="pub-meta"><span>Psychology and Aging · 2025</span></p>
+          <h4>Exploring semantic expression disparities in intragenerational and intergenerational communication: A novel perspective on socioemotional selectivity theory</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">A linguistic analysis (LIWC) of 36 conversations. Within generations, older adults used more present-oriented and family-related words than younger adults, consistent with socioemotional selectivity theory; in intergenerational conversation, however, the two groups' language converged, showing that between-group linguistic accommodation outweighs the age differences the theory predicts.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/04.pdf&amp;title=Psychology and Aging (2025)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1037/pag0000877" target="_blank" rel="noopener">doi.org/10.1037/pag0000877</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-5">
+          <span class="pub-no">05</span>
+          <p class="pub-meta"><span>Mindfulness · 2025</span><span class="dtag">Dissertation · Study 1</span></p>
+          <h4>Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">Fifty-six university students were followed for two weeks of daily life by experience sampling. Present-moment focus positively predicted happiness, but external motivation weakened that relationship; participants high in trait mindfulness were more sensitive to external motivation, amplifying its moderating effect — a reminder that mindfulness training should also address the influence of external motivation.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/05.pdf&amp;title=Mindfulness (2025)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">doi.org/10.1007/s12671-025-02534-7</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-6">
+          <span class="pub-no">06</span>
+          <p class="pub-meta"><span>Current Psychology · 2025</span><span class="dtag">Dissertation · Study 5</span></p>
+          <h4>Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Wu, S.H., Li, T.V., &amp; Yeh, S.L.*</p>
+          <p class="summary">Forty-four Taiwanese intergenerational dyads completed three communication scenarios. Both intrapersonal and interpersonal mindfulness raised positive affect, empathy, and communication satisfaction and narrowed psychological distance; interpersonal mindfulness carried the broader benefit, and mindfulness improved older adults' communication quality more comprehensively than younger adults'.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/06.pdf&amp;title=Current Psychology (2025)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">doi.org/10.1007/s12144-025-07849-1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-7">
+          <span class="pub-no">07</span>
+          <p class="pub-meta"><span>Research Square (Preprint) · 2024</span></p>
+          <h4>Emotional impact on investment and insurance preferences in unit-linked insurance plans</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Liu, H.Y., Chen, L.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">Framed by the Affect Infusion Model, this paper examines how emotional states shape the trade-off between investment and insurance preferences in unit-linked insurance plans, bringing a psychological perspective to financial product design and consumer decision-making.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/07.pdf&amp;title=Research Square Preprint (2024)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.21203/rs.3.rs-4733981/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-4733981/v1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-8">
+          <span class="pub-no">08</span>
+          <p class="pub-meta"><span>Research in Applied Psychology · 2024</span></p>
+          <h4>Precision nudging: A customer-oriented approach to business applications <em>(in Chinese)</em></h4>
+          <p class="authors">Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">A systematic review of nudge applications in government, business, and finance, extended to how personality traits and emotions shape a nudge's effectiveness. The paper proposes a "precision nudging" framework that matches the form and strength of a nudge to its purpose and its audience.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/08.pdf&amp;title=Research in Applied Psychology (2024)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.53106/156092512024120081001" target="_blank" rel="noopener">doi.org/10.53106/156092512024120081001</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-9">
+          <span class="pub-no">09</span>
+          <p class="pub-meta"><span>Cogent Economics &amp; Finance · 2024</span></p>
+          <h4>Psychological dynamics of unit-linked insurance product decision-making: A cognitive model</h4>
+          <p class="authors">Tsai, C.C., Chen, L.Y., Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">A cognitive model of decision-making for unit-linked insurance products, analyzing the psychological dynamics through which consumers form preferences and make choices about financial products that combine investment with protection.</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/09.pdf&amp;title=Cogent Economics %26 Finance (2024)">Read PDF</a>
+            <a class="doi" href="https://doi.org/10.1080/23322039.2024.2422966" target="_blank" rel="noopener">doi.org/10.1080/23322039.2024.2422966</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h3>Conference Paper (1)</h3>
+      <div class="pubs">
+        <article class="pub" id="pub-10">
+          <span class="pub-no">10</span>
+          <p class="pub-meta"><span>IEEE RO-MAN · (under review)</span></p>
+          <h4>Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hou, C.A., Pan, C.H., Liu, Y.C., Liu, T., Chiu, T.W., &amp; Yeh, S.L.*</p>
+          <p class="summary">Two experiments testing the emotion-regulation effects of AI chatbots: a 20-minute conversation not only reduced negative affect but also increased positive affect and helped participants return to baseline. Among three facets of perceived empathy, only relational warmth significantly predicted the success of emotion regulation.</p>
+        </article>
       </div>
     </div>
   </div>
+</section>
+
+<section id="closing">
+  <div class="wrap">
+    <p class="sec-label">Takeaways</p>
+    <h2>In an Age of Scarce Attention, Focus Is Worth Protecting</h2>
+    <div class="levels">
+      <div class="level">
+        <h3>Psychological Level</h3>
+        <p>Strengthen autonomous motivation and cultivate self-compassion — an inner safeguard for focus.</p>
+      </div>
+      <div class="level">
+        <h3>Practical Level</h3>
+        <p>Actively build a deep connection with nature and with mindfulness — a mechanism that strengthens focus.</p>
+      </div>
+      <div class="level">
+        <h3>Societal Level</h3>
+        <p>Let the value of mindfulness guide education and technology design, so that living in the present becomes a collective choice of our time.</p>
+      </div>
+    </div>
+    <p class="closing-quote">In the age of AI, the scarcest resource is not computing power but human attention.<br>To hold on to the present is to hold on to what makes us human.</p>
+  </div>
+</section>
+
+<section id="thanks">
+  <div class="wrap">
+    <p class="sec-label">Acknowledgments</p>
+    <h2>To Everyone Who Walked This Road With Me</h2>
+    <div class="prose">
+      <p>My deepest thanks to my advisor, Professor Su-Ling Yeh, for her careful guidance; to my colleagues in the EPA Lab for their support along the way; and to the family and friends who stood by me throughout. This dissertation was written standing on your shoulders.</p>
+    </div>
+    <figure class="fig" data-local-fig>
+      <div class="imgbox"><img src="assets/acknowledgment.jpg" alt="Group photo with Professor Su-Ling Yeh and members of the EPA Lab" loading="lazy"></div>
+      <figcaption>With Professor Su-Ling Yeh and friends from the EPA Lab.</figcaption>
+    </figure>
+    <p class="thanks-song">Dedicated, with the song "You Raise Me Up," to everyone who lifted me higher.</p>
+  </div>
+</section>
+</div>
+
+<div class="diss-content" data-diss-lang="zh">
+<div class="hero">
+  <div class="breath" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">國立臺灣大學心理學系暨研究所 · 博士論文</p>
+    <h1>從<span class="kanji-accent">專注</span>到<span class="kanji-accent">幸福</span></h1>
+    <p class="subtitle">心理機制、個人實踐、人際影響力的探討</p>
+    <div class="byline">
+      <span>研究生 <strong>曾鵬宇</strong>（Peng-Yu Zeng）</span>
+      <span>指導教授 <strong>葉素玲</strong> 博士</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>章節</span></div>
+      <div class="stat"><b>6</b><span>研究</span></div>
+      <div class="stat"><b>9</b><span>期刊發表</span></div>
+      <div class="stat"><b>1</b><span>會議論文</span></div>
+    </div>
+    <p class="hero-thesis"><a class="btn-pdf" data-local-pdf href="viewer.html?file=thesis.pdf&amp;title=博士論文全文">博士論文全文 PDF</a></p>
+  </div>
+</div>
+
+<section id="abstract-zh">
+  <div class="wrap">
+    <p class="sec-label">摘要 · ABSTRACT</p>
+    <h2>在分心的時代，重塑專注與幸福</h2>
+    <div class="prose">
+      <p>在數位科技高度滲透的當代，社群媒體的持續干擾使人們長期處於分心狀態；與此同時，個體內在紛擾的思緒亦不斷將注意力從當下抽離。這種普遍的分心狀態不僅削弱個體的認知功能，更對幸福感造成負面影響。如何形塑當下的專注力與幸福感，已成為學界與實務界共同關注的核心議題。</p>
+      <p>本論文以「專注當下」與「幸福感」為核心構念，從心理機制、個人實踐與人際影響力三個層次展開探討。第一章從機制層次切入，探討外在動機如何削弱專注與幸福感之間的正向關係，並檢視自我慈悲特質在個體分心時的關鍵緩衝作用。第二章從個人實踐層次出發，檢驗自然介入與正念介入如何有效提升專注與幸福感。第三章將視角延伸至人際影響力層次，探討正念特質較高者如何促進人際互動品質，並探討賦予正念角色的聊天機器人如何影響人際感恩。</p>
+      <p>本論文不僅從理論層次揭示影響專注與幸福感的各種因素，亦在實踐層次為提升自身與他人福祉提供具體啟示。</p>
+    </div>
+    <div class="keywords">
+      <span class="kw">專注當下</span><span class="kw">幸福感</span><span class="kw">動機</span>
+      <span class="kw">自我慈悲</span><span class="kw">自然介入</span><span class="kw">正念訓練</span>
+      <span class="kw">人際關係</span><span class="kw">人機關係</span>
+    </div>
+  </div>
+</section>
+
+<section id="context-zh">
+  <div class="wrap">
+    <p class="sec-label">研究背景 · WHY IT MATTERS</p>
+    <h2>注意力稀缺的時代</h2>
+    <blockquote class="epigraph">
+      <span class="en">"What information consumes is rather obvious: it consumes the attention of its recipients."</span>
+      「資訊消耗的是什麼，顯而易見——它消耗的是接收者的注意力。」
+      <cite>— Herbert A. Simon（1971），諾貝爾經濟學獎得主</cite>
+    </blockquote>
+    <div class="bigstats">
+      <div class="bigstat"><b>46.9%</b><span>日常生活中，人們分心於無關思緒的時間比例——而分心會降低幸福感（Killingsworth &amp; Gilbert, 2010）</span></div>
+      <div class="bigstat"><b>73%</b><span>AI 演算法讓人們多花在社群媒體上的時間（Guess et al., 2023）</span></div>
+      <div class="bigstat"><b>44 秒</b><span>人們在電腦螢幕前的平均注意力持續時間——2004 年還有 150 秒</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="structure-zh">
+  <div class="wrap">
+    <p class="sec-label">論文架構 · THREE LEVELS</p>
+    <h2>三個層次，六個研究</h2>
+    <p class="frame-note">論文以 Seligman 的 PERMA 幸福感模型為理論框架，從個人層次（機制與實踐）到人際層次（影響力）逐步展開。點擊任一研究可展開閱讀研究問題、方法與主要發現；已發表的四個研究另可跳至對應的期刊發表。</p>
+
+    <div class="chapters">
+      <article class="chapter" id="ch1-zh">
+        <div class="ch-head"><span class="ch-num">第一章</span><h3>心理機制</h3></div>
+        <p class="ch-q">專注與分心，如何影響幸福感？</p>
+        <p>以經驗取樣法捕捉日常生活中即時的專注狀態，探討外在動機如何削弱「專注 → 幸福感」的正向關係，以及當人們分心時，自我慈悲特質如何緩衝分心帶來的負面影響。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究一</em>動機影響專注到幸福感的歷程</span>
+              <a class="pub-tag" href="#pub-5-zh">已發表 · Mindfulness（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>專注當下能提升快樂，但為什麼有時效果不明顯？本研究檢驗「做這件事的動機」是否調節專注與幸福感的關係，以及正念特質高的人是否對動機更敏感。</p>
+              <p><b>研究方法</b>以經驗取樣法追蹤 56 位臺灣大學生兩週的日常生活，每天三次隨機回報當下的專注程度、快樂感受，以及從事活動的動機類型（自主動機或外在動機）。</p>
+              <p><b>主要發現</b>專注當下顯著正向預測快樂；但活動的外在動機越高，專注與快樂的正向關係越弱。此外，高正念特質者對自身動機的覺察更敏銳，反而放大了外在動機的削弱效果——提示正念訓練應同時留意降低外在動機的影響。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-mindfulness.png" alt="外在動機調節專注與幸福感關係的迴歸圖" loading="lazy"></div>
+                  <figcaption>外在動機高（紅線）時，專注當下與幸福感的正向關係明顯變平緩。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-moderation.png" alt="正念特質高低分組下外在動機的調節效果" loading="lazy"></div>
+                  <figcaption>高正念特質者（右圖）受外在動機的影響更強：外在動機高時，專注的幸福效益幾乎消失。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=14&amp;title=博士論文 · 研究一">閱讀論文原文（第 14 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究二</em>分心時，想法的內容動機影響幸福感</span>
+              <span class="unpub">論文章節</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>分心一定會讓人不快樂嗎？本研究首次從「分心內容的動機屬性」切入：分心想著自主動機的事（如期待的聚會）與受控動機的事（如不得不做的工作），對幸福感的影響是否不同？年齡與自我慈悲又扮演什麼角色？</p>
+              <p><b>研究方法</b>以經驗取樣法追蹤 91 位參與者（35 位長者、56 位年輕人）兩週，共回收 3,023 筆日常經驗資料，同時測量自我慈悲特質，以多層次調節中介模型分析。</p>
+              <p><b>主要發現</b>參與者平均 39.3% 的時間處於分心，且分心時幸福感較低；但分心想「自主動機」內容顯著比想「受控動機」內容更快樂——當從事受控活動時，分心想自主動機的事，幸福感可與專注時相當，顯示分心可作為缺失自主性時的補償機制。此外，長者即使分心也不降低幸福感：因為長者具備更高的自我慈悲（其中正念與共同人性是關鍵成分），緩衝了分心的負面影響。</p>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study2-interaction.png" alt="專注狀態、活動動機與年齡的交互作用圖" loading="lazy"></div>
+                <figcaption>左：從事自主動機活動時，年輕人（藍）一分心幸福感就下降，長者（紅）則不受影響。右：從事受控動機活動時，分心想「自主動機」內容不會降低幸福感，分心想「受控動機」內容才會。</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=25&amp;title=博士論文 · 研究二">閱讀論文原文（第 25 頁起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第一章總結 · 專注與幸福感的「易損性」與「保護機制」</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch1-summary.png" alt="第一章架構圖：主動專注與被動分心的心理機制" loading="lazy"></div>
+            </figure>
+            <p><b>易損性：</b>專注與幸福感的正向關係並不穩固，會被外在動機破壞。在組織層次中，可為個體建立支持自主性的環境，降低外在動機的干擾。</p>
+            <p><b>保護機制：</b>自我慈悲能緩解分心的負向效果。年輕人可以向長者學習，有意識地覺察分心時刻，並以自我慈悲回應自己，重塑抵抗分心影響的心理韌性。</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch2-zh">
+        <div class="ch-head"><span class="ch-num">第二章</span><h3>個人實踐</h3></div>
+        <p class="ch-q">哪些介入方法，能有效提升專注與幸福感？</p>
+        <p>基於輕推理論（改變環境）與賦能理論（系統性訓練）的雙軌途徑，以縱貫視角檢驗自然介入與正念介入對日常專注狀態與幸福感的提升效果。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究三</em>自然介入對專注與幸福感的影響</span>
+              <a class="pub-tag" href="#pub-2-zh">已發表 · J. Environ. Psychol.（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>接觸自然能提升幸福感，但背後的心理機制是什麼？本研究假設「正念狀態」是自然介入促進幸福感的關鍵中介：身處自然時，人更容易回到當下。</p>
+              <p><b>研究方法</b>兩個子研究：子研究一以經驗取樣法比較自然介入期間與基準日的快樂、壓力與自主動機；子研究二以日重建法測量快樂與自然連結感，皆以多層次迴歸分析。</p>
+              <p><b>主要發現</b>相較於基準日，自然介入提升快樂、降低壓力，並增進自主動機與自然連結感；更重要的是，正念狀態顯著中介了自然介入與幸福感的關係，且介入期間正念狀態較高的時刻，幸福感也較高——未來的自然介入課程可納入正念元素以強化效果。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-farm.png" alt="農業療育場域照片" loading="lazy"></div>
+                  <figcaption>研究場域：農業療育——結合在地農業發展與鄉村環境的自然介入，為期十八週。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-mediation.png" alt="農業療育透過正念狀態影響幸福感的中介模型" loading="lazy"></div>
+                  <figcaption>中介模型：農業療育 → 正念狀態（專注當下＋非批判）→ 幸福感。經驗取樣法與日記重建法皆支持此路徑。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=37&amp;title=博士論文 · 研究三">閱讀論文原文（第 37 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究四</em>正念介入對專注與幸福感的影響</span>
+              <span class="unpub">論文章節</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>正念課程的效果取決於「練了多少」。本研究提出正念練習的不對稱 U 型曲線模型：練習量低於某個門檻時，正念可能不增反減幸福感；超過門檻後才展現劑量效果。</p>
+              <p><b>研究方法</b>21 位參與者完成八週正念認知療法（MBCT）課程，另有 27 位年齡性別配對的對照組（閱讀任務）。所有人連續 50 天填寫每日幸福感日記（個人、人際、環境、生理四面向），並於課程前後完成持續注意力、情緒記憶與情緒臉孔眼動三項電腦測驗。</p>
+              <p><b>主要發現</b>以每日平均練習 10 分鐘為切點，正念組分為高練習組（平均約 25 分鐘／天）與低練習組（平均約 5 分鐘／天）。高練習組的正念特質與各面向每日幸福感顯著高於對照組；每天平均練習低於約 5 分鐘時，幸福感反而出現輕微下降，支持不對稱 U 型曲線。正念訓練主要降低「內在思緒分心」而非提升客觀注意力，支持內在注意力模型；低練習組在正向高激發刺激下的後設記憶能力下降，呼應初學者困境。交叉滯後分析並顯示：練習與幸福感、睡眠品質之間是雙向相互滋養的動態歷程。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-trait.png" alt="三組正念特質前後測比較圖" loading="lazy"></div>
+                  <figcaption>八週後，只有高練習組（紅）的正念特質顯著提升（p = .008）；低練習組僅呈現邊緣顯著的趨勢。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-dose.png" alt="正念練習時間與幸福感的不對稱U型曲線" loading="lazy"></div>
+                  <figcaption>不對稱 U 型曲線：每天平均練習超過約 4.5–4.8 分鐘的轉折點後，人際與環境幸福感才隨練習時間上升。</figcaption>
+                </figure>
+              </div>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study4-crosslag.png" alt="個人幸福感與正念練習時間的交叉滯後模型" loading="lazy"></div>
+                <figcaption>交叉滯後模型：八週之間，個人幸福感與當週正念練習時間逐週相互預測（藍：幸福感 → 練習；綠：練習 → 幸福感），形成雙向滋養的正向循環。</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=51&amp;title=博士論文 · 研究四">閱讀論文原文（第 51 頁起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第二章總結 · 專注與幸福感的「強化」路徑</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch2-summary.png" alt="第二章架構圖：自然介入與正念訓練的雙軌途徑" loading="lazy"></div>
+            </figure>
+            <p><b>深度連結，而非被動暴露：</b>單純待在自然環境中並非幸福感的關鍵，要專注且不批判地參與其中——正念地注視自然風景、正念地品味食物，與自然建立深度連結。</p>
+            <p><b>持久練習，而非上完課就好：</b>參加正念課程但缺乏練習，反而可能降低正念狀態。提升幸福感的核心在於日常持久的積累——每天至少保持 5 分鐘以上的自主練習，並藉由幸福感與睡眠品質的正向循環，滋養持續練習的動機。</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch3-zh">
+        <div class="ch-head"><span class="ch-num">第三章</span><h3>人際影響力</h3></div>
+        <p class="ch-q">專注與正念，如何影響他人與關係？</p>
+        <p>將視角從個人延伸至人際：正念特質較高者如何促進跨世代溝通品質；當生成式 AI 聊天機器人被賦予正念角色時，又如何重塑人際感恩的表達。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究五</em>正念特質影響溝通品質</span>
+              <a class="pub-tag" href="#pub-6-zh">已發表 · Current Psychology（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>個人內正念（專注當下、不評判）與人際正念（覺察對話中的語言與非語言線索）如何分別影響跨世代溝通的品質？</p>
+              <p><b>研究方法</b>44 組臺灣跨世代配對（年輕人＋長者）進行三種溝通情境，依人際化學模型從情緒、認知、行為三層面評估溝通品質，並以多層次迴歸與行動者—夥伴互依模型（APIM）分析。</p>
+              <p><b>主要發現</b>兩種正念皆能提升正向情緒、降低壓力、促進同理心與溝通滿意度、拉近心理距離，並在爭議話題上達成更高共識；其中人際正念的效益範圍更廣（還能降低負向情緒、加快合作速度）。APIM 分析顯示，正念對長者溝通品質的提升效果比對年輕人更全面。有趣的是，肢體同步性分析發現正念促進「反相位」同步——一方說話（身體動）時，另一方專注聆聽（身體不動），這正是專注傾聽的具體展現。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-indicators.png" alt="溝通滿意度的情感、認知、行為三層面指標" loading="lazy"></div>
+                  <figcaption>研究架構：從情感面（情緒變化、溝通壓力）、認知面（同理心、心理距離、共識）、行為面（合作速度、肢體同步）三個層面全方位評估跨世代溝通品質。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-sync.png" alt="正念溝通組的肢體同步性分析" loading="lazy"></div>
+                  <figcaption>肢體同步性：正念溝通組呈現顯著的反相位同步（左圖），呼應「一方表達、一方專注聆聽」的高品質互動節奏。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=90&amp;title=博士論文 · 研究五">閱讀論文原文（第 90 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究六</em>正念聊天機器人影響感恩</span>
+              <a class="pub-tag" href="#pub-1-zh">已發表 · CHB: Artificial Humans（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究問題</b>當生成式 AI 介入感恩練習，改變的不只是效果，還有「歷程」。本研究比較 AI 對話式感恩與傳統感恩日記，檢驗 GenAI 如何重塑幸福感介入。</p>
+              <p><b>研究方法</b>為期七天的隨機對照試驗，三組：感恩聊天機器人組（GenAI 對話式書寫）、感恩日記組（結構化提示書寫）、主動對照組（記錄每日事件），以線性混合效果模型結合主題分析（混合方法）。</p>
+              <p><b>主要發現</b>兩種感恩形式皆比對照組提升快樂與意義感；但聊天機器人組的知覺努力較低、感恩表達較淺（更多「知恩」、更少「謝恩」），且更偏向自我導向的感恩（擁有型、失去型、比較型）。質性分析顯示參與者對 AI 生成的摘要感到驚喜與啟發。整體而言，GenAI 介入是把雙面刃：降低認知門檻、帶來靈感，卻可能侵蝕反思深度——未來的 AI 幸福感工具應讓使用者自行權衡是否納入 AI 中介。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-chatbot.png" alt="研究六三組實驗設計流程圖" loading="lazy"></div>
+                  <figcaption>實驗設計：117 位參與者隨機分為正念機器人組（與 AI 對話分享感恩）、感恩日記組（線上書寫）、對照組（記錄日常事件），連續七天。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-depth.png" alt="兩組感恩深度人工編碼比較長條圖" loading="lazy"></div>
+                  <figcaption>感恩深度的人工編碼：正念機器人組（綠）比感恩日記組（橘）有更多淺層的「知恩」（68.5% vs 57.5%），更少深層的「謝恩」（16.2% vs 22.5%）。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=117&amp;title=博士論文 · 研究六">閱讀論文原文（第 117 頁起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第三章總結 · 專注與幸福感的「外溢」路徑</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch3-summary.png" alt="第三章架構圖：正念在人際溝通與人際感恩的影響路徑" loading="lazy"></div>
+            </figure>
+            <p><b>教育場域：</b>把正念訓練引入教育領域，透過學生、家長、老師正念特質的提高，改善跨世代溝通品質。</p>
+            <p><b>科技設計：</b>AI 的設計可以參考正念的核心元素，並把 AI 部署在人際感恩的脈絡中，讓 AI 的發展成為人際關係的助力而非阻力。</p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications-zh">
+  <div class="wrap">
+    <p class="sec-label">學術發表 · PUBLICATIONS</p>
+    <h2>發表論文清單</h2>
+
+    <div class="pub-group">
+      <h3>期刊發表（9 篇）</h3>
+      <div class="pubs">
+
+        <article class="pub" id="pub-1-zh">
+          <span class="pub-no">01</span>
+          <p class="pub-meta"><span>Computers in Human Behavior: Artificial Humans · 2026</span><span class="dtag">博士論文 研究六</span></p>
+          <h4>How generative AI reshapes gratitude interventions: Benefits and risks</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Chang, K.Y., Lin, K.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">為期七天的隨機對照試驗，比較「感恩聊天機器人」與傳統感恩日記。結果顯示生成式 AI 是把雙面刃：它降低書寫的認知門檻、帶來驚喜與啟發，卻也讓感恩表達變得較淺、更偏向自我導向。兩種感恩形式皆能提升快樂與意義感。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/01.pdf&amp;title=CHB: Artificial Humans（2026）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">doi.org/10.1016/j.chbah.2026.100333</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-2-zh">
+          <span class="pub-no">02</span>
+          <p class="pub-meta"><span>Journal of Environmental Psychology · 2026</span><span class="dtag">博士論文 研究三</span></p>
+          <h4>Nurturing well-being through nature-based intervention: The mediating role of mindfulness state</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Yeh, M.S., &amp; Yeh, S.L.*</p>
+          <p class="summary">結合經驗取樣法與日重建法的兩個研究顯示：自然介入能提升快樂、降低壓力，並增進自主動機與自然連結感；更重要的是，「正念狀態」是自然介入促進幸福感的關鍵中介機制。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/02.pdf&amp;title=J. Environmental Psychology（2026）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">doi.org/10.1016/j.jenvp.2025.102849</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-3-zh">
+          <span class="pub-no">03</span>
+          <p class="pub-meta"><span>Journal of Behavioral and Experimental Economics · 2026</span></p>
+          <h4>Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hsieh, T.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">檢驗預設選項、社會規範與正向框架三種輕推策略的組合效果：使用的輕推種類越多、效果越強，且策略之間沒有交互作用。「預設＋正向框架」僅對年輕人有效，「預設＋社會規範」則對高齡者更有效，為年齡導向的輕推設計提供依據。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/03.pdf&amp;title=J. Behavioral and Experimental Economics（2026）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.socec.2026.102598" target="_blank" rel="noopener">doi.org/10.1016/j.socec.2026.102598</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-4-zh">
+          <span class="pub-no">04</span>
+          <p class="pub-meta"><span>Psychology and Aging · 2025</span></p>
+          <h4>Exploring semantic expression disparities in intragenerational and intergenerational communication: A novel perspective on socioemotional selectivity theory</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以語言分析工具（LIWC）檢視 36 組對話：同世代對話中，高齡者比年輕人使用更多當下導向與家庭詞彙，符合社會情緒選擇理論；但在跨世代對話中，雙方的語言型態趨於一致，顯示群體間的語言調適比理論預測的年齡差異更具主導性。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/04.pdf&amp;title=Psychology and Aging（2025）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1037/pag0000877" target="_blank" rel="noopener">doi.org/10.1037/pag0000877</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-5-zh">
+          <span class="pub-no">05</span>
+          <p class="pub-meta"><span>Mindfulness · 2025</span><span class="dtag">博士論文 研究一</span></p>
+          <h4>Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以經驗取樣法追蹤 56 位大學生兩週的日常經驗。結果顯示專注當下能正向預測快樂，但外在動機會削弱這個正向關係；而高正念特質者對外在動機更敏感，放大了外在動機的調節效果——提示正念訓練應留意降低外在動機的影響。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/05.pdf&amp;title=Mindfulness（2025）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">doi.org/10.1007/s12671-025-02534-7</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-6-zh">
+          <span class="pub-no">06</span>
+          <p class="pub-meta"><span>Current Psychology · 2025</span><span class="dtag">博士論文 研究五</span></p>
+          <h4>Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Wu, S.H., Li, T.V., &amp; Yeh, S.L.*</p>
+          <p class="summary">44 組台灣跨世代配對進行三種溝通情境。個人內正念與人際正念皆能提升正向情緒、同理心、溝通滿意度並拉近心理距離；其中人際正念的效益更廣，且正念對高齡者溝通品質的提升效果比年輕人更全面。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/06.pdf&amp;title=Current Psychology（2025）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">doi.org/10.1007/s12144-025-07849-1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-7-zh">
+          <span class="pub-no">07</span>
+          <p class="pub-meta"><span>Research Square（Preprint）· 2024</span></p>
+          <h4>Emotional impact on investment and insurance preferences in unit-linked insurance plans</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Liu, H.Y., Chen, L.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">以情感灌注模型（Affect Infusion Model）為框架，探討情緒狀態如何影響投資型保單中投資與保險偏好的權衡，為金融商品設計與消費者決策提供心理學觀點。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/07.pdf&amp;title=Research Square Preprint（2024）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.21203/rs.3.rs-4733981/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-4733981/v1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-8-zh">
+          <span class="pub-no">08</span>
+          <p class="pub-meta"><span>應用心理研究（Research in Applied Psychology）· 2024</span></p>
+          <h4>精準輕推：以客戶為導向的商業應用</h4>
+          <p class="authors">黃振維、<b>曾鵬宇</b>、葉素玲*</p>
+          <p class="summary">系統性回顧輕推（Nudge）在政府、企業與金融領域的應用，並延伸探討性格特質與情緒如何影響輕推的有效性，提出「精準輕推」框架——依據目的、形式、客群與強度，設計最合適的輕推方式。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/08.pdf&amp;title=應用心理研究（2024）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.53106/156092512024120081001" target="_blank" rel="noopener">doi.org/10.53106/156092512024120081001</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-9-zh">
+          <span class="pub-no">09</span>
+          <p class="pub-meta"><span>Cogent Economics &amp; Finance · 2024</span></p>
+          <h4>Psychological dynamics of unit-linked insurance product decision-making: A cognitive model</h4>
+          <p class="authors">Tsai, C.C., Chen, L.Y., Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">建構投資型保單決策的認知模型，剖析消費者在兼具投資與保障性質的金融商品中，如何形成偏好與做出選擇的心理動態歷程。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/09.pdf&amp;title=Cogent Economics %26 Finance（2024）">閱讀 PDF</a>
+            <a class="doi" href="https://doi.org/10.1080/23322039.2024.2422966" target="_blank" rel="noopener">doi.org/10.1080/23322039.2024.2422966</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h3>會議論文（1 篇）</h3>
+      <div class="pubs">
+        <article class="pub" id="pub-10-zh">
+          <span class="pub-no">10</span>
+          <p class="pub-meta"><span>IEEE RO-MAN ·（審查中）</span></p>
+          <h4>Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hou, C.A., Pan, C.H., Liu, Y.C., Liu, T., Chiu, T.W., &amp; Yeh, S.L.*</p>
+          <p class="summary">兩項實驗檢驗 AI 聊天機器人的情緒調節效果：20 分鐘的對話不僅降低負向情緒，還能促進正向情緒並協助回復基準狀態。在知覺同理的三個面向中，唯有「關係溫暖」顯著預測情緒調節成效。</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="closing-zh">
+  <div class="wrap">
+    <p class="sec-label">結語 · TAKEAWAYS</p>
+    <h2>注意力稀缺的時代，專注是值得守護的價值</h2>
+    <div class="levels">
+      <div class="level">
+        <h3>心理層次</h3>
+        <p>強化自主動機，培養自我慈悲，為專注建立「內在保護機制」。</p>
+      </div>
+      <div class="level">
+        <h3>實踐層次</h3>
+        <p>主動創造與自然、正念的深度連結，為專注建立「強化機制」。</p>
+      </div>
+      <div class="level">
+        <h3>社會層次</h3>
+        <p>讓正念的價值引導教育與科技設計，使「活在當下」成為時代的集體選擇。</p>
+      </div>
+    </div>
+    <p class="closing-quote">AI 時代最稀缺的資源，不是算力，而是人們的專注力。<br>守住當下的力量，也守住了人類的獨特價值。</p>
+  </div>
+</section>
+
+<section id="thanks-zh">
+  <div class="wrap">
+    <p class="sec-label">謝辭 · ACKNOWLEDGMENTS</p>
+    <h2>感謝一路相伴的人</h2>
+    <div class="prose">
+      <p>感謝指導教授葉素玲老師的悉心引導，感謝 EPA 實驗室夥伴們的相互扶持，也感謝一路支持我的重要親友。這份論文，是站在你們的肩膀上完成的。</p>
+    </div>
+    <figure class="fig" data-local-fig>
+      <div class="imgbox"><img src="assets/acknowledgment.jpg" alt="與葉素玲老師、EPA 實驗室成員的合照" loading="lazy"></div>
+      <figcaption>與素玲老師、EPA 實驗室夥伴的合影。</figcaption>
+    </figure>
+    <p class="thanks-song">謹以〈You Raise Me Up〉這首歌，獻給所有把我舉向更高處的人。</p>
+  </div>
+</section>
+</div>
+
+<div class="diss-content" data-diss-lang="zh-cn">
+<div class="hero">
+  <div class="breath" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">国立台湾大学心理学系暨研究所 · 博士论文</p>
+    <h1>从<span class="kanji-accent">专注</span>到<span class="kanji-accent">幸福</span></h1>
+    <p class="subtitle">心理机制、个人实践、人际影响力的探讨</p>
+    <div class="byline">
+      <span>研究生 <strong>曾鹏宇</strong>（Peng-Yu Zeng）</span>
+      <span>指导教授 <strong>叶素玲</strong> 博士</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>章节</span></div>
+      <div class="stat"><b>6</b><span>研究</span></div>
+      <div class="stat"><b>9</b><span>期刊发表</span></div>
+      <div class="stat"><b>1</b><span>会议论文</span></div>
+    </div>
+    <p class="hero-thesis"><a class="btn-pdf" data-local-pdf href="viewer.html?file=thesis.pdf&amp;title=博士论文全文">博士论文全文 PDF</a></p>
+  </div>
+</div>
+
+<section id="abstract-cn">
+  <div class="wrap">
+    <p class="sec-label">摘要 · ABSTRACT</p>
+    <h2>在分心的时代，重塑专注与幸福</h2>
+    <div class="prose">
+      <p>在数字科技高度渗透的当代，社群媒体的持续干扰使人们长期处于分心状态；与此同时，个体内在纷扰的思绪亦不断将注意力从当下抽离。这种普遍的分心状态不仅削弱个体的认知功能，更对幸福感造成负面影响。如何形塑当下的专注力与幸福感，已成为学界与实务界共同关注的内核议题。</p>
+      <p>本论文以「专注当下」与「幸福感」为内核构念，从心理机制、个人实践与人际影响力三个层次展开探讨。第一章从机制层次切入，探讨外在动机如何削弱专注与幸福感之间的正向关系，并查看自我慈悲特质在个体分心时的关键缓冲作用。第二章从个人实践层次出发，检验自然介入与正念介入如何有效提升专注与幸福感。第三章将视角延伸至人际影响力层次，探讨正念特质较高者如何促进人际交互品质，并探讨赋予正念角色的聊天机器人如何影响人际感恩。</p>
+      <p>本论文不仅从理论层次揭示影响专注与幸福感的各种因素，亦在实践层次为提升自身与他人福祉提供具体启示。</p>
+    </div>
+    <div class="keywords">
+      <span class="kw">专注当下</span><span class="kw">幸福感</span><span class="kw">动机</span>
+      <span class="kw">自我慈悲</span><span class="kw">自然介入</span><span class="kw">正念训练</span>
+      <span class="kw">人际关系</span><span class="kw">人机关系</span>
+    </div>
+  </div>
+</section>
+
+<section id="context-cn">
+  <div class="wrap">
+    <p class="sec-label">研究背景 · WHY IT MATTERS</p>
+    <h2>注意力稀缺的时代</h2>
+    <blockquote class="epigraph">
+      <span class="en">"What information consumes is rather obvious: it consumes the attention of its recipients."</span>
+      「信息消耗的是什么，显而易见——它消耗的是接收者的注意力。」
+      <cite>— Herbert A. Simon（1971），诺贝尔经济学奖得主</cite>
+    </blockquote>
+    <div class="bigstats">
+      <div class="bigstat"><b>46.9%</b><span>日常生活中，人们分心于无关思绪的时间比例——而分心会降低幸福感（Killingsworth &amp; Gilbert, 2010）</span></div>
+      <div class="bigstat"><b>73%</b><span>AI 算法让人们多花在社群媒体上的时间（Guess et al., 2023）</span></div>
+      <div class="bigstat"><b>44 秒</b><span>人们在电脑屏幕前的平均注意力持续时间——2004 年还有 150 秒</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="structure-cn">
+  <div class="wrap">
+    <p class="sec-label">论文架构 · THREE LEVELS</p>
+    <h2>三个层次，六个研究</h2>
+    <p class="frame-note">论文以 Seligman 的 PERMA 幸福感模型为理论框架，从个人层次（机制与实践）到人际层次（影响力）逐步展开。点击任一研究可展开阅读研究问题、方法与主要发现；已发表的四个研究另可跳至对应的期刊发表。</p>
+
+    <div class="chapters">
+      <article class="chapter" id="ch1-cn">
+        <div class="ch-head"><span class="ch-num">第一章</span><h3>心理机制</h3></div>
+        <p class="ch-q">专注与分心，如何影响幸福感？</p>
+        <p>以经验采样法捕捉日常生活中即时的专注状态，探讨外在动机如何削弱「专注 → 幸福感」的正向关系，以及当人们分心时，自我慈悲特质如何缓冲分心带来的负面影响。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究一</em>动机影响专注到幸福感的历程</span>
+              <a class="pub-tag" href="#pub-5-cn">已发表 · Mindfulness（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>专注当下能提升快乐，但为什么有时效果不明显？本研究检验「做这件事的动机」是否调节专注与幸福感的关系，以及正念特质高的人是否对动机更敏感。</p>
+              <p><b>研究方法</b>以经验采样法追踪 56 位台湾大学生两周的日常生活，每天三次随机回报当下的专注程度、快乐感受，以及从事活动的动机类型（自主动机或外在动机）。</p>
+              <p><b>主要发现</b>专注当下显著正向预测快乐；但活动的外在动机越高，专注与快乐的正向关系越弱。此外，高正念特质者对自身动机的觉察更敏锐，反而放大了外在动机的削弱效果——提示正念训练应同时留意降低外在动机的影响。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-mindfulness.png" alt="外在动机调节专注与幸福感关系的回归图" loading="lazy"></div>
+                  <figcaption>外在动机高（红线）时，专注当下与幸福感的正向关系明显变平缓。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study1-moderation.png" alt="正念特质高低分组下外在动机的调节效果" loading="lazy"></div>
+                  <figcaption>高正念特质者（右图）受外在动机的影响更强：外在动机高时，专注的幸福效益几乎消失。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=14&amp;title=博士论文 · 研究一">阅读论文原文（第 14 页起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究二</em>分心时，想法的内容动机影响幸福感</span>
+              <span class="unpub">论文章节</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>分心一定会让人不快乐吗？本研究首次从「分心内容的动机属性」切入：分心想着自主动机的事（如期待的聚会）与受控动机的事（如不得不做的工作），对幸福感的影响是否不同？年龄与自我慈悲又扮演什么角色？</p>
+              <p><b>研究方法</b>以经验采样法追踪 91 位参与者（35 位长者、56 位年轻人）两周，共回收 3,023 笔日常经验数据，同时测量自我慈悲特质，以多层次调节中介模型分析。</p>
+              <p><b>主要发现</b>参与者平均 39.3% 的时间处于分心，且分心时幸福感较低；但分心想「自主动机」内容显著比想「受控动机」内容更快乐——当从事受控活动时，分心想自主动机的事，幸福感可与专注时相当，显示分心可作为缺失自主性时的补偿机制。此外，长者即使分心也不降低幸福感：因为长者具备更高的自我慈悲（其中正念与共同人性是关键成分），缓冲了分心的负面影响。</p>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study2-interaction.png" alt="专注状态、活动动机与年龄的交互作用图" loading="lazy"></div>
+                <figcaption>左：从事自主动机活动时，年轻人（蓝）一分心幸福感就下降，长者（红）则不受影响。右：从事受控动机活动时，分心想「自主动机」内容不会降低幸福感，分心想「受控动机」内容才会。</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=25&amp;title=博士论文 · 研究二">阅读论文原文（第 25 页起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第一章总结 · 专注与幸福感的「易损性」与「保护机制」</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch1-summary.png" alt="第一章架构图：主动专注与被动分心的心理机制" loading="lazy"></div>
+            </figure>
+            <p><b>易损性：</b>专注与幸福感的正向关系并不稳固，会被外在动机破坏。在组织层次中，可为个体创建支持自主性的环境，降低外在动机的干扰。</p>
+            <p><b>保护机制：</b>自我慈悲能缓解分心的负向效果。年轻人可以向长者学习，有意识地觉察分心时刻，并以自我慈悲回应自己，重塑抵抗分心影响的心理韧性。</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch2-cn">
+        <div class="ch-head"><span class="ch-num">第二章</span><h3>个人实践</h3></div>
+        <p class="ch-q">哪些介入方法，能有效提升专注与幸福感？</p>
+        <p>基于轻推理论（改变环境）与赋能理论（系统性训练）的双轨途径，以纵贯视角检验自然介入与正念介入对日常专注状态与幸福感的提升效果。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究三</em>自然介入对专注与幸福感的影响</span>
+              <a class="pub-tag" href="#pub-2-cn">已发表 · J. Environ. Psychol.（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>接触自然能提升幸福感，但背后的心理机制是什么？本研究假设「正念状态」是自然介入促进幸福感的关键中介：身处自然时，人更容易回到当下。</p>
+              <p><b>研究方法</b>两个子研究：子研究一以经验采样法比较自然介入期间与基准日的快乐、压力与自主动机；子研究二以日重建法测量快乐与自然链接感，皆以多层次回归分析。</p>
+              <p><b>主要发现</b>相较于基准日，自然介入提升快乐、降低压力，并增进自主动机与自然链接感；更重要的是，正念状态显著中介了自然介入与幸福感的关系，且介入期间正念状态较高的时刻，幸福感也较高——未来的自然介入课程可纳入正念元素以强化效果。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-farm.png" alt="农业疗育场域照片" loading="lazy"></div>
+                  <figcaption>研究场域：农业疗育——结合在地农业发展与乡村环境的自然介入，为期十八周。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study3-mediation.png" alt="农业疗育通过正念状态影响幸福感的中介模型" loading="lazy"></div>
+                  <figcaption>中介模型：农业疗育 → 正念状态（专注当下＋非批判）→ 幸福感。经验采样法与日记重建法皆支持此路径。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=37&amp;title=博士论文 · 研究三">阅读论文原文（第 37 页起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究四</em>正念介入对专注与幸福感的影响</span>
+              <span class="unpub">论文章节</span>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>正念课程的效果取决于「练了多少」。本研究提出正念练习的不对称 U 型曲线模型：练习量低于某个门槛时，正念可能不增反减幸福感；超过门槛后才展现剂量效果。</p>
+              <p><b>研究方法</b>21 位参与者完成八周正念认知疗法（MBCT）课程，另有 27 位年龄性别配对的对照组（阅读任务）。所有人连续 50 天填写每日幸福感日记（个人、人际、环境、生理四面向），并于课程前后完成持续注意力、情绪记忆与情绪脸孔眼动三项电脑测验。</p>
+              <p><b>主要发现</b>以每日平均练习 10 分钟为切点，正念组分为高练习组（平均约 25 分钟／天）与低练习组（平均约 5 分钟／天）。高练习组的正念特质与各面向每日幸福感显著高于对照组；每天平均练习低于约 5 分钟时，幸福感反而出现轻微下降，支持不对称 U 型曲线。正念训练主要降低「内在思绪分心」而非提升客观注意力，支持内在注意力模型；低练习组在正向高激发刺激下的后设记忆能力下降，呼应初学者困境。交叉滞后分析并显示：练习与幸福感、睡眠品质之间是双向相互滋养的动态历程。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-trait.png" alt="三组正念特质前后测比较图" loading="lazy"></div>
+                  <figcaption>八周后，只有高练习组（红）的正念特质显著提升（p = .008）；低练习组仅呈现边缘显著的趋势。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study4-dose.png" alt="正念练习时间与幸福感的不对称U型曲线" loading="lazy"></div>
+                  <figcaption>不对称 U 型曲线：每天平均练习超过约 4.5–4.8 分钟的转折点后，人际与环境幸福感才随练习时间上升。</figcaption>
+                </figure>
+              </div>
+              <figure class="fig" data-local-fig>
+                <div class="imgbox"><img src="assets/study4-crosslag.png" alt="个人幸福感与正念练习时间的交叉滞后模型" loading="lazy"></div>
+                <figcaption>交叉滞后模型：八周之间，个人幸福感与当周正念练习时间逐周相互预测（蓝：幸福感 → 练习；绿：练习 → 幸福感），形成双向滋养的正向循环。</figcaption>
+              </figure>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=51&amp;title=博士论文 · 研究四">阅读论文原文（第 51 页起）</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第二章总结 · 专注与幸福感的「强化」路径</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch2-summary.png" alt="第二章架构图：自然介入与正念训练的双轨途径" loading="lazy"></div>
+            </figure>
+            <p><b>深度链接，而非被动暴露：</b>单纯待在自然环境中并非幸福感的关键，要专注且不批判地参与其中——正念地注视自然风景、正念地品味食物，与自然创建深度链接。</p>
+            <p><b>持久练习，而非上完课就好：</b>参加正念课程但缺乏练习，反而可能降低正念状态。提升幸福感的内核在于日常持久的积累——每天至少保持 5 分钟以上的自主练习，并借由幸福感与睡眠品质的正向循环，滋养持续练习的动机。</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="chapter" id="ch3-cn">
+        <div class="ch-head"><span class="ch-num">第三章</span><h3>人际影响力</h3></div>
+        <p class="ch-q">专注与正念，如何影响他人与关系？</p>
+        <p>将视角从个人延伸至人际：正念特质较高者如何促进跨世代沟通品质；当生成式 AI 聊天机器人被赋予正念角色时，又如何重塑人际感恩的表达。</p>
+        <div class="studies">
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究五</em>正念特质影响沟通品质</span>
+              <a class="pub-tag" href="#pub-6-cn">已发表 · Current Psychology（2025）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>个人内正念（专注当下、不评判）与人际正念（觉察对话中的语言与非语言线索）如何分别影响跨世代沟通的品质？</p>
+              <p><b>研究方法</b>44 组台湾跨世代配对（年轻人＋长者）进行三种沟通情境，依人际化学模型从情绪、认知、行为三层面评估沟通品质，并以多层次回归与行动者—伙伴互依模型（APIM）分析。</p>
+              <p><b>主要发现</b>两种正念皆能提升正向情绪、降低压力、促进同理心与沟通满意度、拉近心理距离，并在争议话题上达成更高共识；其中人际正念的效益范围更广（还能降低负向情绪、加快合作速度）。APIM 分析显示，正念对长者沟通品质的提升效果比对年轻人更全面。有趣的是，肢体同步性分析发现正念促进「反相位」同步——一方说话（身体动）时，另一方专注聆听（身体不动），这正是专注倾听的具体展现。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-indicators.png" alt="沟通满意度的情感、认知、行为三层面指针" loading="lazy"></div>
+                  <figcaption>研究架构：从情感面（情绪变化、沟通压力）、认知面（同理心、心理距离、共识）、行为面（合作速度、肢体同步）三个层面全方位评估跨世代沟通品质。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study5-sync.png" alt="正念沟通组的肢体同步性分析" loading="lazy"></div>
+                  <figcaption>肢体同步性：正念沟通组呈现显著的反相位同步（左图），呼应「一方表达、一方专注聆听」的高品质交互节奏。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=90&amp;title=博士论文 · 研究五">阅读论文原文（第 90 页起）</a>
+                <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="study">
+            <summary>
+              <span class="study-name"><em>研究六</em>正念聊天机器人影响感恩</span>
+              <a class="pub-tag" href="#pub-1-cn">已发表 · CHB: Artificial Humans（2026）</a>
+              <span class="chev">▾</span>
+            </summary>
+            <div class="study-body">
+              <p><b>研究问题</b>当生成式 AI 介入感恩练习，改变的不只是效果，还有「历程」。本研究比较 AI 对话式感恩与传统感恩日记，检验 GenAI 如何重塑幸福感介入。</p>
+              <p><b>研究方法</b>为期七天的随机对照试验，三组：感恩聊天机器人组（GenAI 对话式书写）、感恩日记组（结构化提示书写）、主动对照组（记录每日事件），以线性混合效果模型结合主题分析（混合方法）。</p>
+              <p><b>主要发现</b>两种感恩形式皆比对照组提升快乐与意义感；但聊天机器人组的知觉努力较低、感恩表达较浅（更多「知恩」、更少「谢恩」），且更偏向自我导向的感恩（拥有型、失去型、比较型）。质性分析显示参与者对 AI 生成的摘要感到惊喜与启发。整体而言，GenAI 介入是把双面刃：降低认知门槛、带来灵感，却可能侵蚀反思深度——未来的 AI 幸福感工具应让用户自行权衡是否纳入 AI 中介。</p>
+              <div class="fig-grid" data-local-fig>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-chatbot.png" alt="研究六三组实验设计流程图" loading="lazy"></div>
+                  <figcaption>实验设计：117 位参与者随机分为正念机器人组（与 AI 对话分享感恩）、感恩日记组（在线书写）、对照组（记录日常事件），连续七天。</figcaption>
+                </figure>
+                <figure class="fig">
+                  <div class="imgbox"><img src="assets/study6-depth.png" alt="两组感恩深度人工编码比较长条图" loading="lazy"></div>
+                  <figcaption>感恩深度的人工编码：正念机器人组（绿）比感恩日记组（橘）有更多浅层的「知恩」（68.5% vs 57.5%），更少深层的「谢恩」（16.2% vs 22.5%）。</figcaption>
+                </figure>
+              </div>
+              <div class="study-links">
+                <a class="thesis-link" data-local-pdf href="viewer.html?file=thesis.pdf&amp;page=117&amp;title=博士论文 · 研究六">阅读论文原文（第 117 页起）</a>
+                <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">期刊版本 DOI</a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <details class="takeaway">
+          <summary><span class="tk-label">第三章总结 · 专注与幸福感的「外溢」路径</span><span class="chev">▾</span></summary>
+          <div class="tk-body">
+            <figure class="fig" data-local-fig>
+              <div class="imgbox"><img src="assets/ch3-summary.png" alt="第三章架构图：正念在人际沟通与人际感恩的影响路径" loading="lazy"></div>
+            </figure>
+            <p><b>教育场域：</b>把正念训练引入教育领域，通过学生、家长、老师正念特质的提高，改善跨世代沟通品质。</p>
+            <p><b>科技设计：</b>AI 的设计可以参考正念的内核元素，并把 AI 部署在人际感恩的脉络中，让 AI 的发展成为人际关系的助力而非阻力。</p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications-cn">
+  <div class="wrap">
+    <p class="sec-label">学术发表 · PUBLICATIONS</p>
+    <h2>发表论文清单</h2>
+
+    <div class="pub-group">
+      <h3>期刊发表（9 篇）</h3>
+      <div class="pubs">
+
+        <article class="pub" id="pub-1-cn">
+          <span class="pub-no">01</span>
+          <p class="pub-meta"><span>Computers in Human Behavior: Artificial Humans · 2026</span><span class="dtag">博士论文 研究六</span></p>
+          <h4>How generative AI reshapes gratitude interventions: Benefits and risks</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Chang, K.Y., Lin, K.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">为期七天的随机对照试验，比较「感恩聊天机器人」与传统感恩日记。结果显示生成式 AI 是把双面刃：它降低书写的认知门槛、带来惊喜与启发，却也让感恩表达变得较浅、更偏向自我导向。两种感恩形式皆能提升快乐与意义感。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/01.pdf&amp;title=CHB: Artificial Humans（2026）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.chbah.2026.100333" target="_blank" rel="noopener">doi.org/10.1016/j.chbah.2026.100333</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-2-cn">
+          <span class="pub-no">02</span>
+          <p class="pub-meta"><span>Journal of Environmental Psychology · 2026</span><span class="dtag">博士论文 研究三</span></p>
+          <h4>Nurturing well-being through nature-based intervention: The mediating role of mindfulness state</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Yeh, M.S., &amp; Yeh, S.L.*</p>
+          <p class="summary">结合经验采样法与日重建法的两个研究显示：自然介入能提升快乐、降低压力，并增进自主动机与自然链接感；更重要的是，「正念状态」是自然介入促进幸福感的关键中介机制。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/02.pdf&amp;title=J. Environmental Psychology（2026）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.jenvp.2025.102849" target="_blank" rel="noopener">doi.org/10.1016/j.jenvp.2025.102849</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-3-cn">
+          <span class="pub-no">03</span>
+          <p class="pub-meta"><span>Journal of Behavioral and Experimental Economics · 2026</span></p>
+          <h4>Nudging toward long-term gains: Differential impacts of combined nudge strategies across age cohorts</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hsieh, T.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">检验缺省选项、社会规范与正向框架三种轻推策略的组合效果：使用的轻推种类越多、效果越强，且策略之间没有交互作用。「缺省＋正向框架」仅对年轻人有效，「缺省＋社会规范」则对高龄者更有效，为年龄导向的轻推设计提供依据。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/03.pdf&amp;title=J. Behavioral and Experimental Economics（2026）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1016/j.socec.2026.102598" target="_blank" rel="noopener">doi.org/10.1016/j.socec.2026.102598</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-4-cn">
+          <span class="pub-no">04</span>
+          <p class="pub-meta"><span>Psychology and Aging · 2025</span></p>
+          <h4>Exploring semantic expression disparities in intragenerational and intergenerational communication: A novel perspective on socioemotional selectivity theory</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以语言分析工具（LIWC）查看 36 组对话：同世代对话中，高龄者比年轻人使用更多当下导向与家庭词汇，符合社会情绪选择理论；但在跨世代对话中，双方的语言型态趋于一致，显示群体间的语言调适比理论预测的年龄差异更具主导性。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/04.pdf&amp;title=Psychology and Aging（2025）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1037/pag0000877" target="_blank" rel="noopener">doi.org/10.1037/pag0000877</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-5-cn">
+          <span class="pub-no">05</span>
+          <p class="pub-meta"><span>Mindfulness · 2025</span><span class="dtag">博士论文 研究一</span></p>
+          <h4>Embracing momentary focus for elevated happiness: The moderating effects of external motivation and trait mindfulness</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">以经验采样法追踪 56 位大学生两周的日常经验。结果显示专注当下能正向预测快乐，但外在动机会削弱这个正向关系；而高正念特质者对外在动机更敏感，放大了外在动机的调节效果——提示正念训练应留意降低外在动机的影响。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/05.pdf&amp;title=Mindfulness（2025）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12671-025-02534-7" target="_blank" rel="noopener">doi.org/10.1007/s12671-025-02534-7</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-6-cn">
+          <span class="pub-no">06</span>
+          <p class="pub-meta"><span>Current Psychology · 2025</span><span class="dtag">博士论文 研究五</span></p>
+          <h4>Fostering intergenerational understanding: Roles of intrapersonal and interpersonal mindfulness in communication</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Wu, S.H., Li, T.V., &amp; Yeh, S.L.*</p>
+          <p class="summary">44 组台湾跨世代配对进行三种沟通情境。个人内正念与人际正念皆能提升正向情绪、同理心、沟通满意度并拉近心理距离；其中人际正念的效益更广，且正念对高龄者沟通品质的提升效果比年轻人更全面。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/06.pdf&amp;title=Current Psychology（2025）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1007/s12144-025-07849-1" target="_blank" rel="noopener">doi.org/10.1007/s12144-025-07849-1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-7-cn">
+          <span class="pub-no">07</span>
+          <p class="pub-meta"><span>Research Square（Preprint）· 2024</span></p>
+          <h4>Emotional impact on investment and insurance preferences in unit-linked insurance plans</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Liu, H.Y., Chen, L.Y., &amp; Yeh, S.L.*</p>
+          <p class="summary">以情感灌注模型（Affect Infusion Model）为框架，探讨情绪状态如何影响投资型保单中投资与保险偏好的权衡，为金融商品设计与消费者决策提供心理学观点。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/07.pdf&amp;title=Research Square Preprint（2024）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.21203/rs.3.rs-4733981/v1" target="_blank" rel="noopener">doi.org/10.21203/rs.3.rs-4733981/v1</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-8-cn">
+          <span class="pub-no">08</span>
+          <p class="pub-meta"><span>应用心理研究（Research in Applied Psychology）· 2024</span></p>
+          <h4>精准轻推：以客户为导向的商业应用</h4>
+          <p class="authors">黄振维、<b>曾鹏宇</b>、叶素玲*</p>
+          <p class="summary">系统性回顾轻推（Nudge）在政府、企业与金融领域的应用，并延伸探讨性格特质与情绪如何影响轻推的有效性，提出「精准轻推」框架——依据目的、形式、客群与强度，设计最合适的轻推方式。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/08.pdf&amp;title=应用心理研究（2024）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.53106/156092512024120081001" target="_blank" rel="noopener">doi.org/10.53106/156092512024120081001</a>
+          </div>
+        </article>
+
+        <article class="pub" id="pub-9-cn">
+          <span class="pub-no">09</span>
+          <p class="pub-meta"><span>Cogent Economics &amp; Finance · 2024</span></p>
+          <h4>Psychological dynamics of unit-linked insurance product decision-making: A cognitive model</h4>
+          <p class="authors">Tsai, C.C., Chen, L.Y., Huang, C.W., <b>Zeng, P.Y.</b>, &amp; Yeh, S.L.*</p>
+          <p class="summary">建构投资型保单决策的认知模型，剖析消费者在兼具投资与保障性质的金融商品中，如何形成偏好与做出选择的心理动态历程。</p>
+          <div class="pub-actions">
+            <a class="btn-pdf" data-local-pdf href="viewer.html?file=papers/09.pdf&amp;title=Cogent Economics %26 Finance（2024）">阅读 PDF</a>
+            <a class="doi" href="https://doi.org/10.1080/23322039.2024.2422966" target="_blank" rel="noopener">doi.org/10.1080/23322039.2024.2422966</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h3>会议论文（1 篇）</h3>
+      <div class="pubs">
+        <article class="pub" id="pub-10-cn">
+          <span class="pub-no">10</span>
+          <p class="pub-meta"><span>IEEE RO-MAN ·（审查中）</span></p>
+          <h4>Can talking to AI chatbots help when you're feeling down? Examining the role of perceived empathy</h4>
+          <p class="authors"><b>Zeng, P.Y.</b>, Hou, C.A., Pan, C.H., Liu, Y.C., Liu, T., Chiu, T.W., &amp; Yeh, S.L.*</p>
+          <p class="summary">两项实验检验 AI 聊天机器人的情绪调节效果：20 分钟的对话不仅降低负向情绪，还能促进正向情绪并协助回复基准状态。在知觉同理的三个面向中，唯有「关系温暖」显著预测情绪调节成效。</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="closing-cn">
+  <div class="wrap">
+    <p class="sec-label">结语 · TAKEAWAYS</p>
+    <h2>注意力稀缺的时代，专注是值得守护的价值</h2>
+    <div class="levels">
+      <div class="level">
+        <h3>心理层次</h3>
+        <p>强化自主动机，培养自我慈悲，为专注创建「内在保护机制」。</p>
+      </div>
+      <div class="level">
+        <h3>实践层次</h3>
+        <p>主动创造与自然、正念的深度链接，为专注创建「强化机制」。</p>
+      </div>
+      <div class="level">
+        <h3>社会层次</h3>
+        <p>让正念的价值引导教育与科技设计，使「活在当下」成为时代的集体选择。</p>
+      </div>
+    </div>
+    <p class="closing-quote">AI 时代最稀缺的资源，不是算力，而是人们的专注力。<br>守住当下的力量，也守住了人类的独特价值。</p>
+  </div>
+</section>
+
+<section id="thanks-cn">
+  <div class="wrap">
+    <p class="sec-label">谢辞 · ACKNOWLEDGMENTS</p>
+    <h2>感谢一路相伴的人</h2>
+    <div class="prose">
+      <p>感谢指导教授叶素玲老师的悉心引导，感谢 EPA 实验室伙伴们的相互扶持，也感谢一路支持我的重要亲友。这份论文，是站在你们的肩膀上完成的。</p>
+    </div>
+    <figure class="fig" data-local-fig>
+      <div class="imgbox"><img src="assets/acknowledgment.jpg" alt="与叶素玲老师、EPA 实验室成员的合照" loading="lazy"></div>
+      <figcaption>与素玲老师、EPA 实验室伙伴的合影。</figcaption>
+    </figure>
+    <p class="thanks-song">谨以〈You Raise Me Up〉这首歌，献给所有把我举向更高处的人。</p>
+  </div>
+</section>
+</div>
 </main>
 
 <script>
@@ -436,6 +2050,7 @@ const translations = {
     'diss-label': 'Dissertation:',
     'diss-title-text': 'From Focus to Happiness: Exploring Psychological Mechanisms, Personal Practice, and Interpersonal Influence',
     'advisor-label': 'Advisor:',
+    'advisor-name': 'Su-Ling Yeh, Ph.D.',
     'edu-bs-title': 'B.S. in Psychology and Chemical Engineering (Double Major)',
     'edu-bs-uni': 'Chung Yuan Christian University, Taoyuan, Taiwan, 2021',
     'pub-title': 'Publications',
@@ -486,6 +2101,7 @@ const translations = {
     'diss-label': '論文題目：',
     'diss-title-text': '從專注到幸福：心理機制、個人實踐與人際影響力的探討',
     'advisor-label': '指導教授：',
+    'advisor-name': '葉素玲 教授',
     'edu-bs-title': '心理學與化學工程雙學位學士',
     'edu-bs-uni': '中原大學，桃園，台灣，2021',
     'pub-title': '學術發表',
@@ -536,6 +2152,7 @@ const translations = {
     'diss-label': '论文题目：',
     'diss-title-text': '从专注到幸福：心理机制、个人实践与人际影响力的探讨',
     'advisor-label': '指导教授：',
+    'advisor-name': '叶素玲 教授',
     'edu-bs-title': '心理学与化学工程双学位学士',
     'edu-bs-uni': '中原大学，桃园，台湾，2021',
     'pub-title': '学术发表',
@@ -596,6 +2213,9 @@ function setLanguage(lang) {
   renderConferencePresentations();
   renderAwards();
   renderEntrepreneurship();
+  document.querySelectorAll('.diss-content').forEach(b => {
+    b.classList.toggle('active', b.dataset.dissLang === lang);
+  });
   closeLangMenu();
 }
 
