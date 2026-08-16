@@ -42,31 +42,55 @@ header{
 }
 header .wrap{
   display:flex; align-items:center; justify-content:space-between;
-  padding:16px 24px; gap:20px;
+  padding:14px 24px; gap:20px;
 }
 .logo{
-  font-weight:700; font-size:18px; color:var(--ink);
-  letter-spacing:-.5px;
+  display:flex; align-items:baseline; gap:9px;
+  font-weight:700; font-size:19px; color:var(--ink);
+  letter-spacing:-.3px; white-space:nowrap;
 }
-nav{display:flex; gap:12px; align-items:center}
-nav button{
-  background:none; border:1px solid var(--line); padding:8px 16px;
-  border-radius:6px; cursor:pointer; font-family:var(--sans);
-  color:var(--ink); font-size:14px; transition:all 0.2s;
-  font-weight:500;
+.degree-chip{
+  font-family:var(--sans); font-size:11px; font-weight:600;
+  letter-spacing:.04em;
+  color:var(--accent-ink); background:var(--accent-soft);
+  border:1px solid var(--faint);
+  padding:2px 9px; border-radius:999px; white-space:nowrap;
 }
-nav button.active{
-  background:var(--accent); color:#fff; border-color:var(--accent);
+.degree-chip.lg{
+  font-size:12.5px; padding:4px 13px;
 }
-nav button:hover:not(.active){
-  background:var(--accent-soft); border-color:var(--accent);
+nav{display:flex; gap:10px; align-items:center}
+
+/* Segmented section switcher */
+.seg{
+  display:flex; gap:3px; padding:3px;
+  background:var(--accent-soft); border:1px solid var(--line);
+  border-radius:999px;
 }
+.seg button{
+  background:none; border:none; padding:7px 17px;
+  border-radius:999px; cursor:pointer; font-family:var(--sans);
+  color:var(--muted); font-size:13.5px; font-weight:600;
+  transition:background .18s, color .18s; white-space:nowrap;
+}
+.seg button.active{
+  background:var(--accent); color:var(--surface); box-shadow:var(--shadow);
+}
+.seg button:hover:not(.active){color:var(--accent-ink)}
 
 /* Language dropdown */
 .lang-dropdown{
   position:relative;
 }
-.lang-btn{margin-left:auto}
+.lang-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:none; border:1px solid transparent; padding:7px 12px;
+  border-radius:999px; cursor:pointer; font-family:var(--sans);
+  color:var(--muted); font-size:13.5px; font-weight:500;
+  transition:background .18s, color .18s; white-space:nowrap;
+}
+.lang-btn::after{content:"\25BE"; font-size:10px; opacity:.65}
+.lang-btn:hover{background:var(--accent-soft); color:var(--accent-ink)}
 .lang-menu{
   display:none; position:absolute; top:100%; right:0;
   background:var(--surface); border:1px solid var(--line);
@@ -82,7 +106,7 @@ nav button:hover:not(.active){
 }
 .lang-menu button:hover{background:var(--accent-soft)}
 .lang-menu button.active{
-  background:var(--accent); color:#fff;
+  background:var(--accent); color:var(--surface);
 }
 
 /* Main content areas */
@@ -95,8 +119,12 @@ nav button:hover:not(.active){
 .cv-header{
   margin-bottom:40px; padding-bottom:32px; border-bottom:2px solid var(--accent);
 }
+.cv-name-row{
+  display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  margin:0 0 10px;
+}
 .cv-name{
-  font-size:32px; font-weight:700; margin:0 0 8px;
+  font-size:32px; font-weight:700; margin:0;
   letter-spacing:-1px;
 }
 .cv-subtitle{
@@ -242,9 +270,10 @@ nav button:hover:not(.active){
 }
 
 @media (max-width:768px){
-  header .wrap{flex-direction:column; align-items:flex-start}
-  nav{width:100%; flex-wrap:wrap; gap:8px}
-  nav button{flex:1; min-width:100px}
+  header .wrap{flex-direction:column; align-items:flex-start; gap:12px; padding:14px 20px}
+  nav{width:100%; justify-content:space-between; gap:8px}
+  .seg{flex:1}
+  .seg button{flex:1; padding:7px 10px}
   .cv-contact{grid-template-columns:1fr; gap:12px}
   .diss-h1{font-size:32px}
   .diss-subtitle{font-size:16px}
@@ -536,12 +565,16 @@ details.takeaway summary::-webkit-details-marker{display:none}
 
 <header>
   <div class="wrap">
-    <div class="logo">Peng-Yu Zeng</div>
+    <div class="logo">
+      <span id="logo-name">Peng-Yu Zeng</span><span class="degree-chip" id="logo-degree">Ph.D.</span>
+    </div>
     <nav>
-      <button class="nav-btn active" data-section="cv" data-lang-en="Curriculum Vitae" data-lang-zh="履歷" data-lang-zh-cn="履历">Curriculum Vitae</button>
-      <button class="nav-btn" data-section="dissertation" data-lang-en="Dissertation" data-lang-zh="博士論文" data-lang-zh-cn="博士论文">Dissertation</button>
+      <div class="seg">
+        <button class="nav-btn active" data-section="cv" data-lang-en="Curriculum Vitae" data-lang-zh="履歷" data-lang-zh-cn="履历">Curriculum Vitae</button>
+        <button class="nav-btn" data-section="dissertation" data-lang-en="Dissertation" data-lang-zh="博士論文" data-lang-zh-cn="博士论文">Dissertation</button>
+      </div>
       <div class="lang-dropdown">
-        <button class="lang-btn" id="lang-toggle" data-lang-en="Language" data-lang-zh="語言" data-lang-zh-cn="语言">Language</button>
+        <button class="lang-btn" id="lang-toggle" data-lang-en="English" data-lang-zh="繁體" data-lang-zh-cn="简体">English</button>
         <div class="lang-menu" id="lang-menu">
           <button class="lang-opt active" data-lang="en">English</button>
           <button class="lang-opt" data-lang="zh">繁體中文</button>
@@ -556,8 +589,11 @@ details.takeaway summary::-webkit-details-marker{display:none}
 <main id="cv" class="active">
   <div class="wrap">
     <div class="cv-header">
-      <div class="cv-name" id="cv-name">Peng-Yu Zeng</div>
-      <div class="cv-subtitle" id="cv-dept">Department of Psychology, National Taiwan University</div>
+      <div class="cv-name-row">
+        <div class="cv-name" id="cv-name">Peng-Yu Zeng</div>
+        <span class="degree-chip lg" id="cv-degree">Ph.D.</span>
+      </div>
+      <div class="cv-subtitle" id="cv-dept">Ph.D. in Psychology, National Taiwan University (2026)</div>
       <div class="cv-role" id="cv-role">Co-founder, PSYbyPSY</div>
       <div class="cv-contact">
         <div><strong id="cv-email-label">Email:</strong> <a href="mailto:zengmaterial@gmail.com">zengmaterial@gmail.com</a></div>
@@ -2039,8 +2075,11 @@ const publications = [
 
 const translations = {
   en: {
+    'logo-name': 'Peng-Yu Zeng',
+    'logo-degree': 'Ph.D.',
     'cv-name': 'Peng-Yu Zeng',
-    'cv-dept': 'Department of Psychology, National Taiwan University',
+    'cv-degree': 'Ph.D.',
+    'cv-dept': 'Ph.D. in Psychology, National Taiwan University (2026)',
     'cv-role': 'Co-founder, PSYbyPSY',
     'cv-email-label': 'Email:',
     'cv-phone-label': 'Phone:',
@@ -2089,8 +2128,11 @@ const translations = {
     'abs-3': 'Together, these studies identify the factors that shape focus and happiness at a theoretical level, and offer concrete implications for cultivating well-being — our own and other people\'s — in practice.'
   },
   zh: {
+    'logo-name': '曾鵬宇',
+    'logo-degree': '博士',
     'cv-name': '曾鵬宇',
-    'cv-dept': '國立臺灣大學心理學系暨研究所',
+    'cv-degree': '博士',
+    'cv-dept': '國立臺灣大學心理學系 博士（2026）',
     'cv-role': 'PSYbyPSY 共同創辦人',
     'cv-email-label': '電子郵件：',
     'cv-phone-label': '電話：',
@@ -2139,8 +2181,11 @@ const translations = {
     'abs-3': '本論文不僅從理論層次揭示影響專注與幸福感的各種因素，亦在實踐層次為提升自身與他人福祉提供具體啟示。'
   },
   'zh-cn': {
+    'logo-name': '曾鹏宇',
+    'logo-degree': '博士',
     'cv-name': '曾鹏宇',
-    'cv-dept': '国立台湾大学心理学系暨研究所',
+    'cv-degree': '博士',
+    'cv-dept': '国立台湾大学心理学系 博士（2026）',
     'cv-role': 'PSYbyPSY 联合创始人',
     'cv-email-label': '电子邮件：',
     'cv-phone-label': '电话：',
